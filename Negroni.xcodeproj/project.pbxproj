@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46C27F1C2ADDF90500038380 /* learnData.json in Resources */ = {isa = PBXBuildFile; fileRef = 46C27F1B2ADDF90500038380 /* learnData.json */; };
+		46C27F1F2ADDF93300038380 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F1E2ADDF93300038380 /* ModelData.swift */; };
+		46C27F212ADDF96800038380 /* Learn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F202ADDF96800038380 /* Learn.swift */; };
+		46C27F242ADDF9D100038380 /* LearnHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F232ADDF9D100038380 /* LearnHome.swift */; };
+		46C27F262ADDF9ED00038380 /* LearnRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F252ADDF9ED00038380 /* LearnRow.swift */; };
+		46C27F282ADDF9F500038380 /* LearnDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F272ADDF9F500038380 /* LearnDetail.swift */; };
+		46C27F2D2ADDFA4700038380 /* TrackHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F2C2ADDFA4700038380 /* TrackHome.swift */; };
+		46C27F2F2ADDFA5300038380 /* CalmHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F2E2ADDFA5300038380 /* CalmHome.swift */; };
 		46E4BACF2ADDA9DF004BFA9F /* NegroniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4BACE2ADDA9DF004BFA9F /* NegroniApp.swift */; };
 		46E4BAD12ADDA9DF004BFA9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4BAD02ADDA9DF004BFA9F /* ContentView.swift */; };
 		46E4BAD32ADDA9E0004BFA9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E4BAD22ADDA9E0004BFA9F /* Assets.xcassets */; };
@@ -14,6 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		46C27F1B2ADDF90500038380 /* learnData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = learnData.json; sourceTree = "<group>"; };
+		46C27F1E2ADDF93300038380 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		46C27F202ADDF96800038380 /* Learn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn.swift; sourceTree = "<group>"; };
+		46C27F232ADDF9D100038380 /* LearnHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnHome.swift; sourceTree = "<group>"; };
+		46C27F252ADDF9ED00038380 /* LearnRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnRow.swift; sourceTree = "<group>"; };
+		46C27F272ADDF9F500038380 /* LearnDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnDetail.swift; sourceTree = "<group>"; };
+		46C27F2C2ADDFA4700038380 /* TrackHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackHome.swift; sourceTree = "<group>"; };
+		46C27F2E2ADDFA5300038380 /* CalmHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmHome.swift; sourceTree = "<group>"; };
 		46E4BACB2ADDA9DF004BFA9F /* Negroni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Negroni.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E4BACE2ADDA9DF004BFA9F /* NegroniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NegroniApp.swift; sourceTree = "<group>"; };
 		46E4BAD02ADDA9DF004BFA9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +48,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46C27F1A2ADDF8EF00038380 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				46C27F1B2ADDF90500038380 /* learnData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		46C27F1D2ADDF92600038380 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46C27F1E2ADDF93300038380 /* ModelData.swift */,
+				46C27F202ADDF96800038380 /* Learn.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46C27F222ADDF9BF00038380 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46E4BAD02ADDA9DF004BFA9F /* ContentView.swift */,
+				46C27F2B2ADDFA3500038380 /* Calm */,
+				46C27F2A2ADDFA2200038380 /* Track */,
+				46C27F292ADDFA1400038380 /* Learn */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46C27F292ADDFA1400038380 /* Learn */ = {
+			isa = PBXGroup;
+			children = (
+				46C27F232ADDF9D100038380 /* LearnHome.swift */,
+				46C27F252ADDF9ED00038380 /* LearnRow.swift */,
+				46C27F272ADDF9F500038380 /* LearnDetail.swift */,
+			);
+			path = Learn;
+			sourceTree = "<group>";
+		};
+		46C27F2A2ADDFA2200038380 /* Track */ = {
+			isa = PBXGroup;
+			children = (
+				46C27F2C2ADDFA4700038380 /* TrackHome.swift */,
+			);
+			path = Track;
+			sourceTree = "<group>";
+		};
+		46C27F2B2ADDFA3500038380 /* Calm */ = {
+			isa = PBXGroup;
+			children = (
+				46C27F2E2ADDFA5300038380 /* CalmHome.swift */,
+			);
+			path = Calm;
+			sourceTree = "<group>";
+		};
 		46E4BAC22ADDA9DF004BFA9F = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +121,10 @@
 		46E4BACD2ADDA9DF004BFA9F /* Negroni */ = {
 			isa = PBXGroup;
 			children = (
+				46C27F222ADDF9BF00038380 /* View */,
+				46C27F1D2ADDF92600038380 /* Model */,
+				46C27F1A2ADDF8EF00038380 /* Resources */,
 				46E4BACE2ADDA9DF004BFA9F /* NegroniApp.swift */,
-				46E4BAD02ADDA9DF004BFA9F /* ContentView.swift */,
 				46E4BAD22ADDA9E0004BFA9F /* Assets.xcassets */,
 				46E4BAD42ADDA9E0004BFA9F /* Preview Content */,
 			);
@@ -125,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46C27F1C2ADDF90500038380 /* learnData.json in Resources */,
 				46E4BAD62ADDA9E0004BFA9F /* Preview Assets.xcassets in Resources */,
 				46E4BAD32ADDA9E0004BFA9F /* Assets.xcassets in Resources */,
 			);
@@ -137,8 +210,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46C27F2D2ADDFA4700038380 /* TrackHome.swift in Sources */,
+				46C27F242ADDF9D100038380 /* LearnHome.swift in Sources */,
+				46C27F2F2ADDFA5300038380 /* CalmHome.swift in Sources */,
+				46C27F212ADDF96800038380 /* Learn.swift in Sources */,
 				46E4BAD12ADDA9DF004BFA9F /* ContentView.swift in Sources */,
+				46C27F262ADDF9ED00038380 /* LearnRow.swift in Sources */,
+				46C27F282ADDF9F500038380 /* LearnDetail.swift in Sources */,
 				46E4BACF2ADDA9DF004BFA9F /* NegroniApp.swift in Sources */,
+				46C27F1F2ADDF93300038380 /* ModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
