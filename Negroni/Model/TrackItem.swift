@@ -22,7 +22,7 @@ public class TrackItem:  Identifiable {
     enum TrackType: String {
         case Thought = "Thought"
         case Breathing = "Breathing"
-        case Splitted = "Splitted"
+        case Steps = "Steps"
         case Listening = "Listening"
     }
 

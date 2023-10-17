@@ -13,31 +13,32 @@ struct ContentView: View {
 
     @State private var selection: Tab = .Calm
 
-    enum Tab {
-        case Calm
-        case Track
-        case Learn
+    enum Tab: Int {
+        case Calm = 1
+        case Track = 2
+        case Learn = 3
     }
 
     var body: some View {
+
         TabView(selection: $selection) {
             CalmHome()
                 .tabItem {
                     Label("Calm", systemImage: "water.waves")
                 }
-                .tag(Tab.Calm)
+                .tag(Tab.Calm.rawValue)
 
             TrackHome()
                 .tabItem {
                     Label("Track", systemImage: "point.bottomleft.filled.forward.to.point.topright.scurvepath")
                 }
-                .tag(Tab.Track)
+                .tag(Tab.Track.rawValue)
 
             LearnHome()
                 .tabItem {
                     Label("List", systemImage: "books.vertical")
                 }
-                .tag(Tab.Track)
+                .tag(Tab.Track.rawValue)
         }
 
     }

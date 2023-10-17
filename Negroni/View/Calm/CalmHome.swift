@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CalmHome: View {
 
+    @State private var isPresented = false
+
     func something() {
     }
 
@@ -19,12 +21,17 @@ struct CalmHome: View {
 
     var body: some View {
 
-        NavigationView {
+        NavigationStack {
             
-            VStack(spacing: 64) {
+            VStack(spacing: 96) {
 
                 NavigationLink(destination: CalmDynamicView()) {
-                    Text("Calm Down")
+                    Text("Calm\nDown")
+                        .font(.title)
+                        .multilineTextAlignment(.center)
+                        .kerning(-0.3)
+                        .fontDesign(.rounded)
+                        .fontWeight(.bold)
                         .padding([.top,.bottom], 10)
                         .padding([.leading,.trailing], 20)
                         .frame(width:cs,height:cs)
@@ -44,6 +51,7 @@ struct CalmHome: View {
                                     .opacity(0.25)
                             }
                         }
+                    
                 }
 
 
