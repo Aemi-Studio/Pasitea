@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct TrackHome: View {
+
+    @Environment(ModelData.self) var modelData
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(modelData.trackItems) { trackItem in
+                TrackItemRow(trackItem: trackItem)
+            }
+        }
     }
 }
 
 #Preview {
     TrackHome()
+        .environment(ModelData())
 }

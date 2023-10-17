@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4699DCA52ADE6432008B17F9 /* TrackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCA42ADE6432008B17F9 /* TrackItem.swift */; };
+		4699DCA72ADE67F7008B17F9 /* TrackItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCA62ADE67F7008B17F9 /* TrackItemView.swift */; };
+		4699DCA92ADE6809008B17F9 /* TrackItemEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCA82ADE6809008B17F9 /* TrackItemEdit.swift */; };
+		4699DCAB2ADE6822008B17F9 /* TrackItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCAA2ADE6822008B17F9 /* TrackItemRow.swift */; };
+		4699DCBF2ADE8BF6008B17F9 /* CalmSplittedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCBE2ADE8BF6008B17F9 /* CalmSplittedView.swift */; };
+		4699DCC12ADE8DF5008B17F9 /* CalmBreatheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC02ADE8DF5008B17F9 /* CalmBreatheView.swift */; };
+		4699DCC32ADE8E00008B17F9 /* CalmListenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC22ADE8E00008B17F9 /* CalmListenView.swift */; };
+		4699DCC52ADE92B1008B17F9 /* calmData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4699DCC42ADE92B1008B17F9 /* calmData.json */; };
+		4699DCC72ADE9449008B17F9 /* CalmStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC62ADE9449008B17F9 /* CalmStep.swift */; };
+		4699DCC92ADE9601008B17F9 /* CalmDynamicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC82ADE9601008B17F9 /* CalmDynamicView.swift */; };
 		46C27F1C2ADDF90500038380 /* learnData.json in Resources */ = {isa = PBXBuildFile; fileRef = 46C27F1B2ADDF90500038380 /* learnData.json */; };
 		46C27F1F2ADDF93300038380 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F1E2ADDF93300038380 /* ModelData.swift */; };
 		46C27F212ADDF96800038380 /* Learn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F202ADDF96800038380 /* Learn.swift */; };
@@ -22,6 +32,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4699DCA42ADE6432008B17F9 /* TrackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItem.swift; sourceTree = "<group>"; };
+		4699DCA62ADE67F7008B17F9 /* TrackItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemView.swift; sourceTree = "<group>"; };
+		4699DCA82ADE6809008B17F9 /* TrackItemEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemEdit.swift; sourceTree = "<group>"; };
+		4699DCAA2ADE6822008B17F9 /* TrackItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemRow.swift; sourceTree = "<group>"; };
+		4699DCBE2ADE8BF6008B17F9 /* CalmSplittedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmSplittedView.swift; sourceTree = "<group>"; };
+		4699DCC02ADE8DF5008B17F9 /* CalmBreatheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmBreatheView.swift; sourceTree = "<group>"; };
+		4699DCC22ADE8E00008B17F9 /* CalmListenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmListenView.swift; sourceTree = "<group>"; };
+		4699DCC42ADE92B1008B17F9 /* calmData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = calmData.json; sourceTree = "<group>"; };
+		4699DCC62ADE9449008B17F9 /* CalmStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmStep.swift; sourceTree = "<group>"; };
+		4699DCC82ADE9601008B17F9 /* CalmDynamicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmDynamicView.swift; sourceTree = "<group>"; };
 		46C27F1B2ADDF90500038380 /* learnData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = learnData.json; sourceTree = "<group>"; };
 		46C27F1E2ADDF93300038380 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		46C27F202ADDF96800038380 /* Learn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn.swift; sourceTree = "<group>"; };
@@ -52,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				46C27F1B2ADDF90500038380 /* learnData.json */,
+				4699DCC42ADE92B1008B17F9 /* calmData.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -61,6 +82,8 @@
 			children = (
 				46C27F1E2ADDF93300038380 /* ModelData.swift */,
 				46C27F202ADDF96800038380 /* Learn.swift */,
+				4699DCA42ADE6432008B17F9 /* TrackItem.swift */,
+				4699DCC62ADE9449008B17F9 /* CalmStep.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -90,6 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				46C27F2C2ADDFA4700038380 /* TrackHome.swift */,
+				4699DCA62ADE67F7008B17F9 /* TrackItemView.swift */,
+				4699DCA82ADE6809008B17F9 /* TrackItemEdit.swift */,
+				4699DCAA2ADE6822008B17F9 /* TrackItemRow.swift */,
 			);
 			path = Track;
 			sourceTree = "<group>";
@@ -98,6 +124,10 @@
 			isa = PBXGroup;
 			children = (
 				46C27F2E2ADDFA5300038380 /* CalmHome.swift */,
+				4699DCBE2ADE8BF6008B17F9 /* CalmSplittedView.swift */,
+				4699DCC02ADE8DF5008B17F9 /* CalmBreatheView.swift */,
+				4699DCC22ADE8E00008B17F9 /* CalmListenView.swift */,
+				4699DCC82ADE9601008B17F9 /* CalmDynamicView.swift */,
 			);
 			path = Calm;
 			sourceTree = "<group>";
@@ -197,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4699DCC52ADE92B1008B17F9 /* calmData.json in Resources */,
 				46C27F1C2ADDF90500038380 /* learnData.json in Resources */,
 				46E4BAD62ADDA9E0004BFA9F /* Preview Assets.xcassets in Resources */,
 				46E4BAD32ADDA9E0004BFA9F /* Assets.xcassets in Resources */,
@@ -210,15 +241,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4699DCA72ADE67F7008B17F9 /* TrackItemView.swift in Sources */,
+				4699DCA52ADE6432008B17F9 /* TrackItem.swift in Sources */,
+				4699DCAB2ADE6822008B17F9 /* TrackItemRow.swift in Sources */,
 				46C27F2D2ADDFA4700038380 /* TrackHome.swift in Sources */,
 				46C27F242ADDF9D100038380 /* LearnHome.swift in Sources */,
+				4699DCA92ADE6809008B17F9 /* TrackItemEdit.swift in Sources */,
+				4699DCC32ADE8E00008B17F9 /* CalmListenView.swift in Sources */,
+				4699DCC92ADE9601008B17F9 /* CalmDynamicView.swift in Sources */,
 				46C27F2F2ADDFA5300038380 /* CalmHome.swift in Sources */,
 				46C27F212ADDF96800038380 /* Learn.swift in Sources */,
 				46E4BAD12ADDA9DF004BFA9F /* ContentView.swift in Sources */,
 				46C27F262ADDF9ED00038380 /* LearnRow.swift in Sources */,
 				46C27F282ADDF9F500038380 /* LearnDetail.swift in Sources */,
 				46E4BACF2ADDA9DF004BFA9F /* NegroniApp.swift in Sources */,
+				4699DCBF2ADE8BF6008B17F9 /* CalmSplittedView.swift in Sources */,
 				46C27F1F2ADDF93300038380 /* ModelData.swift in Sources */,
+				4699DCC12ADE8DF5008B17F9 /* CalmBreatheView.swift in Sources */,
+				4699DCC72ADE9449008B17F9 /* CalmStep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
