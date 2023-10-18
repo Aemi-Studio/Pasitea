@@ -12,7 +12,7 @@ I (Gigi) recommend to use the `git` command line utility (already installed on y
 git clone https://github.com/GEDAF/Negroni
 ```
 
-If this command needs you to login, I (Gigi) suggest to use `[gh](https://cli.github.com/)` (you can install it with brew if you have brew with `brew install gh`).
+If this command needs you to login, I (Gigi) suggest to use [`gh`](https://cli.github.com/) (you can install it with brew if you have brew with `brew install gh`).
 With `gh`, just type:
 
 ```bash
@@ -22,7 +22,7 @@ gh auth login
 And follow the instructions.
 
 
-Then you can retry the previous command to clone the repository. I also recommend to **NOT** clone it in your user directory.
+Then you can retry the previous command to clone the repository. I (Gigi) also recommend to **NOT** clone it in your user directory.
 
 ```bash
 mkdir -p ~/Developer
