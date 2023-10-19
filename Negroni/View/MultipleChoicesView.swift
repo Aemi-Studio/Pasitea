@@ -11,40 +11,75 @@ struct MultipleChoicesView: View {
 
     var dismissAction: DismissAction?
     var lastExercise: TrackItem.TrackType
+    @State private var isBreathingExercisePresented = false
+    @State private var isListeningExercisePresented = false
+    @State private var isTrackingPresented = false
 
     var body: some View {
-        CustomBackButton(dismissAction: dismissAction, enforce: false)
-        VStack {
+
+        HStack {
+
             Spacer()
-            List {
-                VStack(alignment: .leading) {
-                    Text("Breathe")
-                        .font(.headline)
-                    Text("Lorem ipsum dolor sit amet")
-                        .font(.subheadline)
-                }
-                .padding()
 
-                VStack(alignment: .leading) {
-                    Text("Listen to calm sounds")
-                        .font(.headline)
-                    Text("Lorem ipsum dolor sit amet")
-                        .font(.subheadline)
-                }
-                .padding()
+            NavigationStack {
 
-                VStack(alignment: .leading) {
-                    Text("Keep track of your mood")
-                        .font(.headline)
-                    Text("Lorem ipsum dolor sit amet")
-                        .font(.subheadline)
+                VStack {
+
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Breathe")
+                                .font(.headline)
+                            Text("Lorem ipsum dolor sit amet")
+                                .font(.subheadline)
+                        }
+                        .padding()
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                    }
+
+                    HStack {
+                        Button {
+                            isListeningExercisePresented = true
+                        } label: {
+                            VStack(alignment: .leading) {
+                                Text("Listen to calm sounds")
+                                    .font(.headline)
+                                Text("Lorem ipsum dolor sit amet")
+                                    .font(.subheadline)
+                            }
+                            .padding()
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }
+                    }.sheet(isPresented: $isListeningExercisePresented, onDismiss: {
+
+                    }) {
+                        CalmListenView()
+                            .presentationDetents([.large])
+                            .presentationDragIndicator(.visible)
+                            .presentationBackgroundInteraction(.disabled)
+                    }
+
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Keep track of your mood")
+                                .font(.headline)
+                            Text("Lorem ipsum dolor sit amet")
+                                .font(.subheadline)
+                        }
+                        .padding()
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                    }
+
                 }
-                .padding()
 
             }
-            .listRowSpacing(20)
+            .background(.thickMaterial)
+
             Spacer()
         }
+
     }
 }
 

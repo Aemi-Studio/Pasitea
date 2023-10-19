@@ -32,7 +32,9 @@ struct CalmExerciseFinishedView: View {
                     Button("Yes", systemImage:"questionmark.circle.fill",action:{
                         isPresented = true
                     })
-                        .navigationDestination(isPresented: $isPresented) {
+                    .sheet(isPresented: $isPresented) {
+                        (previousDismissAction ?? dismiss)()
+                        } content: {
                             MultipleChoicesView(dismissAction: previousDismissAction ?? dismiss, lastExercise: .Steps)
                         }
                         .navigationSplitViewStyle(.prominentDetail)

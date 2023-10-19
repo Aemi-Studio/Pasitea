@@ -18,28 +18,30 @@ struct ContentView: View {
     }
 
     var body: some View {
-
         TabView(selection: $selection) {
-            CalmHome()
-                .tabItem {
-                    Label("Calm", systemImage: "water.waves")
-                }
-                .tag(Tab.Calm.rawValue)
+            Group {
 
-            TrackHome()
-                .tabItem {
-                    Label("Track", systemImage: "point.bottomleft.filled.forward.to.point.topright.scurvepath")
-                }
-                .tag(Tab.Track.rawValue)
+                CalmHome()
+                    .tabItem {
+                        Label("Calm", systemImage: "water.waves")
+                    }
+                    .tag(Tab.Calm.rawValue)
 
-            LearnHome()
-                .tabItem {
-                    Label("List", systemImage: "books.vertical")
-                }
-                .tag(Tab.Track.rawValue)
+                TrackHome()
+                    .tabItem {
+                        Label("Track", systemImage: "point.bottomleft.filled.forward.to.point.topright.scurvepath")
+                    }
+                    .tag(Tab.Track.rawValue)
+
+                LearnHome()
+                    .tabItem {
+                        Label("Learn", systemImage: "books.vertical")
+                    }
+                    .tag(Tab.Track.rawValue)
+
+            }
+            .toolbarBackground(.visible, for: .tabBar)
         }
-        .background(.regularMaterial)
-
     }
 }
 

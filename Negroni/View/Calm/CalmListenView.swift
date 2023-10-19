@@ -8,12 +8,22 @@
 import SwiftUI
 
 struct CalmListenView: View {
+
+    @Environment(\.dismiss) var dismiss
+
     var body: some View {
+
+        CustomBackButton(dismissAction: dismiss)
+
         VStack {
+
+            Spacer()
+
             Text("Listen")
+
+            Spacer()
         }
-        .navigationTitle("Listen")
-        .navigationBarTitleDisplayMode(.inline)
+        .toolbar(.hidden, for: .tabBar)
     }
 }
 

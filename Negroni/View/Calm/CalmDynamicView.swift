@@ -13,7 +13,6 @@ struct CalmDynamicView: View {
     @Environment(ModelData.self) private var modelData
     @Environment(\.dismiss) var dismiss
     @State private var id = 0
-    var last: Bool = false
 
     func getNextScreen() {
         id += 1
@@ -38,7 +37,7 @@ struct CalmDynamicView: View {
             Spacer()
 
         }
-        .padding()
+        .toolbar(.hidden, for: .tabBar)
 
     }
     

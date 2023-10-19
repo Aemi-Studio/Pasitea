@@ -11,7 +11,7 @@ struct CustomBackButton: View {
 
     @State private var alertPresented = false
 
-    var dismissAction: DismissAction?
+    var dismissAction: DismissAction? = nil
     var enforce: Bool = true
     var display: Bool = true
 
@@ -40,8 +40,8 @@ struct CustomBackButton: View {
                 EmptyView()
                     .frame(height: 48)
             }
-        }.alert("Exiting the exercise", isPresented: $alertPresented) {
-            Button("OK", role: .destructive, action: { dismissAction?() })
+        }.confirmationDialog("Exiting the exercise", isPresented: $alertPresented) {
+            Button("Yes", role: .destructive, action: { dismissAction?() })
         } message: {
             Text("Are you sure?")
         }
