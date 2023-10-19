@@ -12,7 +12,7 @@ struct CalmExerciseFinishedView: View {
     @Environment(\.dismiss) var dismiss
     @State private var isPresented = false
 
-    var hasToBeDismissed: Binding<Bool>?
+    var previousDismissAction: DismissAction?
 
     var body: some View {
         NavigationStack {
@@ -33,7 +33,7 @@ struct CalmExerciseFinishedView: View {
                         isPresented = true
                     })
                         .navigationDestination(isPresented: $isPresented) {
-                            MultipleChoicesView(dismissAction: dismiss, lastExercise: .Steps)
+                            MultipleChoicesView(dismissAction: previousDismissAction ?? dismiss, lastExercise: .Steps)
                         }
                         .navigationSplitViewStyle(.prominentDetail)
                         .buttonStyle(.borderedProminent)

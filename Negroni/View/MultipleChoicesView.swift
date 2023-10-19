@@ -13,6 +13,7 @@ struct MultipleChoicesView: View {
     var lastExercise: TrackItem.TrackType
 
     var body: some View {
+        CustomBackButton(dismissAction: dismissAction, enforce: false)
         VStack {
             Spacer()
             List {

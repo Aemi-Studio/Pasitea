@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4609E7572ADFD33000CAD374 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */; };
+		4609E7592ADFD3B800CAD374 /* CalmStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609E7582ADFD3B800CAD374 /* CalmStepView.swift */; };
 		4699DCA52ADE6432008B17F9 /* TrackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCA42ADE6432008B17F9 /* TrackItem.swift */; };
 		4699DCA72ADE67F7008B17F9 /* TrackItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCA62ADE67F7008B17F9 /* TrackItemView.swift */; };
 		4699DCA92ADE6809008B17F9 /* TrackItemEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCA82ADE6809008B17F9 /* TrackItemEdit.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
+		4609E7582ADFD3B800CAD374 /* CalmStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmStepView.swift; sourceTree = "<group>"; };
 		4699DCA42ADE6432008B17F9 /* TrackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItem.swift; sourceTree = "<group>"; };
 		4699DCA62ADE67F7008B17F9 /* TrackItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemView.swift; sourceTree = "<group>"; };
 		4699DCA82ADE6809008B17F9 /* TrackItemEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemEdit.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 				46C27F2A2ADDFA2200038380 /* Track */,
 				46C27F292ADDFA1400038380 /* Learn */,
 				4699DCCC2ADF04F9008B17F9 /* MultipleChoicesView.swift */,
+				4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				4699DCC22ADE8E00008B17F9 /* CalmListenView.swift */,
 				4699DCC82ADE9601008B17F9 /* CalmDynamicView.swift */,
 				4699DCCA2ADEDB72008B17F9 /* CalmExerciseFinishedView.swift */,
+				4609E7582ADFD3B800CAD374 /* CalmStepView.swift */,
 			);
 			path = Calm;
 			sourceTree = "<group>";
@@ -245,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4699DCA72ADE67F7008B17F9 /* TrackItemView.swift in Sources */,
+				4609E7572ADFD33000CAD374 /* CustomBackButton.swift in Sources */,
 				4699DCCB2ADEDB72008B17F9 /* CalmExerciseFinishedView.swift in Sources */,
 				4699DCA52ADE6432008B17F9 /* TrackItem.swift in Sources */,
 				4699DCAB2ADE6822008B17F9 /* TrackItemRow.swift in Sources */,
@@ -255,6 +262,7 @@
 				4699DCC32ADE8E00008B17F9 /* CalmListenView.swift in Sources */,
 				4699DCC92ADE9601008B17F9 /* CalmDynamicView.swift in Sources */,
 				46C27F2F2ADDFA5300038380 /* CalmHome.swift in Sources */,
+				4609E7592ADFD3B800CAD374 /* CalmStepView.swift in Sources */,
 				46C27F212ADDF96800038380 /* Learn.swift in Sources */,
 				46E4BAD12ADDA9DF004BFA9F /* ContentView.swift in Sources */,
 				46C27F262ADDF9ED00038380 /* LearnRow.swift in Sources */,

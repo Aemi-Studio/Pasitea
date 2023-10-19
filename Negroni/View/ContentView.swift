@@ -38,6 +38,7 @@ struct ContentView: View {
                 }
                 .tag(Tab.Track.rawValue)
         }
+        .background(.regularMaterial)
 
     }
 }
