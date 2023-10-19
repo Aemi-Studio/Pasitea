@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42D4CCD42AE13EAE004D3C47 /* TestBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D4CCD32AE13EAE004D3C47 /* TestBackgroundView.swift */; };
 		4699DCA52ADE6432008B17F9 /* TrackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCA42ADE6432008B17F9 /* TrackItem.swift */; };
 		4699DCA72ADE67F7008B17F9 /* TrackItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCA62ADE67F7008B17F9 /* TrackItemView.swift */; };
 		4699DCA92ADE6809008B17F9 /* TrackItemEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCA82ADE6809008B17F9 /* TrackItemEdit.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42D4CCD32AE13EAE004D3C47 /* TestBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBackgroundView.swift; sourceTree = "<group>"; };
 		4699DCA42ADE6432008B17F9 /* TrackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItem.swift; sourceTree = "<group>"; };
 		4699DCA62ADE67F7008B17F9 /* TrackItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemView.swift; sourceTree = "<group>"; };
 		4699DCA82ADE6809008B17F9 /* TrackItemEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemEdit.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				4699DCC22ADE8E00008B17F9 /* CalmListenView.swift */,
 				4699DCC82ADE9601008B17F9 /* CalmDynamicView.swift */,
 				4699DCCA2ADEDB72008B17F9 /* CalmExerciseFinishedView.swift */,
+				42D4CCD32AE13EAE004D3C47 /* TestBackgroundView.swift */,
 			);
 			path = Calm;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				46E4BACF2ADDA9DF004BFA9F /* NegroniApp.swift in Sources */,
 				46C27F1F2ADDF93300038380 /* ModelData.swift in Sources */,
 				4699DCC12ADE8DF5008B17F9 /* CalmBreatheView.swift in Sources */,
+				42D4CCD42AE13EAE004D3C47 /* TestBackgroundView.swift in Sources */,
 				4699DCC72ADE9449008B17F9 /* CalmStep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
