@@ -13,8 +13,11 @@ func iCS(_ cs: CGFloat,_ multiplier: CGFloat) -> CGFloat {
 }
 
 struct BigButton: View {
+    @State var amount = 0.75
+    
     var body: some View {
-        Text("Calm Down")
+        
+            Text("Calm Down")
             .font(.title)
             .multilineTextAlignment(.center)
             .kerning(-0.3)
@@ -30,17 +33,47 @@ struct BigButton: View {
                 ZStack {
                     Circle()
                         .frame(width:iCS(cs,1),height:iCS(cs,1))
-                        .opacity(0.25)
+                        .opacity(1.5 - amount)
+                        .scaleEffect(amount)
+                        .onAppear {
+                            DispatchQueue.main.async {
+                                withAnimation(.easeOut(duration: 2) .repeatForever(autoreverses: false))
+                                {
+                                    self.amount = 1.5
+                            }
+                            }
+                        }
                     Circle()
                         .frame(width:iCS(cs,2),height:iCS(cs,2))
-                        .opacity(0.25)
+                        .opacity(1.25 - amount)
+                        .scaleEffect(amount)
+                        .onAppear {
+                            DispatchQueue.main.async {
+                                withAnimation(.easeOut(duration: 2) .repeatForever(autoreverses: false))
+                                {
+                                    self.amount = 1.5
+                            }
+                            }
+                        }
                     Circle()
                         .frame(width:iCS(cs,3),height:iCS(cs,3))
-                        .opacity(0.25)
+                        .opacity(1.0 - amount)
+                        .scaleEffect(amount)
+                        .onAppear {
+                            DispatchQueue.main.async {
+                                withAnimation(.easeOut(duration: 2) .repeatForever(autoreverses: false))
+                                {
+                                    self.amount = 1.5
+                            }
+                            }
+                        }
+                    
                 }
             }
+                
+            }
 
-    }
+    
 }
 
 #Preview {
