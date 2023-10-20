@@ -6,60 +6,48 @@
 //
 
 import Foundation
+import SwiftData
 
-public class TrackItem:  Identifiable {
+@Model
+public final class TrackItem:  Identifiable {
 
-    public var id: UUID = UUID()
-    public var date: Date = Date()
+    public enum TrackType: String, Codable, CaseIterable {
+        case none = "Exercise"
+        case steps = "5 Steps"
+        case breathing = "Breathing"
+        case listening = "Listening"
+        case feeling = "Feeling"
+    }
+
+    @Attribute(.unique) public let id: UUID
+    public var date: Date
     public var title: String
+    public var desc: String = ""
+    public var tags: [String] = []
+    var type: TrackType.RawValue
 
-    init(title: String, date: Date) {
+    enum TrackItemCodingKeys: CodingKey {
+        case id
+        case date
+        case title
+        case desc
+        case tags
+        case type
+    }
+
+    init(_ title: String,_ desc: String?, type: TrackType.RawValue?, tags: [String]?, date: Date?) {
         self.id = UUID()
-        self.date = date
         self.title = title
-    }
-
-    enum TrackType: String {
-        case Thought = "Thought"
-        case Breathing = "Breathing"
-        case Steps = "Steps"
-        case Listening = "Listening"
-    }
-
-}
-
-public class TrackThought: TrackItem {
-
-    var description: String
-
-    init(title: String, description: String, date: Date = Date()) {
-        self.description = description
-        super.init(title: title, date: date)
-    }
-
-}
-
-
-public class TrackExercise: TrackItem {
-
-    var duration: DateInterval
-
-    init(title: String, date: Date, duration: DateInterval) {
-        self.duration = duration
-        super.init(title: title, date: date)
-
+        self.desc = desc ?? ""
+        self.type = type ?? "Exercise"
+        self.tags = tags ?? []
+        self.date = date ?? Date.now
     }
 }
 
-
-public class TrackBreathing: TrackExercise {
-
-}
-
-public class TrackListening: TrackExercise {
-
-}
-
-public class TrackSplitted: TrackExercise {
-
+extension TrackItem {
+    @Transient
+    var trackType: TrackType {
+        TrackType(rawValue: self.type) ?? .none
+    }
 }

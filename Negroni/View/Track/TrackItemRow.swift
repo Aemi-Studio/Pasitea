@@ -6,19 +6,21 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct TrackItemRow: View {
-    var trackItem: TrackItem
+
+    var trackItem: TrackItem?
 
     var body: some View {
         VStack(alignment: .leading, spacing:5) {
-            Text(trackItem.title)
-            Text(trackItem.date.formatted())
+            Text(((trackItem?.title.isEmpty) != nil) ? "Lorem Ipsum" : trackItem!.title)
+            Text(trackItem!.date.formatted())
                 .font(.caption)
         }
     }
 }
 
-#Preview {
-    TrackItemRow(trackItem: TrackThought(title:"Personal Observation", description: "Lorem Ipsum"))
-}
+//#Preview {
+//    TrackItemRowBeta(trackItem: nil)
+//}

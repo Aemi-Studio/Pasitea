@@ -35,7 +35,7 @@ struct CalmExerciseFinishedView: View {
                     .sheet(isPresented: $isPresented) {
                         (previousDismissAction ?? dismiss)()
                         } content: {
-                            MultipleChoicesView(dismissAction: previousDismissAction ?? dismiss, lastExercise: .Steps)
+                            MultipleChoicesView(dismissAction: previousDismissAction ?? dismiss, lastExercise: "steps")
                         }
                         .navigationSplitViewStyle(.prominentDetail)
                         .buttonStyle(.borderedProminent)

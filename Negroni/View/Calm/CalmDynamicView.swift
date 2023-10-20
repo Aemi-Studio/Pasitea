@@ -20,7 +20,7 @@ struct CalmDynamicView: View {
 
     var body: some View {
 
-        var last = id >= modelData.calmSteps.count - 1
+        let last = id >= modelData.calmSteps.count - 1
 
         CustomBackButton(dismissAction: dismiss, display: !last)
 

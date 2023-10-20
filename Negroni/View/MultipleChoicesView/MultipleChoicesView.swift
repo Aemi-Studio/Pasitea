@@ -10,7 +10,7 @@ import SwiftUI
 struct MultipleChoicesView: View {
 
     var dismissAction: DismissAction?
-    var lastExercise: TrackItem.TrackType
+    var lastExercise: TrackItem.TrackType.RawValue
     @State private var isBreathingExercisePresented = false
     @State private var isListeningExercisePresented = false
     @State private var isTrackingPresented = false
@@ -58,12 +58,12 @@ struct MultipleChoicesView: View {
                         }
 
                         MultipleChoicesItemView(
-                            title: "Track",
+                            title: "Keep Track",
                             subtitle: "Lorem ipsum dolor sit amet",
-                            isViewPresented: $isListeningExercisePresented
+                            isViewPresented: $isTrackingPresented
                         )
-                        .sheet(isPresented: $isListeningExercisePresented) {
-                            CalmListenView()
+                        .sheet(isPresented: $isTrackingPresented) {
+                            TrackItemAddView()
                                 .presentationDetents([.large])
                                 .presentationDragIndicator(.visible)
                                 .presentationBackgroundInteraction(.disabled)
@@ -84,5 +84,5 @@ struct MultipleChoicesView: View {
 }
 
 #Preview {
-    MultipleChoicesView(lastExercise: .Steps)
+    MultipleChoicesView(lastExercise: "steps")
 }
