@@ -21,25 +21,33 @@ struct ContentView: View {
         TabView(selection: $selection) {
             Group {
 
-                CalmHome()
-                    .tabItem {
-                        Label("Calm", systemImage: "water.waves")
-                    }
-                    .tag(Tab.Calm.rawValue)
+                ZStack {
+                    Color.red.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/).ignoresSafeArea(.all)
+                    CalmHome()
+                }
+                .tabItem {
+                    Label("Calm", systemImage: "water.waves")
+                }
+                .tag(Tab.Calm.rawValue)
 
-                TrackHome()
-                    .tabItem {
-                        Label("Track", systemImage: "point.bottomleft.filled.forward.to.point.topright.scurvepath")
-                    }
-                    .tag(Tab.Track.rawValue)
+                ZStack {
+                    TrackHome()
+                }
+                .tabItem {
+                    Label("Track", systemImage: "point.bottomleft.filled.forward.to.point.topright.scurvepath")
+                }
+                .tag(Tab.Track.rawValue)
 
-                LearnHome()
-                    .tabItem {
-                        Label("Learn", systemImage: "books.vertical")
-                    }
-                    .tag(Tab.Track.rawValue)
+                ZStack {
+                    LearnHome()
+                }
+                .tabItem {
+                    Label("Learn", systemImage: "books.vertical")
+                }
+                .tag(Tab.Track.rawValue)
 
             }
+            .scrollContentBackground(.visible)
             .toolbarBackground(.visible, for: .tabBar)
         }
     }

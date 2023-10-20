@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4600682E2AE2663200BA571E /* MultipleChoicesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4600682D2AE2663200BA571E /* MultipleChoicesItemView.swift */; };
 		4609E7572ADFD33000CAD374 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */; };
 		4609E7592ADFD3B800CAD374 /* CalmStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609E7582ADFD3B800CAD374 /* CalmStepView.swift */; };
 		4699DCA52ADE6432008B17F9 /* TrackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCA42ADE6432008B17F9 /* TrackItem.swift */; };
@@ -20,6 +21,7 @@
 		4699DCC92ADE9601008B17F9 /* CalmDynamicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC82ADE9601008B17F9 /* CalmDynamicView.swift */; };
 		4699DCCB2ADEDB72008B17F9 /* CalmExerciseFinishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCCA2ADEDB72008B17F9 /* CalmExerciseFinishedView.swift */; };
 		4699DCCD2ADF04F9008B17F9 /* MultipleChoicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCCC2ADF04F9008B17F9 /* MultipleChoicesView.swift */; };
+		46A538A62AE16EE90042A375 /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A538A52AE16EE90042A375 /* BigButton.swift */; };
 		46C27F1C2ADDF90500038380 /* learnData.json in Resources */ = {isa = PBXBuildFile; fileRef = 46C27F1B2ADDF90500038380 /* learnData.json */; };
 		46C27F1F2ADDF93300038380 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F1E2ADDF93300038380 /* ModelData.swift */; };
 		46C27F212ADDF96800038380 /* Learn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F202ADDF96800038380 /* Learn.swift */; };
@@ -35,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4600682D2AE2663200BA571E /* MultipleChoicesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoicesItemView.swift; sourceTree = "<group>"; };
 		4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		4609E7582ADFD3B800CAD374 /* CalmStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmStepView.swift; sourceTree = "<group>"; };
 		4699DCA42ADE6432008B17F9 /* TrackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItem.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		4699DCC82ADE9601008B17F9 /* CalmDynamicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmDynamicView.swift; sourceTree = "<group>"; };
 		4699DCCA2ADEDB72008B17F9 /* CalmExerciseFinishedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmExerciseFinishedView.swift; sourceTree = "<group>"; };
 		4699DCCC2ADF04F9008B17F9 /* MultipleChoicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoicesView.swift; sourceTree = "<group>"; };
+		46A538A52AE16EE90042A375 /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
 		46C27F1B2ADDF90500038380 /* learnData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = learnData.json; sourceTree = "<group>"; };
 		46C27F1E2ADDF93300038380 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		46C27F202ADDF96800038380 /* Learn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn.swift; sourceTree = "<group>"; };
@@ -74,6 +78,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4600682F2AE26C3300BA571E /* MultipleChoicesView */ = {
+			isa = PBXGroup;
+			children = (
+				4699DCCC2ADF04F9008B17F9 /* MultipleChoicesView.swift */,
+				4600682D2AE2663200BA571E /* MultipleChoicesItemView.swift */,
+			);
+			path = MultipleChoicesView;
+			sourceTree = "<group>";
+		};
+		46A538A42AE16ECB0042A375 /* Inputs and Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */,
+				46A538A52AE16EE90042A375 /* BigButton.swift */,
+			);
+			path = "Inputs and Buttons";
+			sourceTree = "<group>";
+		};
 		46C27F1A2ADDF8EF00038380 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +119,12 @@
 		46C27F222ADDF9BF00038380 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46A538A42AE16ECB0042A375 /* Inputs and Buttons */,
 				46E4BAD02ADDA9DF004BFA9F /* ContentView.swift */,
 				46C27F2B2ADDFA3500038380 /* Calm */,
 				46C27F2A2ADDFA2200038380 /* Track */,
 				46C27F292ADDFA1400038380 /* Learn */,
-				4699DCCC2ADF04F9008B17F9 /* MultipleChoicesView.swift */,
-				4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */,
+				4600682F2AE26C3300BA571E /* MultipleChoicesView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -261,11 +283,13 @@
 				4699DCA92ADE6809008B17F9 /* TrackItemEdit.swift in Sources */,
 				4699DCC32ADE8E00008B17F9 /* CalmListenView.swift in Sources */,
 				4699DCC92ADE9601008B17F9 /* CalmDynamicView.swift in Sources */,
+				4600682E2AE2663200BA571E /* MultipleChoicesItemView.swift in Sources */,
 				46C27F2F2ADDFA5300038380 /* CalmHome.swift in Sources */,
 				4609E7592ADFD3B800CAD374 /* CalmStepView.swift in Sources */,
 				46C27F212ADDF96800038380 /* Learn.swift in Sources */,
 				46E4BAD12ADDA9DF004BFA9F /* ContentView.swift in Sources */,
 				46C27F262ADDF9ED00038380 /* LearnRow.swift in Sources */,
+				46A538A62AE16EE90042A375 /* BigButton.swift in Sources */,
 				46C27F282ADDF9F500038380 /* LearnDetail.swift in Sources */,
 				46E4BACF2ADDA9DF004BFA9F /* NegroniApp.swift in Sources */,
 				46C27F1F2ADDF93300038380 /* ModelData.swift in Sources */,
