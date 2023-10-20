@@ -15,8 +15,11 @@ struct CalmBreatheView: View {
     }
     //MARK BODY
     var body: some View {
+        NavigationStack{
+            
             ZStack() {
-                Color.blue.opacity(0.2).edgesIgnoringSafeArea(.all)
+                Color.blue.opacity(0.1).edgesIgnoringSafeArea(.all)
+                Color.blue.opacity(0.1).edgesIgnoringSafeArea(.bottom)
                 
                 VStack {
                     
@@ -43,9 +46,6 @@ struct CalmBreatheView: View {
                                 Circle()
                                     .frame(width:iCS(cs,3),height:iCS(cs,3))
                                     .opacity(0.25)
-                                
-                                
-                                
                                 
                             }
                             
@@ -75,12 +75,13 @@ struct CalmBreatheView: View {
                             .multilineTextAlignment(.center)
                             .foregroundColor(.black)
                     }
-                    //.navigationTitle("Breathe")
+                    .navigationTitle("Breathe")
                     //.navigationBarTitleDisplayMode(.inline)
                 }
             }
         }
     }
+}
         
         #Preview {
             CalmBreatheView()
