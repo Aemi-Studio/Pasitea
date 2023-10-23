@@ -22,7 +22,6 @@ struct ContentView: View {
             Group {
 
                 ZStack {
-                    Color.red.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/).ignoresSafeArea(.all)
                     CalmHome()
                 }
                 .tabItem {
@@ -31,7 +30,7 @@ struct ContentView: View {
                 .tag(Tab.Calm.rawValue)
 
                 ZStack {
-                    TrackHome()
+                    TrackHomeBeta()
                 }
                 .tabItem {
                     Label("Track", systemImage: "point.bottomleft.filled.forward.to.point.topright.scurvepath")
@@ -45,10 +44,7 @@ struct ContentView: View {
                     Label("Learn", systemImage: "books.vertical")
                 }
                 .tag(Tab.Track.rawValue)
-
             }
-            .scrollContentBackground(.visible)
-            .toolbarBackground(.visible, for: .tabBar)
         }
     }
 }

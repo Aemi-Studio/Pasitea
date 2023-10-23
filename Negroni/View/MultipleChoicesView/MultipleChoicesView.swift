@@ -9,80 +9,72 @@ import SwiftUI
 
 struct MultipleChoicesView: View {
 
-    var dismissAction: DismissAction?
-    var lastExercise: TrackItem.TrackType
+    @Environment(\.dismiss) var dismiss
     @State private var isBreathingExercisePresented = false
     @State private var isListeningExercisePresented = false
     @State private var isTrackingPresented = false
 
+    var lastExercise: TrackItem.TrackType.RawValue
+
     var body: some View {
+        ZStack {
+            LightGradientView()
+                .edgesIgnoringSafeArea(.all)
 
-        NavigationStack {
+            VStack(spacing: 64) {
 
-            ZStack {
+                Text("Choose Next Action")
+                    .font(.title)
+                    .bold()
 
-                Color.blue.opacity(0.2).edgesIgnoringSafeArea(.all)
+                VStack(spacing: 16) {
 
-                VStack {
-
-                    Text("Choose Next Action")
-                        .font(.title)
-                        .bold()
-                        .padding([.top,.bottom],64)
-
-
-                    VStack(spacing: 16) {
-
-                        MultipleChoicesItemView(
-                            title: "Breathe",
-                            subtitle: "Lorem ipsum dolor sit amet",
-                            isViewPresented: $isBreathingExercisePresented
-                        )
-                        .sheet(isPresented: $isBreathingExercisePresented) {
-                            CalmBreatheView()
-                                .presentationDetents([.large])
-                                .presentationDragIndicator(.visible)
-                                .presentationBackgroundInteraction(.disabled)
-                        }
-
-                        MultipleChoicesItemView(
-                            title: "Listen",
-                            subtitle: "Lorem ipsum dolor sit amet",
-                            isViewPresented: $isListeningExercisePresented
-                        )
-                        .sheet(isPresented: $isListeningExercisePresented) {
-                            CalmListenView()
-                                .presentationDetents([.large])
-                                .presentationDragIndicator(.visible)
-                                .presentationBackgroundInteraction(.disabled)
-                        }
-
-                        MultipleChoicesItemView(
-                            title: "Track",
-                            subtitle: "Lorem ipsum dolor sit amet",
-                            isViewPresented: $isListeningExercisePresented
-                        )
-                        .sheet(isPresented: $isListeningExercisePresented) {
-                            CalmListenView()
-                                .presentationDetents([.large])
-                                .presentationDragIndicator(.visible)
-                                .presentationBackgroundInteraction(.disabled)
-                        }
+                    MultipleChoicesItemView(
+                        title: "Breathe",
+                        subtitle: "Lorem ipsum dolor sit amet",
+                        isViewPresented: $isBreathingExercisePresented
+                    ).navigationDestination(isPresented: $isBreathingExercisePresented) {
+                        CalmBreatheView()
+                    }
 
 
-                        Spacer()
+                    MultipleChoicesItemView(
+                        title: "Listen",
+                        subtitle: "Lorem ipsum dolor sit amet",
+                        isViewPresented: $isListeningExercisePresented
+                    )
+                    .navigationDestination(isPresented: $isListeningExercisePresented) {
+                        CalmListenView()
+                    }
 
+
+                    MultipleChoicesItemView(
+                        title: "Keep Track",
+                        subtitle: "Lorem ipsum dolor sit amet",
+                        isViewPresented: $isTrackingPresented
+                    )
+                    .sheet(isPresented: $isTrackingPresented) {
+                        TrackItemAddView()
                     }
 
                     Spacer()
 
                 }
-                .padding()
+
+                Spacer()
+            }
+            .padding(.top,48)
+            .padding()
+
+            VStack {
+                CustomBackButton(dismissAction: dismiss)
+                Spacer()
             }
         }
+        .navigationBarBackButtonHidden()
     }
 }
 
 #Preview {
-    MultipleChoicesView(lastExercise: .Steps)
+    MultipleChoicesView(lastExercise: "steps")
 }

@@ -9,13 +9,15 @@ import SwiftUI
 
 struct CalmExerciseFinishedView: View {
 
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) var dismissAction
+    var dismiss: DismissAction?
     @State private var isPresented = false
 
-    var previousDismissAction: DismissAction?
-
     var body: some View {
-        NavigationStack {
+        ZStack {
+            LightGradientView()
+                .edgesIgnoringSafeArea(.all)
+
             VStack {
                 Spacer()
                 VStack(spacing: 20) {
@@ -29,24 +31,32 @@ struct CalmExerciseFinishedView: View {
                 Spacer()
                 HStack(spacing:20) {
 
-                    Button("Yes", systemImage:"questionmark.circle.fill",action:{
-                        isPresented = true
-                    })
-                    .sheet(isPresented: $isPresented) {
-                        (previousDismissAction ?? dismiss)()
-                        } content: {
-                            MultipleChoicesView(dismissAction: previousDismissAction ?? dismiss, lastExercise: .Steps)
+                    Button(
+                        "Yes",
+                        systemImage: "questionmark.circle.fill",
+                        action: {
+                            isPresented = true
                         }
-                        .navigationSplitViewStyle(.prominentDetail)
-                        .buttonStyle(.borderedProminent)
+                    )
+                    .buttonStyle(.borderedProminent)
+                    .navigationDestination(isPresented: $isPresented) {
+                        MultipleChoicesView(lastExercise: "steps")
+                    }
 
-                    Button("I'm fine.", systemImage:"checkmark.circle.fill", action:{ dismiss() })
-                        .buttonStyle(.borderedProminent)
+                    Button(
+                        "I'm fine.",
+                        systemImage: "checkmark.circle.fill",
+                        action: {
+                            dismissAction()
+                            dismiss?()
+                        }
+                    )
+                    .buttonStyle(.borderedProminent)
                 }
                 Spacer()
             }
-            .navigationBarBackButtonHidden()
         }
+        .navigationBarBackButtonHidden()
     }
 }
 

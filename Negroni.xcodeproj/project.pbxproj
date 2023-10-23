@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4600682E2AE2663200BA571E /* MultipleChoicesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4600682D2AE2663200BA571E /* MultipleChoicesItemView.swift */; };
+		460068312AE2ADC300BA571E /* TrackItemAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460068302AE2ADC300BA571E /* TrackItemAddView.swift */; };
 		4609E7572ADFD33000CAD374 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */; };
 		4609E7592ADFD3B800CAD374 /* CalmStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609E7582ADFD3B800CAD374 /* CalmStepView.swift */; };
 		4699DCA52ADE6432008B17F9 /* TrackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCA42ADE6432008B17F9 /* TrackItem.swift */; };
@@ -34,10 +35,13 @@
 		46E4BAD12ADDA9DF004BFA9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4BAD02ADDA9DF004BFA9F /* ContentView.swift */; };
 		46E4BAD32ADDA9E0004BFA9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E4BAD22ADDA9E0004BFA9F /* Assets.xcassets */; };
 		46E4BAD62ADDA9E0004BFA9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E4BAD52ADDA9E0004BFA9F /* Preview Assets.xcassets */; };
+		46FE3EEC2AE3214E0049A56B /* TrackHomeBeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE3EEB2AE3214E0049A56B /* TrackHomeBeta.swift */; };
+		46FE3EEF2AE321FB0049A56B /* LightGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE3EEE2AE321FB0049A56B /* LightGradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4600682D2AE2663200BA571E /* MultipleChoicesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoicesItemView.swift; sourceTree = "<group>"; };
+		460068302AE2ADC300BA571E /* TrackItemAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemAddView.swift; sourceTree = "<group>"; };
 		4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		4609E7582ADFD3B800CAD374 /* CalmStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmStepView.swift; sourceTree = "<group>"; };
 		4699DCA42ADE6432008B17F9 /* TrackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItem.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 		46E4BAD02ADDA9DF004BFA9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		46E4BAD22ADDA9E0004BFA9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46E4BAD52ADDA9E0004BFA9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		46FE3EEB2AE3214E0049A56B /* TrackHomeBeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackHomeBeta.swift; sourceTree = "<group>"; };
+		46FE3EEE2AE321FB0049A56B /* LightGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightGradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 		46C27F222ADDF9BF00038380 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46FE3EED2AE321E90049A56B /* Color Elements */,
 				46A538A42AE16ECB0042A375 /* Inputs and Buttons */,
 				46E4BAD02ADDA9DF004BFA9F /* ContentView.swift */,
 				46C27F2B2ADDFA3500038380 /* Calm */,
@@ -143,9 +150,11 @@
 			isa = PBXGroup;
 			children = (
 				46C27F2C2ADDFA4700038380 /* TrackHome.swift */,
+				460068302AE2ADC300BA571E /* TrackItemAddView.swift */,
 				4699DCA62ADE67F7008B17F9 /* TrackItemView.swift */,
 				4699DCA82ADE6809008B17F9 /* TrackItemEdit.swift */,
 				4699DCAA2ADE6822008B17F9 /* TrackItemRow.swift */,
+				46FE3EEB2AE3214E0049A56B /* TrackHomeBeta.swift */,
 			);
 			path = Track;
 			sourceTree = "<group>";
@@ -198,6 +207,14 @@
 				46E4BAD52ADDA9E0004BFA9F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		46FE3EED2AE321E90049A56B /* Color Elements */ = {
+			isa = PBXGroup;
+			children = (
+				46FE3EEE2AE321FB0049A56B /* LightGradientView.swift */,
+			);
+			path = "Color Elements";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,10 +302,13 @@
 				4699DCC92ADE9601008B17F9 /* CalmDynamicView.swift in Sources */,
 				4600682E2AE2663200BA571E /* MultipleChoicesItemView.swift in Sources */,
 				46C27F2F2ADDFA5300038380 /* CalmHome.swift in Sources */,
+				46FE3EEF2AE321FB0049A56B /* LightGradientView.swift in Sources */,
 				4609E7592ADFD3B800CAD374 /* CalmStepView.swift in Sources */,
 				46C27F212ADDF96800038380 /* Learn.swift in Sources */,
 				46E4BAD12ADDA9DF004BFA9F /* ContentView.swift in Sources */,
 				46C27F262ADDF9ED00038380 /* LearnRow.swift in Sources */,
+				460068312AE2ADC300BA571E /* TrackItemAddView.swift in Sources */,
+				46FE3EEC2AE3214E0049A56B /* TrackHomeBeta.swift in Sources */,
 				46A538A62AE16EE90042A375 /* BigButton.swift in Sources */,
 				46C27F282ADDF9F500038380 /* LearnDetail.swift in Sources */,
 				46E4BACF2ADDA9DF004BFA9F /* NegroniApp.swift in Sources */,
@@ -431,11 +451,13 @@
 				DEVELOPMENT_TEAM = 3JFY6MM7AN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Panic Help";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,11 +482,13 @@
 				DEVELOPMENT_TEAM = 3JFY6MM7AN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Panic Help";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

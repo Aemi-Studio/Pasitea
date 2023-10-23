@@ -6,15 +6,13 @@
 //
 
 import Foundation
+import SwiftData
 
 @Observable
 class ModelData {
     var learnItems: [Learn] = load("learnData.json")
-    var trackItems: [TrackItem] = [
-        TrackThought(title: "Lorem Ipsum 1", description: "Dolor sit amet 1"),
-        TrackThought(title: "Lorem Ipsum 2", description: "Dolor sit amet 2")
-    ]
     var calmSteps: [CalmStep] = load("calmData.json")
+    var trackItems: [TrackItem] = []
 }
 
 func load<T: Decodable>(_ filename: String) -> T {

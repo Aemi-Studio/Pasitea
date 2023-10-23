@@ -11,24 +11,31 @@ struct CalmStepView: View {
 
     @Environment(ModelData.self) var modelData
 
-    let id: Int?
+    let step: CalmStep
     let getNextScreen: (() -> Void)?
 
     var body: some View {
-        let step = modelData.calmSteps[id!]
-        let last = id == modelData.calmSteps.count - 1
-
         VStack {
-            Text("Step \(id!)")
-            Text(step.headline)
-            Text(step.subheadline)
-
-            Button(last ? "Finish" : "Next",action: getNextScreen!)
+            Spacer()
+            VStack(spacing: 16) {
+                Text(step.headline)
+                    .font(.title)
+                    .bold()
+                Text(step.subheadline)
+                    .font(.title2)
+            }
+            Spacer()
+            (
+                step.id != 4
+                ? Button("Next",action: getNextScreen!)
+                : Button("Finish",action: getNextScreen!)
+            )
                 .padding([.top, .bottom], 10)
                 .padding([.leading, .trailing], 20)
                 .background(Color.blue)
                 .foregroundColor(Color.white)
                 .cornerRadius(10)
+            Spacer()
         }
         .background {
             Image(step.image)
@@ -39,6 +46,6 @@ struct CalmStepView: View {
 }
 
 #Preview {
-    CalmStepView(id: 0, getNextScreen: {})
+    CalmStepView(step:ModelData().calmSteps[0], getNextScreen: {})
         .environment(ModelData())
 }
