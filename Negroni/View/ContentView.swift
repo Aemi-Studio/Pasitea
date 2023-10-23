@@ -44,10 +44,7 @@ struct ContentView: View {
                     Label("Learn", systemImage: "books.vertical")
                 }
                 .tag(Tab.Track.rawValue)
-
             }
-            .scrollContentBackground(.visible)
-            .toolbarBackground(.visible, for: .tabBar)
         }
     }
 }

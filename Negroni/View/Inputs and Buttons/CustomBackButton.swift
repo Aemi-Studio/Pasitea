@@ -12,6 +12,7 @@ struct CustomBackButton: View {
     @State private var alertPresented = false
 
     var dismissAction: DismissAction? = nil
+    var customAction: (() -> Void)? = nil
     var enforce: Bool = true
     var display: Bool = true
 
@@ -27,21 +28,26 @@ struct CustomBackButton: View {
                         dismissAction?()
                     }
                 } label: {
-                    HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
-                        Image(systemName: "xmark.circle.fill")
-                            .resizable()
-                            .frame(width:24,height:24)
-                            .scaledToFit()
-                            .padding(16)
-                            .foregroundStyle(.foreground)
-                    }
+                    Image(systemName: "xmark.circle.fill")
+                        .resizable()
+                        .frame(width:22,height:22)
+                        .scaledToFit()
+                        .padding([.top,.bottom], 11)
+                        .padding([.leading,.trailing], 18)
+                        .foregroundStyle(Color.accentColor)
                 }
             } else {
                 EmptyView()
                     .frame(height: 48)
             }
         }.confirmationDialog("Exiting the exercise", isPresented: $alertPresented) {
-            Button("Yes", role: .destructive, action: { dismissAction?() })
+            Button("Yes", role: .destructive, action: {
+                if dismissAction != nil {
+                    dismissAction?()
+                } else if customAction != nil {
+                    customAction?()
+                }
+            })
         } message: {
             Text("Are you sure?")
         }

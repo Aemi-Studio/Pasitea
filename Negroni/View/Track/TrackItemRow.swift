@@ -13,11 +13,15 @@ struct TrackItemRow: View {
     var trackItem: TrackItem?
 
     var body: some View {
-        VStack(alignment: .leading, spacing:5) {
-            Text(((trackItem?.title.isEmpty) != nil) ? "Lorem Ipsum" : trackItem!.title)
+        VStack(alignment: .leading, spacing:8) {
+            Text(trackItem!.title)
+                .bold()
+                .font(.headline)
+
             Text(trackItem!.date.formatted())
                 .font(.caption)
         }
+        .padding(4)
     }
 }
 

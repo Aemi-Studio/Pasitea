@@ -8,32 +8,33 @@
 import SwiftUI
 
 struct MultipleChoicesItemView: View {
-
+    
     var title: String
     var subtitle: String
     var isViewPresented: Binding<Bool>?
-
+    
     var body: some View {
-            HStack {
-                Button {
-                    isViewPresented?.wrappedValue = true
-                } label: {
-                    VStack(alignment: .leading) {
-                        Text(title)
-                            .font(.headline)
-                            .fontWeight(.bold)
-                        Text(subtitle)
-                            .font(.subheadline)
-                    }
-                    .padding()
-                    Spacer()
-                    Image(systemName: "chevron.right")
-                        .padding()
+        HStack {
+            Button {
+                isViewPresented?.wrappedValue = true
+            } label: {
+                VStack(alignment: .leading) {
+                    Text(title)
+                        .font(.headline)
+                        .fontWeight(.bold)
+                    Text(subtitle)
+                        .font(.subheadline)
                 }
-                .accentColor(.black)
+                .padding()
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .padding()
             }
-            .background(.white)
-            .cornerRadius(10)
+        }
+        .foregroundColor(.primary)
+        .background(Color.accentColor.opacity(0.4))
+        .background(.thickMaterial)
+        .cornerRadius(10)
     }
 }
 

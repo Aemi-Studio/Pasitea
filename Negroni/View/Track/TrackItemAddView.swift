@@ -37,13 +37,29 @@ struct TrackItemAddView: View {
 
     var body: some View {
 
-        NavigationView {
-            
-            VStack(alignment: .leading) {
-                
+        NavigationStack {
+
+            VStack(alignment: .leading, spacing: 32) {
+
+                HStack {
+                    Button(role: .cancel, action: {
+                        self.dismiss()
+                    }) {
+                        Text("Cancel")
+                            .bold()
+                    }
+
+                    Spacer()
+
+                    Button("Save", action: {
+                        self.save()
+                        self.dismiss()
+                    })
+                }
+
                 VStack(alignment: .leading, spacing: 16) {
-                    
-                    
+
+
                     VStack(alignment: .leading) {
                         Text("Title")
                             .bold()
@@ -54,7 +70,7 @@ struct TrackItemAddView: View {
                             }
                             .cornerRadius(10)
                     }
-                    
+
                     VStack(alignment: .leading) {
                         Text("Description")
                             .bold()
@@ -65,7 +81,7 @@ struct TrackItemAddView: View {
                             }
                             .cornerRadius(10)
                     }
-                    
+
                     VStack(alignment: .leading) {
                         Text("Type")
                             .bold()
@@ -77,18 +93,12 @@ struct TrackItemAddView: View {
                         }.pickerStyle(.palette)
                     }
                 }.scaledToFit()
-                
+
                 Spacer()
             }
             .padding()
-            .toolbar {
-                Button(action: {
-                    self.save()
-                    self.dismiss()
-                }) {
-                    Text("Save")
-                }
-            }
+            .navigationBarBackButtonHidden()
+            .presentationDragIndicator(.hidden)
         }
     }
 }

@@ -12,6 +12,7 @@ struct TrackHomeBeta: View {
 
     @Environment(ModelData.self) var modelData
     @Environment(\.modelContext) var modelContext
+    @Environment(\.editMode) var editMode
 
     @State private var isAddViewPresented : Bool = false
 
@@ -19,21 +20,47 @@ struct TrackHomeBeta: View {
     var trackItems: [TrackItem]
 
 
+    private func deleteTrackItem(at indexSet: IndexSet) {
+        do {
+            for index in indexSet {
+                let itemToBeDeleted = trackItems[index]
+                modelContext.delete(itemToBeDeleted)
+            }
+            try modelContext.save()
+        } catch {
+            print("I shat somewhere.")
+        }
+    }
+
+
     var body: some View {
+
+
         NavigationStack {
-            List {
-                ForEach(trackItems) { trackItem in
-                    TrackItemRow(trackItem: trackItem)
+            VStack {
+                List {
+                    ForEach(trackItems) { trackItem in
+                        NavigationLink {
+                            TrackItemView(trackItem: trackItem)
+                        } label: {
+                            TrackItemRow(trackItem: trackItem)
+                        }
+                    }
+                    .onDelete(perform: self.deleteTrackItem)
                 }
-            }
-            .sheet(isPresented: $isAddViewPresented) {
-                TrackItemAddView()
-            }
-            .toolbar {
-                Button(action:{
-                    isAddViewPresented = true
-                }) {
-                    Image(systemName: "plus.circle.fill")
+                .listRowSpacing(16)
+                .listStyle(.insetGrouped)
+                .navigationTitle("History")
+                .sheet(isPresented: $isAddViewPresented) {
+                    TrackItemAddView()
+                }
+            }.toolbar {
+                ToolbarItemGroup(placement: .topBarTrailing) {
+                    Button(action:{
+                        isAddViewPresented = true
+                    }) {
+                        Label("Add", systemImage: "square.and.pencil")
+                    }
                 }
             }
         }
@@ -43,4 +70,5 @@ struct TrackHomeBeta: View {
 #Preview {
     TrackHomeBeta()
         .environment(ModelData())
+        .modelContext(ModelContext(try! ModelContainer(for: TrackItem.self)))
 }
