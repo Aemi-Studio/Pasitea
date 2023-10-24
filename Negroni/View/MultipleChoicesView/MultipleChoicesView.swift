@@ -9,17 +9,18 @@ import SwiftUI
 
 struct MultipleChoicesView: View {
 
-    @Environment(\.dismiss) var dismiss
     @State private var isBreathingExercisePresented = false
     @State private var isListeningExercisePresented = false
     @State private var isTrackingPresented = false
 
-    var lastExercise: TrackItem.TrackType.RawValue
+    @Environment(\.dismiss) var dismiss
+
+    var currentTrackItem: TrackItem
 
     var body: some View {
         ZStack {
+
             LightGradientView()
-                .edgesIgnoringSafeArea(.all)
 
             VStack(spacing: 64) {
 
@@ -34,7 +35,12 @@ struct MultipleChoicesView: View {
                         subtitle: "Lorem ipsum dolor sit amet",
                         isViewPresented: $isBreathingExercisePresented
                     ).navigationDestination(isPresented: $isBreathingExercisePresented) {
-                        CalmBreatheView()
+                        CalmBreatheView(
+                            currentTrackItem: TrackItem(
+                                type: TrackItem.TrackType.breathing.rawValue,
+                                previousId: currentTrackItem.id
+                            )
+                        )
                     }
 
 
@@ -44,7 +50,12 @@ struct MultipleChoicesView: View {
                         isViewPresented: $isListeningExercisePresented
                     )
                     .navigationDestination(isPresented: $isListeningExercisePresented) {
-                        CalmListenView()
+                        CalmListenView(
+                            currentTrackItem: TrackItem(
+                                type: TrackItem.TrackType.listening.rawValue,
+                                previousId: currentTrackItem.id
+                            )
+                        )
                     }
 
 
@@ -53,8 +64,11 @@ struct MultipleChoicesView: View {
                         subtitle: "Lorem ipsum dolor sit amet",
                         isViewPresented: $isTrackingPresented
                     )
-                    .sheet(isPresented: $isTrackingPresented) {
-                        TrackItemAddView()
+                    .navigationDestination(isPresented: $isTrackingPresented) {
+                        TrackItemAddView(
+                            isPresented: $isTrackingPresented,
+                            previousId: currentTrackItem.id
+                        )
                     }
 
                     Spacer()
@@ -75,6 +89,10 @@ struct MultipleChoicesView: View {
     }
 }
 
+#if DEBUG
 #Preview {
-    MultipleChoicesView(lastExercise: "steps")
+    MultipleChoicesView(
+        currentTrackItem: TrackItem()
+    )
 }
+#endif

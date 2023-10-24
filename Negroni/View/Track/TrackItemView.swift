@@ -6,57 +6,123 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct TrackItemView: View {
-    
-    var trackItem: TrackItem?
+
+    var trackItem: TrackItem
+
+    @Query(sort: [SortDescriptor(\TrackItem.startDate)] )
+    var trackItems: [TrackItem]
+
+    var previousItem: TrackItem? {
+        var _uuid: String = self.trackItem.previousId?.uuidString ?? UUID().uuidString
+        var _trackItems: [TrackItem]
+        var _trackItem: TrackItem? = nil
+        do {
+            _trackItems = try trackItems.filter(#Predicate<TrackItem> {$0.id.uuidString == _uuid })
+            if _trackItems.count > 0 {
+                _trackItem = _trackItems[0]
+            }
+        } catch {
+            #if DEBUG
+            print(error.localizedDescription)
+            #endif
+        }
+        return _trackItem
+    }
+
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.editMode) private var editMode
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        VStack(alignment:.leading,spacing: 32) {
-
-            HStack {
-                Spacer()
+        NavigationStack {
+            ZStack {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 32) {
+                        HStack { Spacer() }
+                        VStack(alignment: .leading) {
+                            Text("Personal Notes")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                            Text(trackItem.desc)
+                                .fontWeight(.medium)
+                        }
+                        VStack(alignment: .leading) {
+                            Section(
+                                header: Text("Previous Exercise")
+                                    .font(.subheadline)
+                                    .foregroundStyle(Color.init(red: 0.55078125, green: 0.55078125, blue: 0.578125))
+                            ) {
+                                HStack(alignment: .center) {
+                                    VStack(alignment: .leading) {
+                                            if previousItem != nil {
+                                                NavigationLink {
+                                                    TrackItemView(trackItem: previousItem!)
+                                                } label: {
+                                                    TrackItemRow(trackItem: previousItem!)
+                                                }
+                                            } else {
+                                                Text("No Previous Exercise")
+                                            }
+                                    }
+                                    Spacer()
+                                    if previousItem != nil {
+                                        Image(systemName: "chevron.right")
+                                    }
+                                }
+                                .padding()
+                                .background(.regularMaterial)
+                                .cornerRadius(10)
+                            }
+                        }
+                            .padding(.top,16)
+                    }
+                }
+                .safeAreaPadding(.all)
+                .navigationTitle(trackItem.type)
+                .navigationBarTitleDisplayMode(.large)
+                .toolbar {
+                    ToolbarItemGroup(placement: .topBarTrailing) {
+                        HStack {
+                            Button(action: {
+                                modelContext.delete(trackItem)
+                                do {
+                                    try modelContext.save()
+                                } catch {
+                                    #if DEBUG
+                                    print("Cont text did not delete the focused trackItem.")
+                                    #endif
+                                }
+                                dismiss()
+                            }) {
+                                Label("Delete", systemImage: "trash")
+                            }
+                        }
+                    }
+                }
+                .toolbar {
+                    ToolbarItemGroup(placement: .status) {
+                        HStack(spacing: 8) {
+                            Text(trackItem.startDate.formatted())
+                                .font(.caption)
+                                .bold()
+                            Text(trackItem.endDate?.timeIntervalSince(trackItem.startDate).formatted() ?? "")
+                        }
+                        .background(.regularMaterial)
+                        .cornerRadius(16)
+                        .padding(4)
+                    }
             }
-
-            VStack(alignment: .leading) {
-                Text(trackItem!.title)
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                Text(trackItem!.date.formatted())
-                    .font(.caption)
-                    .bold()
             }
-
-            VStack(alignment: .leading) {
-                Text("Description")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                Text(trackItem!.desc)
-            }
-
-            VStack(alignment: .leading) {
-                Text("Date")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                Text(trackItem!.date.formatted())
-            }
-
-            VStack(alignment: .leading) {
-                Text("Type")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-
-                Text(trackItem!.trackType.rawValue)
-                    .font(.headline)
-                    .fontWeight(.semibold)
-            }
-
-            Spacer()
         }
-        .padding()
     }
 }
 
+#if DEBUG
 #Preview {
-    TrackItemView()
+    TrackItemView(trackItem: TrackItem())
+        .modelContext(ModelContext(try! ModelContainer(for: TrackItem.self)))
 }
+#endif

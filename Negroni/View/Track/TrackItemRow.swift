@@ -13,15 +13,15 @@ struct TrackItemRow: View {
     var trackItem: TrackItem?
 
     var body: some View {
-        VStack(alignment: .leading, spacing:8) {
-            Text(trackItem!.title)
-                .bold()
-                .font(.headline)
+            VStack(alignment: .leading, spacing:8) {
+                Text(trackItem!.type)
+                    .bold()
+                    .font(.headline)
 
-            Text(trackItem!.date.formatted())
-                .font(.caption)
-        }
-        .padding(4)
+                Text(trackItem!.startDate.formatted())
+                    .font(.caption)
+            }
+            .padding(4)
     }
 }
 

@@ -7,16 +7,23 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 struct CalmDynamicView: View {
-    
+
     @Environment(ModelData.self) private var modelData
+    @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) var dismiss
+
     @State private var selection = 0
     @State private var lastStep = false
     @State private var exerciseFinished = false
-    
+    @State private var tags: [String] = []
+
+    var currentTrackItem: TrackItem
+
     func getNextScreen() {
+        currentTrackItem.tags.append("\(selection)")
         if selection == modelData.calmSteps.count - 1 {
             exerciseFinished = true
         } else {
@@ -28,34 +35,48 @@ struct CalmDynamicView: View {
     var body: some View {
         ZStack {
             LightGradientView()
-                .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 10) {
                 TabView(selection: $selection) {
                     ForEach(modelData.calmSteps) { step in
-                        CalmStepView(step: step, getNextScreen: getNextScreen)
+                        CalmStepView(
+                            step: step,
+                            getNextScreen: getNextScreen
+                        )
                             .tag(step.id)
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .automatic))
-            }.navigationDestination(isPresented: $exerciseFinished) {
-                CalmExerciseFinishedView(dismiss: dismiss)
+                .navigationDestination(isPresented: $exerciseFinished) {
+                    CalmExerciseFinishedView(
+                        currentTrackItem: currentTrackItem,
+                        dismiss: dismiss
+                    )
+                }
             }
             
             VStack {
-                CustomBackButton(dismissAction: dismiss, display: !lastStep)
+                CustomBackButton(
+                    currentTrackItem: currentTrackItem,
+                    dismissAction: dismiss,
+                    display: !lastStep
+                )
                 Spacer()
             }
         }
+        .toolbar(.hidden, for: .tabBar)
+        .toolbarBackground(.hidden, for: .tabBar)
         .navigationBarBackButtonHidden()
     }
 }
 
-
+#if DEBUG
 #Preview {
-    CalmDynamicView()
+    CalmDynamicView(
+        currentTrackItem: TrackItem()
+    )
         .environment(ModelData())
 }
-
+#endif
 
 

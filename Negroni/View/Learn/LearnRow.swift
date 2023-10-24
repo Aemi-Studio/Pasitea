@@ -12,10 +12,14 @@ struct LearnRow: View {
     var learnItem: Learn
 
     var body: some View {
-        Text(learnItem.title)
+        VStack {
+            Text(learnItem.title)
+        }
     }
 }
 
+#if DEBUG
 #Preview {
     LearnRow(learnItem: ModelData().learnItems[0])
 }
+#endif

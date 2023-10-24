@@ -20,28 +20,39 @@ public final class TrackItem:  Identifiable {
     }
 
     @Attribute(.unique) public let id: UUID
-    public var date: Date
-    public var title: String
+    public var type: TrackType.RawValue = TrackItem.TrackType.none.rawValue
     public var desc: String = ""
     public var tags: [String] = []
-    var type: TrackType.RawValue
+    public var startDate: Date = Date.now
+    public var endDate: Date? = Date.now
+    public var previousId: UUID? = nil
+
 
     enum TrackItemCodingKeys: CodingKey {
         case id
-        case date
-        case title
+        case type
         case desc
         case tags
-        case type
+        case startDate
+        case endDate
+        case previousId
     }
 
-    init(_ title: String,_ desc: String?, type: TrackType.RawValue?, tags: [String]?, date: Date?) {
+    init(
+        type: TrackType.RawValue? = TrackItem.TrackType.none.rawValue,
+        desc: String? = "",
+        tags: [String]? = [],
+        startDate: Date? = Date.now,
+        endDate: Date? = Date.now,
+        previousId: UUID? = nil
+    ) {
         self.id = UUID()
-        self.title = title
+        self.type = type ?? TrackItem.TrackType.none.rawValue
         self.desc = desc ?? ""
-        self.type = type ?? "Exercise"
         self.tags = tags ?? []
-        self.date = date ?? Date.now
+        self.startDate = startDate ?? Date.now
+        self.endDate = endDate ?? Date.now
+        self.previousId = previousId ?? nil
     }
 }
 

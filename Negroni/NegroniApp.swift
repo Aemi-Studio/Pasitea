@@ -13,15 +13,22 @@ struct NegroniApp: App {
     
     @State private var modelData = ModelData()
 
-    let container: ModelContainer
+    private let container: ModelContainer
 
     init() {
-        container = try! ModelContainer( for: TrackItem.self )
+        do {
+            container = try ModelContainer( for: TrackItem.self )
+        } catch {
+            #if DEBUG
+            print(error.localizedDescription)
+            #endif
+            container = try! ModelContainer(for: TrackItem.self )
+        }
     }
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
                 .environment(modelData)
         }
         .modelContainer(container)

@@ -11,10 +11,11 @@ struct CalmListenView: View {
 
     @Environment(\.dismiss) var dismiss
 
+    var currentTrackItem: TrackItem
+
     var body: some View {
         ZStack {
             LightGradientView()
-                .edgesIgnoringSafeArea(.all)
             VStack(spacing: 64) {
                 BigButton(image: Image(systemName:"waveform"))
                 Text("Listen to this song")
@@ -22,14 +23,23 @@ struct CalmListenView: View {
                     .bold()
             }
             VStack {
-                CustomBackButton(dismissAction: dismiss)
+                CustomBackButton(
+                    currentTrackItem: currentTrackItem,
+                    dismissAction: dismiss
+                )
                 Spacer()
             }
         }
         .toolbar(.hidden, for: .tabBar)
+        .toolbarBackground(.hidden, for: .tabBar)
     }
 }
+
+#if DEBUG
 #Preview {
-    CalmListenView()
+    CalmListenView(
+        currentTrackItem: TrackItem()
+    )
 }
+#endif
 

@@ -14,12 +14,13 @@ struct LearnDetail: View {
     var body: some View {
         VStack {
             Text(learnItem.title)
-
             Text(learnItem.content)
         }
     }
 }
 
+#if DEBUG
 #Preview {
     LearnDetail(learnItem: ModelData().learnItems[0])
 }
+#endif

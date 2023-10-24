@@ -9,7 +9,11 @@ import SwiftUI
 
 struct CustomBackButton: View {
 
+    @Environment(\.modelContext) var modelContext
+
     @State private var alertPresented = false
+
+    var currentTrackItem: TrackItem?
 
     var dismissAction: DismissAction? = nil
     var customAction: (() -> Void)? = nil
@@ -19,7 +23,6 @@ struct CustomBackButton: View {
     var body: some View {
         HStack {
             Spacer()
-
             if display {
                 Button(role: .none) {
                     if (enforce) {
@@ -40,8 +43,15 @@ struct CustomBackButton: View {
                 EmptyView()
                     .frame(height: 48)
             }
-        }.confirmationDialog("Exiting the exercise", isPresented: $alertPresented) {
+        }
+        .confirmationDialog("Exiting the exercise", isPresented: $alertPresented) {
             Button("Yes", role: .destructive, action: {
+
+                if currentTrackItem != nil {
+                    currentTrackItem!.endDate = Date.now
+                    modelContext.insert(currentTrackItem!)
+                }
+
                 if dismissAction != nil {
                     dismissAction?()
                 } else if customAction != nil {
@@ -55,6 +65,12 @@ struct CustomBackButton: View {
     }
 }
 
+#if DEBUG
 #Preview {
-    CustomBackButton()
+    CustomBackButton(
+        currentTrackItem: TrackItem(
+            type: TrackItem.TrackType.none.rawValue
+        )
+    )
 }
+#endif

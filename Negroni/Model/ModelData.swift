@@ -6,16 +6,15 @@
 //
 
 import Foundation
-import SwiftData
 
 @Observable
 class ModelData {
     var learnItems: [Learn] = load("learnData.json")
     var calmSteps: [CalmStep] = load("calmData.json")
-    var trackItems: [TrackItem] = []
 }
 
 func load<T: Decodable>(_ filename: String) -> T {
+
     let data: Data
 
     guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
@@ -26,14 +25,16 @@ func load<T: Decodable>(_ filename: String) -> T {
     do {
         data = try Data(contentsOf: file)
     } catch {
-        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+        print("Couldn't load \(filename) from main bundle:\n")
+        fatalError(error.localizedDescription)
     }
 
     do {
         let decoder = JSONDecoder()
         return try decoder.decode(T.self, from: data)
     } catch {
-        fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+        print("Couldn't parse \(filename) as \(T.self):")
+        fatalError(error.localizedDescription)
     }
 }
 

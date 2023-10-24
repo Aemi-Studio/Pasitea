@@ -13,19 +13,22 @@ struct LearnHome: View {
 
     var body: some View {
         NavigationSplitView {
-
-            List {
-
-                ForEach(modelData.learnItems) { learnItem in
-
-                    NavigationLink {
-                        LearnDetail(learnItem: learnItem)
-                    } label: {
-                        LearnRow(learnItem: learnItem)
+            ZStack {
+                List {
+                    ForEach(modelData.learnItems) { learnItem in
+                        NavigationLink {
+                            LearnDetail(learnItem: learnItem)
+                        } label: {
+                            LearnRow(learnItem: learnItem)
+                        }
                     }
                 }
-
+                .listRowSpacing(16)
             }
+            .navigationTitle("Learn")
+            .toolbar(.visible, for: .tabBar)
+            .toolbarBackground(.visible, for: .tabBar)
+            .toolbarBackground(.ultraThinMaterial, for: .tabBar)
 
 
         } detail: {
@@ -34,7 +37,10 @@ struct LearnHome: View {
     }
 }
 
+
+#if DEBUG
 #Preview {
     LearnHome()
         .environment(ModelData())
 }
+#endif
