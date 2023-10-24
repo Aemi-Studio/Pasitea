@@ -11,11 +11,12 @@ struct CalmBreatheView: View {
 
     @Environment(\.dismiss) var dismiss
 
+    var currentTrackItem: TrackItem
+
     var body: some View {
         ZStack() {
             
             LightGradientView()
-                .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 64) {
                 
@@ -27,7 +28,6 @@ struct CalmBreatheView: View {
                 
                 HStack(spacing: 8) {
                     Image(systemName: "clock")
-                    
                     Text("03:00")
                 }
                 .fontWeight(.semibold)
@@ -35,14 +35,23 @@ struct CalmBreatheView: View {
             }
             
             VStack {
-                CustomBackButton(dismissAction: dismiss)
+                CustomBackButton(
+                    currentTrackItem: currentTrackItem,
+                    dismissAction: dismiss
+                )
                 Spacer()
             }
+            .toolbar(.hidden, for: .tabBar)
+            .toolbarBackground(.hidden, for: .tabBar)
         }
-        .toolbar(.hidden, for: .tabBar)
     }
 }
-        
-        #Preview {
-            CalmBreatheView()
-        }
+ 
+
+#if DEBUG
+#Preview {
+    CalmBreatheView(
+        currentTrackItem: TrackItem()
+    )
+}
+#endif

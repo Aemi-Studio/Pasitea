@@ -42,10 +42,14 @@ struct CalmStepView: View {
                 .resizable()
                 .scaledToFit()
         }
+        .toolbar(.hidden, for: .tabBar)
+        .toolbarBackground(.hidden, for: .tabBar)
     }
 }
 
+#if DEBUG
 #Preview {
     CalmStepView(step:ModelData().calmSteps[0], getNextScreen: {})
         .environment(ModelData())
 }
+#endif

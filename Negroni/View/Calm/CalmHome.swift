@@ -12,14 +12,12 @@ struct CalmHome: View {
     @State private var isSteppedExercisePresented = false
     @State private var isBreathingExercisePresented = false
     @State private var isListeningExercisePresented = false
-    @State var amount = 0.75
-    
+
     var body: some View {
         NavigationStack {
             ZStack {
 
                 LightGradientView()
-                    .edgesIgnoringSafeArea(.all)
 
                 VStack(spacing: 96) {
                     Button {
@@ -27,8 +25,11 @@ struct CalmHome: View {
                     } label: {
                         BigButton(title: "Calm Down")
                     }.navigationDestination(isPresented: $isSteppedExercisePresented) {
-                        CalmDynamicView()
-                            .toolbar(.hidden, for: .tabBar)
+                        CalmDynamicView(
+                            currentTrackItem: TrackItem(
+                                type: TrackItem.TrackType.steps.rawValue
+                            )
+                        )
                     }
 
                     HStack(spacing: 32) {
@@ -38,8 +39,11 @@ struct CalmHome: View {
                         } label: {
                             Text("Breathe")
                         }.navigationDestination(isPresented: $isBreathingExercisePresented) {
-                            CalmBreatheView()
-                                .toolbar(.hidden, for: .tabBar)
+                            CalmBreatheView(
+                                currentTrackItem: TrackItem(
+                                    type: TrackItem.TrackType.breathing.rawValue
+                                )
+                            )
                         }
                         .buttonStyle(.borderedProminent)
 
@@ -48,11 +52,13 @@ struct CalmHome: View {
                         } label: {
                             Text("Listen")
                         }.navigationDestination(isPresented: $isListeningExercisePresented) {
-                            CalmListenView()
-                                .toolbar(.hidden, for: .tabBar)
+                            CalmListenView(
+                                currentTrackItem: TrackItem(
+                                    type: TrackItem.TrackType.listening.rawValue
+                                )
+                            )
                         }
                         .buttonStyle(.borderedProminent)
-
                     }
                 }
                 .padding()
@@ -63,12 +69,8 @@ struct CalmHome: View {
     }
 }
 
+#if DEBUG
 #Preview {
     CalmHome()
 }
-
-/*
-.animation(.easeOut(duration: 2) .repeatForever(autoreverses: false),
-           value: amount
-)
-*/
+#endif

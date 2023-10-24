@@ -6,59 +6,83 @@
 //
 
 import SwiftUI
-
+import SwiftData
 
 struct TrackHome: View {
-    
-    @Environment(ModelData.self) var modelData
 
-    
-    var body: some View {
-        
-        NavigationStack{
-           
-            VStack{
-                ZStack{
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(.blue)
-                        .opacity(0.3)
-                    NavigationLink {
-                        Journal()
-                    } label: {
-                        Label("Journal",systemImage: "square.and.pencil")
-                    }
-                    
-                }
-                .padding([.top],200)
-                .padding([.leading,.trailing],70)
-                ZStack{
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(.blue)
-                        .opacity(0.3)
-                    NavigationLink {
-                        History()
-                    } label: {
-                        Label("History",systemImage: "calendar")
-                    }
-                }
-                .padding([.bottom],200)
-                .padding([.leading,.trailing],70)
-                
-                
-                
+    @Environment(ModelData.self) var modelData
+    @Environment(\.modelContext) var modelContext
+    @Environment(\.editMode) var editMode
+
+    @State private var isAddViewPresented : Bool = false
+
+    @Query(sort: \TrackItem.startDate, order: .reverse)
+    var items: [TrackItem]
+
+    private func deleteTrackItem(at indexSet: IndexSet) {
+        do {
+            for index in indexSet {
+                let itemToBeDeleted = items[index]
+                modelContext.delete(itemToBeDeleted)
             }
-            .navigationTitle("Track")
-            .font(.title)
-            
+            try modelContext.save()
+        } catch {
+            #if DEBUG
+            print(error.localizedDescription)
+            #endif
         }
-        
-        .accentColor(Color(red: 0.029, green: 0.49, blue: 0.998))
-        
-        
+    }
+
+    var body: some View {
+        NavigationStack{
+            ZStack {
+                VStack(spacing: 16) {
+                    List {
+                        Section(header: Text("History")) {
+                            ForEach(items) { trackItem in
+                                NavigationLink {
+                                    TrackItemView(trackItem: trackItem)
+                                } label: {
+                                    TrackItemRow(trackItem: trackItem)
+                                }
+                            }
+                            .onDelete(perform: self.deleteTrackItem)
+                        }
+                    }
+                    .listRowSpacing(16)
+                    .scrollContentBackground(.hidden)
+                    .navigationTitle("Track")
+                    .toolbar(.visible, for: .tabBar)
+                    .toolbarBackground(.visible, for: .tabBar)
+                    .toolbarBackground(.ultraThinMaterial, for: .tabBar)
+                    .toolbar {
+                        ToolbarItemGroup(placement: .topBarLeading) {
+                            Button(action:{
+                                isAddViewPresented = true
+                            }) {
+                                Label("Add", systemImage: "plus")
+                            }
+                        }
+                    }
+                    .toolbar {
+                        ToolbarItemGroup(placement: .topBarTrailing) {
+                            EditButton()
+                        }
+                    }
+                    .navigationDestination(isPresented: $isAddViewPresented) {
+                        TrackItemAddView(isPresented: $isAddViewPresented)
+                    }
+                }
+            }
+        }
     }
 }
 
+
+#if DEBUG
 #Preview {
     TrackHome()
         .environment(ModelData())
+        .modelContext(ModelContext(try! ModelContainer(for: TrackItem.self)))
 }
+#endif

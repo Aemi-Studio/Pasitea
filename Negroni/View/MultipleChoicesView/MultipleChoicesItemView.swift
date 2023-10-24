@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct MultipleChoicesItemView: View {
-    
+
     var title: String
     var subtitle: String
-    var isViewPresented: Binding<Bool>?
-    
+
+    @Binding var isViewPresented: Bool
+
     var body: some View {
         HStack {
             Button {
-                isViewPresented?.wrappedValue = true
+                isViewPresented = true
             } label: {
                 VStack(alignment: .leading) {
                     Text(title)
@@ -38,6 +39,25 @@ struct MultipleChoicesItemView: View {
     }
 }
 
-#Preview {
-    MultipleChoicesItemView(title: "Lorem Ipsum",subtitle: "Lorem ipsum dolor sit amet")
+#if DEBUG
+struct MultipleChoicesItemView_Preview: PreviewProvider {
+
+    @State var isPresented: Bool = false
+
+    static var previews: some View {
+
+        Group {
+            MultipleChoicesItemView(
+                title: "Lorem Ipsum",
+                subtitle: "Lorem ipsum dolor sit amet",
+                isViewPresented: .constant(true)
+            )
+            MultipleChoicesItemView(
+                title: "Lorem Ipsum",
+                subtitle: "Lorem ipsum dolor sit amet",
+                isViewPresented: .constant(false)
+            )
+        }
+    }
 }
+#endif

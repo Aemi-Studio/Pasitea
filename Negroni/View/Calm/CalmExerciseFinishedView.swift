@@ -10,13 +10,28 @@ import SwiftUI
 struct CalmExerciseFinishedView: View {
 
     @Environment(\.dismiss) var dismissAction
-    var dismiss: DismissAction?
+    @Environment(\.modelContext) var modelContext
+
     @State private var isPresented = false
+
+    @State private var alreadySaved = false
+
+    private func saveTrackItem() {
+        if !self.alreadySaved {
+            self.alreadySaved = true
+            self.currentTrackItem.endDate = Date.now
+            self.modelContext.insert(self.currentTrackItem)
+        }
+    }
+
+    var currentTrackItem: TrackItem
+
+    var dismiss: DismissAction?
 
     var body: some View {
         ZStack {
+
             LightGradientView()
-                .edgesIgnoringSafeArea(.all)
 
             VStack {
                 Spacer()
@@ -30,23 +45,26 @@ struct CalmExerciseFinishedView: View {
                 }
                 Spacer()
                 HStack(spacing:20) {
-
                     Button(
                         "Yes",
                         systemImage: "questionmark.circle.fill",
                         action: {
+                            self.saveTrackItem()
                             isPresented = true
                         }
                     )
                     .buttonStyle(.borderedProminent)
                     .navigationDestination(isPresented: $isPresented) {
-                        MultipleChoicesView(lastExercise: "steps")
+                        MultipleChoicesView(
+                            currentTrackItem: currentTrackItem
+                        )
                     }
 
                     Button(
                         "I'm fine.",
                         systemImage: "checkmark.circle.fill",
                         action: {
+                            self.saveTrackItem()
                             dismissAction()
                             dismiss?()
                         }
@@ -56,10 +74,17 @@ struct CalmExerciseFinishedView: View {
                 Spacer()
             }
         }
+        .toolbar(.hidden, for: .tabBar)
+        .toolbarBackground(.hidden, for: .tabBar)
         .navigationBarBackButtonHidden()
     }
 }
 
+
+#if DEBUG
 #Preview {
-    CalmExerciseFinishedView()
+    CalmExerciseFinishedView(
+        currentTrackItem: TrackItem()
+    )
 }
+#endif

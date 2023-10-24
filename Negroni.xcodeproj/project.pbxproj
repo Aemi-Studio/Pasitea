@@ -11,9 +11,9 @@
 		460068312AE2ADC300BA571E /* TrackItemAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460068302AE2ADC300BA571E /* TrackItemAddView.swift */; };
 		4609E7572ADFD33000CAD374 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */; };
 		4609E7592ADFD3B800CAD374 /* CalmStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609E7582ADFD3B800CAD374 /* CalmStepView.swift */; };
+		468409D32AE734A900315D05 /* TrackItemRowEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468409D22AE734A900315D05 /* TrackItemRowEmpty.swift */; };
 		4699DCA52ADE6432008B17F9 /* TrackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCA42ADE6432008B17F9 /* TrackItem.swift */; };
 		4699DCA72ADE67F7008B17F9 /* TrackItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCA62ADE67F7008B17F9 /* TrackItemView.swift */; };
-		4699DCA92ADE6809008B17F9 /* TrackItemEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCA82ADE6809008B17F9 /* TrackItemEdit.swift */; };
 		4699DCAB2ADE6822008B17F9 /* TrackItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCAA2ADE6822008B17F9 /* TrackItemRow.swift */; };
 		4699DCC12ADE8DF5008B17F9 /* CalmBreatheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC02ADE8DF5008B17F9 /* CalmBreatheView.swift */; };
 		4699DCC32ADE8E00008B17F9 /* CalmListenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC22ADE8E00008B17F9 /* CalmListenView.swift */; };
@@ -29,13 +29,12 @@
 		46C27F242ADDF9D100038380 /* LearnHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F232ADDF9D100038380 /* LearnHome.swift */; };
 		46C27F262ADDF9ED00038380 /* LearnRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F252ADDF9ED00038380 /* LearnRow.swift */; };
 		46C27F282ADDF9F500038380 /* LearnDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F272ADDF9F500038380 /* LearnDetail.swift */; };
-		46C27F2D2ADDFA4700038380 /* TrackHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F2C2ADDFA4700038380 /* TrackHome.swift */; };
 		46C27F2F2ADDFA5300038380 /* CalmHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F2E2ADDFA5300038380 /* CalmHome.swift */; };
 		46E4BACF2ADDA9DF004BFA9F /* NegroniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4BACE2ADDA9DF004BFA9F /* NegroniApp.swift */; };
-		46E4BAD12ADDA9DF004BFA9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4BAD02ADDA9DF004BFA9F /* ContentView.swift */; };
+		46E4BAD12ADDA9DF004BFA9F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4BAD02ADDA9DF004BFA9F /* MainView.swift */; };
 		46E4BAD32ADDA9E0004BFA9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E4BAD22ADDA9E0004BFA9F /* Assets.xcassets */; };
 		46E4BAD62ADDA9E0004BFA9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E4BAD52ADDA9E0004BFA9F /* Preview Assets.xcassets */; };
-		46FE3EEC2AE3214E0049A56B /* TrackHomeBeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE3EEB2AE3214E0049A56B /* TrackHomeBeta.swift */; };
+		46FE3EEC2AE3214E0049A56B /* TrackHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE3EEB2AE3214E0049A56B /* TrackHome.swift */; };
 		46FE3EEF2AE321FB0049A56B /* LightGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE3EEE2AE321FB0049A56B /* LightGradientView.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,9 +43,9 @@
 		460068302AE2ADC300BA571E /* TrackItemAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemAddView.swift; sourceTree = "<group>"; };
 		4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		4609E7582ADFD3B800CAD374 /* CalmStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmStepView.swift; sourceTree = "<group>"; };
+		468409D22AE734A900315D05 /* TrackItemRowEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemRowEmpty.swift; sourceTree = "<group>"; };
 		4699DCA42ADE6432008B17F9 /* TrackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItem.swift; sourceTree = "<group>"; };
 		4699DCA62ADE67F7008B17F9 /* TrackItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemView.swift; sourceTree = "<group>"; };
-		4699DCA82ADE6809008B17F9 /* TrackItemEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemEdit.swift; sourceTree = "<group>"; };
 		4699DCAA2ADE6822008B17F9 /* TrackItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemRow.swift; sourceTree = "<group>"; };
 		4699DCC02ADE8DF5008B17F9 /* CalmBreatheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmBreatheView.swift; sourceTree = "<group>"; };
 		4699DCC22ADE8E00008B17F9 /* CalmListenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmListenView.swift; sourceTree = "<group>"; };
@@ -62,14 +61,13 @@
 		46C27F232ADDF9D100038380 /* LearnHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnHome.swift; sourceTree = "<group>"; };
 		46C27F252ADDF9ED00038380 /* LearnRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnRow.swift; sourceTree = "<group>"; };
 		46C27F272ADDF9F500038380 /* LearnDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnDetail.swift; sourceTree = "<group>"; };
-		46C27F2C2ADDFA4700038380 /* TrackHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackHome.swift; sourceTree = "<group>"; };
 		46C27F2E2ADDFA5300038380 /* CalmHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmHome.swift; sourceTree = "<group>"; };
 		46E4BACB2ADDA9DF004BFA9F /* Negroni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Negroni.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E4BACE2ADDA9DF004BFA9F /* NegroniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NegroniApp.swift; sourceTree = "<group>"; };
-		46E4BAD02ADDA9DF004BFA9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		46E4BAD02ADDA9DF004BFA9F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		46E4BAD22ADDA9E0004BFA9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46E4BAD52ADDA9E0004BFA9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		46FE3EEB2AE3214E0049A56B /* TrackHomeBeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackHomeBeta.swift; sourceTree = "<group>"; };
+		46FE3EEB2AE3214E0049A56B /* TrackHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackHome.swift; sourceTree = "<group>"; };
 		46FE3EEE2AE321FB0049A56B /* LightGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightGradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,9 +123,9 @@
 		46C27F222ADDF9BF00038380 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46E4BAD02ADDA9DF004BFA9F /* MainView.swift */,
 				46FE3EED2AE321E90049A56B /* Color Elements */,
 				46A538A42AE16ECB0042A375 /* Inputs and Buttons */,
-				46E4BAD02ADDA9DF004BFA9F /* ContentView.swift */,
 				46C27F2B2ADDFA3500038380 /* Calm */,
 				46C27F2A2ADDFA2200038380 /* Track */,
 				46C27F292ADDFA1400038380 /* Learn */,
@@ -149,12 +147,11 @@
 		46C27F2A2ADDFA2200038380 /* Track */ = {
 			isa = PBXGroup;
 			children = (
-				46C27F2C2ADDFA4700038380 /* TrackHome.swift */,
 				460068302AE2ADC300BA571E /* TrackItemAddView.swift */,
 				4699DCA62ADE67F7008B17F9 /* TrackItemView.swift */,
-				4699DCA82ADE6809008B17F9 /* TrackItemEdit.swift */,
 				4699DCAA2ADE6822008B17F9 /* TrackItemRow.swift */,
-				46FE3EEB2AE3214E0049A56B /* TrackHomeBeta.swift */,
+				46FE3EEB2AE3214E0049A56B /* TrackHome.swift */,
+				468409D22AE734A900315D05 /* TrackItemRowEmpty.swift */,
 			);
 			path = Track;
 			sourceTree = "<group>";
@@ -191,10 +188,10 @@
 		46E4BACD2ADDA9DF004BFA9F /* Negroni */ = {
 			isa = PBXGroup;
 			children = (
+				46E4BACE2ADDA9DF004BFA9F /* NegroniApp.swift */,
 				46C27F222ADDF9BF00038380 /* View */,
 				46C27F1D2ADDF92600038380 /* Model */,
 				46C27F1A2ADDF8EF00038380 /* Resources */,
-				46E4BACE2ADDA9DF004BFA9F /* NegroniApp.swift */,
 				46E4BAD22ADDA9E0004BFA9F /* Assets.xcassets */,
 				46E4BAD42ADDA9E0004BFA9F /* Preview Content */,
 			);
@@ -294,10 +291,8 @@
 				4699DCCB2ADEDB72008B17F9 /* CalmExerciseFinishedView.swift in Sources */,
 				4699DCA52ADE6432008B17F9 /* TrackItem.swift in Sources */,
 				4699DCAB2ADE6822008B17F9 /* TrackItemRow.swift in Sources */,
-				46C27F2D2ADDFA4700038380 /* TrackHome.swift in Sources */,
 				4699DCCD2ADF04F9008B17F9 /* MultipleChoicesView.swift in Sources */,
 				46C27F242ADDF9D100038380 /* LearnHome.swift in Sources */,
-				4699DCA92ADE6809008B17F9 /* TrackItemEdit.swift in Sources */,
 				4699DCC32ADE8E00008B17F9 /* CalmListenView.swift in Sources */,
 				4699DCC92ADE9601008B17F9 /* CalmDynamicView.swift in Sources */,
 				4600682E2AE2663200BA571E /* MultipleChoicesItemView.swift in Sources */,
@@ -305,10 +300,11 @@
 				46FE3EEF2AE321FB0049A56B /* LightGradientView.swift in Sources */,
 				4609E7592ADFD3B800CAD374 /* CalmStepView.swift in Sources */,
 				46C27F212ADDF96800038380 /* Learn.swift in Sources */,
-				46E4BAD12ADDA9DF004BFA9F /* ContentView.swift in Sources */,
+				468409D32AE734A900315D05 /* TrackItemRowEmpty.swift in Sources */,
+				46E4BAD12ADDA9DF004BFA9F /* MainView.swift in Sources */,
 				46C27F262ADDF9ED00038380 /* LearnRow.swift in Sources */,
 				460068312AE2ADC300BA571E /* TrackItemAddView.swift in Sources */,
-				46FE3EEC2AE3214E0049A56B /* TrackHomeBeta.swift in Sources */,
+				46FE3EEC2AE3214E0049A56B /* TrackHome.swift in Sources */,
 				46A538A62AE16EE90042A375 /* BigButton.swift in Sources */,
 				46C27F282ADDF9F500038380 /* LearnDetail.swift in Sources */,
 				46E4BACF2ADDA9DF004BFA9F /* NegroniApp.swift in Sources */,
