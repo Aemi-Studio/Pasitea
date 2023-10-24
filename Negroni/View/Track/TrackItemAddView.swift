@@ -10,7 +10,7 @@ import SwiftData
 
 struct TrackItemAddView: View {
 
-    @Environment(\.modelContext) var context
+    @Environment(\.modelContext) var modelContext
 
     @Binding var isPresented: Bool
 
@@ -21,26 +21,6 @@ struct TrackItemAddView: View {
     @State private var endDate: Date = Date.now
 
     var previousId: UUID? = nil
-
-    func save() {
-        let item = TrackItem(
-            type: TrackItem.TrackType.allCases[trackTypeId].rawValue,
-            desc: desc,
-            startDate: startDate,
-            endDate: endDate,
-            previousId: previousId
-        )
-
-        context.insert(item)
-        
-        do {
-            try context.save()
-        } catch {
-            #if DEBUG
-            print(error.localizedDescription)
-            #endif
-        }
-    }
 
     var body: some View {
         NavigationStack {
@@ -60,7 +40,6 @@ struct TrackItemAddView: View {
                             .focusable()
                         }
                         .safeAreaPadding(.bottom)
-
 
                         VStack(alignment: .leading) {
                             Label("Personal Notes", systemImage: "face.smiling.inverse")
@@ -119,14 +98,13 @@ struct TrackItemAddView: View {
         .toolbar {
             ToolbarItemGroup(placement: .confirmationAction) {
                 Button("Save", action: {
-                    self.save()
-                    do {
-                        try context.save()
-                    } catch {
-#if DEBUG
-                        print(error.localizedDescription)
-#endif
-                    }
+                    TrackItem(
+                        type: TrackItem.TrackType.allCases[trackTypeId],
+                        desc: desc,
+                        startDate: startDate,
+                        endDate: endDate,
+                        previousId: previousId
+                    ).saveInto(modelContext, endDate)
                     isPresented = false
                 })
             }

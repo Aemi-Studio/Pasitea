@@ -20,6 +20,12 @@ struct TrackItemRow: View {
 
                 Text(trackItem!.startDate.formatted())
                     .font(.caption)
+
+                #if DEBUG
+                Text(trackItem!.id.uuidString)
+                    .font(.caption)
+                #endif
+
             }
             .padding(4)
     }

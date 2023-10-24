@@ -1,5 +1,5 @@
 //
-//  CalmDynamicView.swift
+//  CalmStepsView.swift
 //  Negroni
 //
 //  Created by Guillaume Coquard on 17/10/23.
@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import SwiftData
 
-struct CalmDynamicView: View {
+struct CalmStepsView: View {
 
     @Environment(ModelData.self) private var modelData
     @Environment(\.modelContext) private var modelContext
@@ -18,12 +18,15 @@ struct CalmDynamicView: View {
     @State private var selection = 0
     @State private var lastStep = false
     @State private var exerciseFinished = false
-    @State private var tags: [String] = []
 
-    var currentTrackItem: TrackItem
+    @State private var trackItem: TrackItem = TrackItem(type: .steps)
 
     func getNextScreen() {
-        currentTrackItem.tags.append("\(selection)")
+        if selection == 0 {
+            trackItem = TrackItem(type: .steps, tags:["\(selection)"])
+        } else {
+            trackItem.addTags( "\(selection)" )
+        }
         if selection == modelData.calmSteps.count - 1 {
             exerciseFinished = true
         } else {
@@ -39,7 +42,7 @@ struct CalmDynamicView: View {
             VStack(spacing: 10) {
                 TabView(selection: $selection) {
                     ForEach(modelData.calmSteps) { step in
-                        CalmStepView(
+                        CalmSingleStepView(
                             step: step,
                             getNextScreen: getNextScreen
                         )
@@ -48,19 +51,12 @@ struct CalmDynamicView: View {
                 }
                 .tabViewStyle(.page(indexDisplayMode: .automatic))
                 .navigationDestination(isPresented: $exerciseFinished) {
-                    CalmExerciseFinishedView(
-                        currentTrackItem: currentTrackItem,
-                        dismiss: dismiss
-                    )
+                    CalmExerciseFinishedView( sourceTrackItem: trackItem, dismiss: dismiss )
                 }
             }
             
             VStack {
-                CustomBackButton(
-                    currentTrackItem: currentTrackItem,
-                    dismissAction: dismiss,
-                    display: !lastStep
-                )
+                CustomBackButton( trackItem: trackItem, dismissAction: dismiss, display: !lastStep )
                 Spacer()
             }
         }
@@ -72,9 +68,7 @@ struct CalmDynamicView: View {
 
 #if DEBUG
 #Preview {
-    CalmDynamicView(
-        currentTrackItem: TrackItem()
-    )
+    CalmStepsView()
         .environment(ModelData())
 }
 #endif
