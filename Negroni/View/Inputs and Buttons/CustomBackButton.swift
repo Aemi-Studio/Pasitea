@@ -13,7 +13,7 @@ struct CustomBackButton: View {
 
     @State private var alertPresented = false
 
-    var currentTrackItem: TrackItem?
+    var trackItem: TrackItem?
 
     var dismissAction: DismissAction? = nil
     var customAction: (() -> Void)? = nil
@@ -47,9 +47,9 @@ struct CustomBackButton: View {
         .confirmationDialog("Exiting the exercise", isPresented: $alertPresented) {
             Button("Yes", role: .destructive, action: {
 
-                if currentTrackItem != nil {
-                    currentTrackItem!.endDate = Date.now
-                    modelContext.insert(currentTrackItem!)
+                if trackItem != nil {
+                    print(trackItem!.previousId?.uuidString ?? "")
+                    trackItem!.saveInto(modelContext)
                 }
 
                 if dismissAction != nil {
@@ -67,10 +67,6 @@ struct CustomBackButton: View {
 
 #if DEBUG
 #Preview {
-    CustomBackButton(
-        currentTrackItem: TrackItem(
-            type: TrackItem.TrackType.none.rawValue
-        )
-    )
+    CustomBackButton( trackItem: TrackItem() )
 }
 #endif

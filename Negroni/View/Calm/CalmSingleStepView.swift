@@ -1,5 +1,5 @@
 //
-//  CalmStepView.swift
+//  CalmSingleStepView.swift
 //  Negroni
 //
 //  Created by Guillaume Coquard on 18/10/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CalmStepView: View {
+struct CalmSingleStepView: View {
 
     @Environment(ModelData.self) var modelData
 
@@ -49,7 +49,7 @@ struct CalmStepView: View {
 
 #if DEBUG
 #Preview {
-    CalmStepView(step:ModelData().calmSteps[0], getNextScreen: {})
+    CalmSingleStepView(step:ModelData().calmSteps[0], getNextScreen: {})
         .environment(ModelData())
 }
 #endif

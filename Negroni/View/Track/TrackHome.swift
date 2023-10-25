@@ -16,20 +16,13 @@ struct TrackHome: View {
 
     @State private var isAddViewPresented : Bool = false
 
-    @Query(sort: \TrackItem.startDate, order: .reverse)
+    @Query(sort: \TrackItem.endDate, order: .reverse)
     var items: [TrackItem]
 
     private func deleteTrackItem(at indexSet: IndexSet) {
-        do {
-            for index in indexSet {
-                let itemToBeDeleted = items[index]
-                modelContext.delete(itemToBeDeleted)
-            }
-            try modelContext.save()
-        } catch {
-            #if DEBUG
-            print(error.localizedDescription)
-            #endif
+        for index in indexSet {
+            let itemToBeDeleted = items[index]
+            itemToBeDeleted.deleteFrom(modelContext)
         }
     }
 

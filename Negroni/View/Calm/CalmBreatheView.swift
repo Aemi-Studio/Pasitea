@@ -11,8 +11,8 @@ struct CalmBreatheView: View {
     
     @Environment(\.dismiss) var dismiss
 
-    var currentTrackItem: TrackItem
-    
+    var trackItem: TrackItem = TrackItem(type:.breathing)
+
     var body: some View {
         ZStack() {
             
@@ -23,6 +23,14 @@ struct CalmBreatheView: View {
                 //BreatheAnimationView()
                 FlowerAnimationView( currentTrackItem: TrackItem())
 /*
+                BigButton(
+                    image: Image(systemName: "aqi.medium")
+                )
+
+                Text("Breathe")
+                    .font(.title)
+                    .bold()
+                
                 HStack(spacing: 8) {
                     Image(systemName: "clock")
                     Text("03:00")
@@ -34,10 +42,7 @@ struct CalmBreatheView: View {
             /*
              
             VStack {
-                CustomBackButton(
-                    currentTrackItem: currentTrackItem,
-                    dismissAction: dismiss
-                )
+                CustomBackButton( trackItem: trackItem, dismissAction: dismiss )
                 Spacer()
             }
              */
@@ -57,8 +62,6 @@ struct CalmBreatheView: View {
 
 #if DEBUG
 #Preview {
-    CalmBreatheView(
-        currentTrackItem: TrackItem()
-    )
+    CalmBreatheView( trackItem: TrackItem() )
 }
 #endif
