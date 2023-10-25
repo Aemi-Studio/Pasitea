@@ -11,7 +11,7 @@ struct CalmBreatheView: View {
 
     @Environment(\.dismiss) var dismiss
 
-    var currentTrackItem: TrackItem
+    var trackItem: TrackItem = TrackItem(type:.breathing)
 
     var body: some View {
         ZStack() {
@@ -20,8 +20,10 @@ struct CalmBreatheView: View {
             
             VStack(spacing: 64) {
                 
-                BigButton(image: Image(systemName: "aqi.medium"))
-                
+                BigButton(
+                    image: Image(systemName: "aqi.medium")
+                )
+
                 Text("Breathe")
                     .font(.title)
                     .bold()
@@ -35,10 +37,7 @@ struct CalmBreatheView: View {
             }
             
             VStack {
-                CustomBackButton(
-                    currentTrackItem: currentTrackItem,
-                    dismissAction: dismiss
-                )
+                CustomBackButton( trackItem: trackItem, dismissAction: dismiss )
                 Spacer()
             }
             .toolbar(.hidden, for: .tabBar)
@@ -50,8 +49,6 @@ struct CalmBreatheView: View {
 
 #if DEBUG
 #Preview {
-    CalmBreatheView(
-        currentTrackItem: TrackItem()
-    )
+    CalmBreatheView( trackItem: TrackItem() )
 }
 #endif

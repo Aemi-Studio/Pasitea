@@ -14,17 +14,10 @@ struct CalmExerciseFinishedView: View {
 
     @State private var isPresented = false
 
-    @State private var alreadySaved = false
-
-    private func saveTrackItem() {
-        if !self.alreadySaved {
-            self.alreadySaved = true
-            self.currentTrackItem.endDate = Date.now
-            self.modelContext.insert(self.currentTrackItem)
-        }
+    var sourceTrackItem: TrackItem
+    var trackItem: TrackItem {
+        sourceTrackItem.endsNow()
     }
-
-    var currentTrackItem: TrackItem
 
     var dismiss: DismissAction?
 
@@ -49,22 +42,20 @@ struct CalmExerciseFinishedView: View {
                         "Yes",
                         systemImage: "questionmark.circle.fill",
                         action: {
-                            self.saveTrackItem()
+                            trackItem.saveInto(modelContext)
                             isPresented = true
                         }
                     )
                     .buttonStyle(.borderedProminent)
                     .navigationDestination(isPresented: $isPresented) {
-                        MultipleChoicesView(
-                            currentTrackItem: currentTrackItem
-                        )
+                        MultipleChoicesView( trackItem: trackItem )
                     }
 
                     Button(
                         "I'm fine.",
                         systemImage: "checkmark.circle.fill",
                         action: {
-                            self.saveTrackItem()
+                            trackItem.saveInto(modelContext)
                             dismissAction()
                             dismiss?()
                         }
@@ -83,8 +74,6 @@ struct CalmExerciseFinishedView: View {
 
 #if DEBUG
 #Preview {
-    CalmExerciseFinishedView(
-        currentTrackItem: TrackItem()
-    )
+    CalmExerciseFinishedView( sourceTrackItem: TrackItem() )
 }
 #endif
