@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CalmBreatheView: View {
-
+    
     @Environment(\.dismiss) var dismiss
 
     var trackItem: TrackItem = TrackItem(type:.breathing)
@@ -20,6 +20,9 @@ struct CalmBreatheView: View {
             
             VStack(spacing: 64) {
                 
+                //BreatheAnimationView()
+                FlowerAnimationView( currentTrackItem: TrackItem())
+/*
                 BigButton(
                     image: Image(systemName: "aqi.medium")
                 )
@@ -32,20 +35,30 @@ struct CalmBreatheView: View {
                     Image(systemName: "clock")
                     Text("03:00")
                 }
-                .fontWeight(.semibold)
-                .foregroundColor(.secondary)
-            }
-            
+ */
+            } // Both the Stacks are implemented inside the flowerView
+              // to see the other animation remove the comments
+              // otherwise you cant go back
+            /*
+             
             VStack {
                 CustomBackButton( trackItem: trackItem, dismissAction: dismiss )
                 Spacer()
             }
+             */
             .toolbar(.hidden, for: .tabBar)
             .toolbarBackground(.hidden, for: .tabBar)
         }
     }
+
+    
 }
  
+
+
+
+
+
 
 #if DEBUG
 #Preview {
