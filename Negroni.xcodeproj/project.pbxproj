@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D75D7902AE7CF850014F488 /* BreatheAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D75D78F2AE7CF850014F488 /* BreatheAnimationView.swift */; };
+		1D75D7922AE9611D0014F488 /* FlowerAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D75D7912AE9611D0014F488 /* FlowerAnimationView.swift */; };
+		1D75D7942AE974550014F488 /* EndButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D75D7932AE974550014F488 /* EndButton.swift */; };
+		1D75D7982AEA688D0014F488 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D75D7972AEA688D0014F488 /* AudioPlayer.swift */; };
+		1D75D79A2AEA69F40014F488 /* water.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1D75D7992AEA69F40014F488 /* water.mp3 */; };
 		4600682E2AE2663200BA571E /* MultipleChoicesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4600682D2AE2663200BA571E /* MultipleChoicesItemView.swift */; };
 		460068312AE2ADC300BA571E /* TrackItemAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460068302AE2ADC300BA571E /* TrackItemAddView.swift */; };
 		4609E7572ADFD33000CAD374 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */; };
@@ -39,6 +44,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D75D78F2AE7CF850014F488 /* BreatheAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheAnimationView.swift; sourceTree = "<group>"; };
+		1D75D7912AE9611D0014F488 /* FlowerAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerAnimationView.swift; sourceTree = "<group>"; };
+		1D75D7932AE974550014F488 /* EndButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndButton.swift; sourceTree = "<group>"; };
+		1D75D7972AEA688D0014F488 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		1D75D7992AEA69F40014F488 /* water.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = water.mp3; sourceTree = "<group>"; };
 		4600682D2AE2663200BA571E /* MultipleChoicesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoicesItemView.swift; sourceTree = "<group>"; };
 		460068302AE2ADC300BA571E /* TrackItemAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemAddView.swift; sourceTree = "<group>"; };
 		4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
@@ -95,7 +105,10 @@
 			isa = PBXGroup;
 			children = (
 				4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */,
+				1D75D7932AE974550014F488 /* EndButton.swift */,
 				46A538A52AE16EE90042A375 /* BigButton.swift */,
+				1D75D78F2AE7CF850014F488 /* BreatheAnimationView.swift */,
+				1D75D7912AE9611D0014F488 /* FlowerAnimationView.swift */,
 			);
 			path = "Inputs and Buttons";
 			sourceTree = "<group>";
@@ -159,12 +172,15 @@
 		46C27F2B2ADDFA3500038380 /* Calm */ = {
 			isa = PBXGroup;
 			children = (
+				1D75D7992AEA69F40014F488 /* water.mp3 */,
 				46C27F2E2ADDFA5300038380 /* CalmHome.swift */,
 				4699DCC82ADE9601008B17F9 /* CalmStepsView.swift */,
 				4609E7582ADFD3B800CAD374 /* CalmSingleStepView.swift */,
 				4699DCC02ADE8DF5008B17F9 /* CalmBreatheView.swift */,
 				4699DCC22ADE8E00008B17F9 /* CalmListenView.swift */,
 				4699DCCA2ADEDB72008B17F9 /* CalmExerciseFinishedView.swift */,
+				4609E7582ADFD3B800CAD374 /* CalmStepView.swift */,
+				1D75D7972AEA688D0014F488 /* AudioPlayer.swift */,
 			);
 			path = Calm;
 			sourceTree = "<group>";
@@ -273,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4699DCC52ADE92B1008B17F9 /* calmData.json in Resources */,
+				1D75D79A2AEA69F40014F488 /* water.mp3 in Resources */,
 				46C27F1C2ADDF90500038380 /* learnData.json in Resources */,
 				46E4BAD62ADDA9E0004BFA9F /* Preview Assets.xcassets in Resources */,
 				46E4BAD32ADDA9E0004BFA9F /* Assets.xcassets in Resources */,
@@ -297,10 +314,15 @@
 				4699DCC92ADE9601008B17F9 /* CalmStepsView.swift in Sources */,
 				4600682E2AE2663200BA571E /* MultipleChoicesItemView.swift in Sources */,
 				46C27F2F2ADDFA5300038380 /* CalmHome.swift in Sources */,
+				1D75D7902AE7CF850014F488 /* BreatheAnimationView.swift in Sources */,
 				46FE3EEF2AE321FB0049A56B /* LightGradientView.swift in Sources */,
+				1D75D7922AE9611D0014F488 /* FlowerAnimationView.swift in Sources */,
+				4609E7592ADFD3B800CAD374 /* CalmStepView.swift in Sources */,
 				4609E7592ADFD3B800CAD374 /* CalmSingleStepView.swift in Sources */,
 				46C27F212ADDF96800038380 /* Learn.swift in Sources */,
+				1D75D7982AEA688D0014F488 /* AudioPlayer.swift in Sources */,
 				468409D32AE734A900315D05 /* TrackItemRowEmpty.swift in Sources */,
+				1D75D7942AE974550014F488 /* EndButton.swift in Sources */,
 				46E4BAD12ADDA9DF004BFA9F /* MainView.swift in Sources */,
 				46C27F262ADDF9ED00038380 /* LearnRow.swift in Sources */,
 				460068312AE2ADC300BA571E /* TrackItemAddView.swift in Sources */,
@@ -444,7 +466,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Negroni/Preview Content\"";
-				DEVELOPMENT_TEAM = 3JFY6MM7AN;
+				DEVELOPMENT_TEAM = 7YCDK4684M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Panic Help";
@@ -475,7 +497,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Negroni/Preview Content\"";
-				DEVELOPMENT_TEAM = 3JFY6MM7AN;
+				DEVELOPMENT_TEAM = 7YCDK4684M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Panic Help";
