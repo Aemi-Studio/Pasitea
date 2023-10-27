@@ -17,8 +17,8 @@ struct CalmListenView: View {
         ZStack {
             LightGradientView()
             VStack(spacing: 64) {
-                BigButton(image: Image(systemName:"waveform"))
-                Text("Listen to this song")
+                AudioPlayer()
+                Text("Listen to this sound")
                     .font(.title)
                     .bold()
             }

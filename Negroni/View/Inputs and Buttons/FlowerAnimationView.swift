@@ -92,7 +92,7 @@ struct FlowerAnimationView: View {
                             }
                         
                     }.shadow(radius: showShadow ? 20 : 0)
-                        .hueRotation(Angle(degrees: showShadow ? 0 : 180))
+                        .hueRotation(Angle(degrees: showShadow ? -170 : 0))
                         .animation(Animation.easeInOut(duration: 2).delay(2).repeatForever(autoreverses: true))
                         .onAppear {
                             showShadow.toggle()
@@ -100,7 +100,7 @@ struct FlowerAnimationView: View {
                     Circle()  // Left Stroke
                         .trim(from: showLeftStroke ? 0 : 1/4, to: 1/4)
                         .stroke(style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round, dash: [7, 14]))
-                        .frame(width: 215, height: 2215, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: 215, height: 215, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                         .rotationEffect(.degrees(-180), anchor: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .offset(x: 0, y: -25)
