@@ -11,22 +11,22 @@ struct CalmListenView: View {
 
     @Environment(\.dismiss) var dismiss
 
-    var currentTrackItem: TrackItem
+    var trackItem: TrackItem = TrackItem(type:.listening)
 
     var body: some View {
         ZStack {
+            
             LightGradientView()
+
             VStack(spacing: 64) {
                 AudioPlayer()
                 Text("Listen to this sound")
                     .font(.title)
                     .bold()
             }
+            
             VStack {
-                CustomBackButton(
-                    currentTrackItem: currentTrackItem,
-                    dismissAction: dismiss
-                )
+                CustomBackButton( trackItem: trackItem, dismissAction: dismiss )
                 Spacer()
             }
         }
@@ -37,9 +37,7 @@ struct CalmListenView: View {
 
 #if DEBUG
 #Preview {
-    CalmListenView(
-        currentTrackItem: TrackItem()
-    )
+    CalmListenView( trackItem: TrackItem() )
 }
 #endif
 

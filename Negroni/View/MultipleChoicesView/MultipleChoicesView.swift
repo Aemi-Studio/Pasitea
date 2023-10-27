@@ -15,7 +15,7 @@ struct MultipleChoicesView: View {
 
     @Environment(\.dismiss) var dismiss
 
-    var currentTrackItem: TrackItem
+    var trackItem: TrackItem
 
     var body: some View {
         ZStack {
@@ -36,10 +36,7 @@ struct MultipleChoicesView: View {
                         isViewPresented: $isBreathingExercisePresented
                     ).navigationDestination(isPresented: $isBreathingExercisePresented) {
                         CalmBreatheView(
-                            currentTrackItem: TrackItem(
-                                type: TrackItem.TrackType.breathing.rawValue,
-                                previousId: currentTrackItem.id
-                            )
+                            trackItem: TrackItem(type: .breathing, previousId: trackItem.id)
                         )
                     }
 
@@ -51,10 +48,7 @@ struct MultipleChoicesView: View {
                     )
                     .navigationDestination(isPresented: $isListeningExercisePresented) {
                         CalmListenView(
-                            currentTrackItem: TrackItem(
-                                type: TrackItem.TrackType.listening.rawValue,
-                                previousId: currentTrackItem.id
-                            )
+                            trackItem: TrackItem(type: .listening, previousId: trackItem.id)
                         )
                     }
 
@@ -67,7 +61,7 @@ struct MultipleChoicesView: View {
                     .navigationDestination(isPresented: $isTrackingPresented) {
                         TrackItemAddView(
                             isPresented: $isTrackingPresented,
-                            previousId: currentTrackItem.id
+                            previousId: trackItem.id
                         )
                     }
 
@@ -91,8 +85,6 @@ struct MultipleChoicesView: View {
 
 #if DEBUG
 #Preview {
-    MultipleChoicesView(
-        currentTrackItem: TrackItem()
-    )
+    MultipleChoicesView( trackItem: TrackItem() )
 }
 #endif

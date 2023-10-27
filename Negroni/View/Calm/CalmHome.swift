@@ -14,7 +14,9 @@ struct CalmHome: View {
     @State private var isListeningExercisePresented = false
 
     var body: some View {
+
         NavigationStack {
+            
             ZStack {
 
                 LightGradientView()
@@ -25,11 +27,7 @@ struct CalmHome: View {
                     } label: {
                         BigButton(title: "Calm Down")
                     }.navigationDestination(isPresented: $isSteppedExercisePresented) {
-                        CalmDynamicView(
-                            currentTrackItem: TrackItem(
-                                type: TrackItem.TrackType.steps.rawValue
-                            )
-                        )
+                        CalmStepsView()
                     }
 
                     HStack(spacing: 32) {
@@ -39,26 +37,20 @@ struct CalmHome: View {
                         } label: {
                             Text("Breathe")
                         }.navigationDestination(isPresented: $isBreathingExercisePresented) {
-                            CalmBreatheView(
-                                currentTrackItem: TrackItem(
-                                    type: TrackItem.TrackType.breathing.rawValue
-                                )
-                            )
+                            CalmBreatheView()
                         }
                         .buttonStyle(.borderedProminent)
+
 
                         Button {
                             isListeningExercisePresented = true
                         } label: {
                             Text("Listen")
                         }.navigationDestination(isPresented: $isListeningExercisePresented) {
-                            CalmListenView(
-                                currentTrackItem: TrackItem(
-                                    type: TrackItem.TrackType.listening.rawValue
-                                )
-                            )
+                            CalmListenView()
                         }
                         .buttonStyle(.borderedProminent)
+
                     }
                 }
                 .padding()

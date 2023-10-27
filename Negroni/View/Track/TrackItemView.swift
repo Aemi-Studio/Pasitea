@@ -12,11 +12,11 @@ struct TrackItemView: View {
 
     var trackItem: TrackItem
 
-    @Query(sort: [SortDescriptor(\TrackItem.startDate)] )
+    @Query(sort: [SortDescriptor(\TrackItem.endDate)] )
     var trackItems: [TrackItem]
 
     var previousItem: TrackItem? {
-        var _uuid: String = self.trackItem.previousId?.uuidString ?? UUID().uuidString
+        let _uuid: String = self.trackItem.previousId?.uuidString ?? UUID().uuidString
         var _trackItems: [TrackItem]
         var _trackItem: TrackItem? = nil
         do {
@@ -87,14 +87,7 @@ struct TrackItemView: View {
                     ToolbarItemGroup(placement: .topBarTrailing) {
                         HStack {
                             Button(action: {
-                                modelContext.delete(trackItem)
-                                do {
-                                    try modelContext.save()
-                                } catch {
-                                    #if DEBUG
-                                    print("Cont text did not delete the focused trackItem.")
-                                    #endif
-                                }
+                                trackItem.deleteFrom(modelContext)
                                 dismiss()
                             }) {
                                 Label("Delete", systemImage: "trash")
