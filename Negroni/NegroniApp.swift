@@ -10,7 +10,6 @@ import SwiftData
 
 @main
 struct NegroniApp: App {
-    
     @State private var modelData = ModelData()
 
     private let container: ModelContainer
@@ -22,7 +21,7 @@ struct NegroniApp: App {
             #if DEBUG
             print(error.localizedDescription)
             #endif
-            container = try! ModelContainer(for: TrackItem.self )
+            exit(EXIT_FAILURE)
         }
     }
 

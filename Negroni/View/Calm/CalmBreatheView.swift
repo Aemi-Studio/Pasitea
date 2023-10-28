@@ -8,57 +8,32 @@
 import SwiftUI
 
 struct CalmBreatheView: View {
-    
     @Environment(\.dismiss) var dismiss
 
-    var trackItem: TrackItem = TrackItem(type:.breathing)
+    @State private var started: Bool = false
+    @State private var running: Bool = false
+    @State private var exercises: [(Int, Int)] = []
+
+    var trackItem: TrackItem = TrackItem(type: .breathing)
 
     var body: some View {
-        ZStack() {
-            
+        ZStack {
             LightGradientView()
-            
-            VStack(spacing: 64) {
-                
-                //BreatheAnimationView()
-                FlowerAnimationView( currentTrackItem: TrackItem())
-/*
-                BigButton(
-                    image: Image(systemName: "aqi.medium")
-                )
 
-                Text("Breathe")
-                    .font(.title)
-                    .bold()
-                
-                HStack(spacing: 8) {
-                    Image(systemName: "clock")
-                    Text("03:00")
-                }
- */
-            } // Both the Stacks are implemented inside the flowerView
-              // to see the other animation remove the comments
-              // otherwise you cant go back
-            /*
-             
+            FlowerAnimationView()
+
             VStack {
-                CustomBackButton( trackItem: trackItem, dismissAction: dismiss )
+                CustomBackButton(
+                    trackItem: trackItem.endsNow(),
+                    dismissAction: dismiss,
+                    enforce: false
+                )
                 Spacer()
             }
-             */
-            .toolbar(.hidden, for: .tabBar)
-            .toolbarBackground(.hidden, for: .tabBar)
         }
+        .ultraThinInterface()
     }
-
-    
 }
- 
-
-
-
-
-
 
 #if DEBUG
 #Preview {

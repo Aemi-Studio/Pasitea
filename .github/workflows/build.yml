@@ -1,0 +1,10 @@
+on:
+  push:
+    branches:
+      - main
+      - dev
+      - A-*
+      - D-*
+      - E-*
+      - F-*
+      - G-*

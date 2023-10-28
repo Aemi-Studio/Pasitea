@@ -10,59 +10,54 @@ import SwiftUI
 import SwiftData
 
 struct CalmStepsView: View {
-
     @Environment(ModelData.self) private var modelData
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) var dismiss
 
-    @State private var selection = 0
-    @State private var lastStep = false
-    @State private var exerciseFinished = false
+    @State private var currentStep: Int = 0
+    @State private var lastStep: Bool = false
+    @State private var exerciseFinished: Bool = false
 
-    @State private var trackItem: TrackItem = TrackItem(type: .steps)
+    private var trackItem: TrackItem = TrackItem(type: .steps, tags: [0.description])
 
     func getNextScreen() {
-        if selection == 0 {
-            trackItem = TrackItem(type: .steps, tags:["\(selection)"])
-        } else {
-            trackItem.addTags( "\(selection)" )
+        if currentStep > 0 {
+            trackItem.addTags(currentStep.description)
         }
-        if selection == modelData.calmSteps.count - 1 {
+        if lastStep {
             exerciseFinished = true
         } else {
-            selection += 1
-            lastStep = selection == modelData.calmSteps.count - 1
+            currentStep += 1
+            lastStep = currentStep == modelData.calmSteps.count - 1
         }
     }
-    
+
     var body: some View {
         ZStack {
             LightGradientView()
-            
+
             VStack(spacing: 10) {
-                TabView(selection: $selection) {
-                    ForEach(modelData.calmSteps) { step in
-                        CalmSingleStepView(
-                            step: step,
-                            getNextScreen: getNextScreen
+                CalmSingleStepView( step: $currentStep, getNextScreen: getNextScreen )
+                    .fullScreenCover(isPresented: $exerciseFinished) {
+                        CalmExerciseFinishedView(
+                            trackItem: TrackItem( trackItem ).endsNow(),
+                            dismiss: dismiss
                         )
-                            .tag(step.id)
                     }
-                }
-                .tabViewStyle(.page(indexDisplayMode: .automatic))
-                .navigationDestination(isPresented: $exerciseFinished) {
-                    CalmExerciseFinishedView( sourceTrackItem: trackItem, dismiss: dismiss )
-                }
+                    .transiAction()
             }
-            
+
             VStack {
-                CustomBackButton( trackItem: trackItem, dismissAction: dismiss, display: !lastStep )
+                CustomBackButton(
+                    trackItem: trackItem,
+                    dismissAction: dismiss,
+                    enforce: false,
+                    display: !lastStep
+                )
                 Spacer()
             }
         }
-        .toolbar(.hidden, for: .tabBar)
-        .toolbarBackground(.hidden, for: .tabBar)
-        .navigationBarBackButtonHidden()
+        .ultraThinInterface()
     }
 }
 
@@ -72,5 +67,3 @@ struct CalmStepsView: View {
         .environment(ModelData())
 }
 #endif
-
-

@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct TrackItemRowEmpty: View {
+    var text: String? = "No previous exercise registered."
+    var style = Material.thickMaterial
+    var radius: CGFloat? = 8.0
+
     var body: some View {
-        VStack(alignment: .leading, spacing:8) {
-            Text("No previous exercise registered.")
-                .bold()
-                .font(.headline)
+        VStack(alignment: .leading) {
+            Text(text!)
         }
-        .padding(4)
+        .padding()
+        .frame(maxWidth: .infinity)
+        .background(style)
+        .cornerRadius(radius!)
     }
 }
 

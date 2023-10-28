@@ -10,25 +10,15 @@ import SwiftData
 
 @Model
 public final class TrackItem: Identifiable {
-
-    public enum TrackType: String, Codable, CaseIterable {
-        case none = "Exercise"
-        case steps = "5 Steps"
-        case breathing = "Breathing"
-        case listening = "Listening"
-        case feeling = "Feeling"
-    }
-
     @Attribute(.unique) public let id: UUID
-    public var type: TrackType.RawValue = TrackItem.TrackType.none.rawValue
+    public var type: TrackType.RawValue = TrackType.none.rawValue
     public var desc: String = ""
-    private var tags: [String] = []
+    public var tags: [String] = []
     public var startDate: Date = Date.now
-    public var endDate: Date? = Date.now
-    public var previousId: UUID? = nil
+    public var endDate: Date = Date.now
+    public var previousId: UUID?
     private var saved: Bool = false
     private var deleted: Bool = false
-
 
     enum TrackItemCodingKeys: CodingKey {
         case id
@@ -41,32 +31,56 @@ public final class TrackItem: Identifiable {
     }
 
     init(
-        type: TrackType? = TrackItem.TrackType.none,
-        desc: String? = "",
-        tags: [String]? = [],
-        startDate: Date? = Date.now,
-        endDate: Date? = Date.now,
+        type: TrackType = TrackType.none,
+        desc: String = "",
+        tags: [String] = [],
+        startDate: Date = Date.now,
+        endDate: Date = Date.now,
         previousId: UUID? = nil
     ) {
         self.id = UUID()
-        self.type = type?.rawValue ?? TrackItem.TrackType.none.rawValue
-        self.desc = desc ?? ""
-        self.tags = tags ?? []
-        self.startDate = startDate ?? Date.now
-        self.endDate = endDate ?? Date.now
+        self.type = type.rawValue
+        self.desc = desc
+        self.tags = tags
+        self.startDate = startDate
+        self.endDate = endDate
         self.previousId = previousId ?? nil
+    }
+
+    init(_ item: TrackItem ) {
+        self.id = UUID()
+        self.type = item.type
+        self.desc = item.desc
+        self.tags = item.tags
+        self.startDate = item.startDate
+        self.endDate = item.endDate
+        self.previousId = item.previousId
     }
 }
 
 extension TrackItem {
     @Transient
-    var trackType: TrackType {
-        TrackType(rawValue: self.type) ?? .none
+    public var typeAsTrackType: TrackType {
+        get {
+            (TrackType(rawValue: self.type))!
+        }
+        set(rawValue) {
+            self.type = rawValue.rawValue
+        }
+    }
+
+    @Transient
+    public var typeAsInt: Int {
+        get {
+            return TrackType.allCases.firstIndex { value in value == self.typeAsTrackType } ?? 0
+        }
+        set(index) {
+            self.type = TrackType.allCases[index].rawValue
+        }
     }
 }
 
 extension TrackItem {
-    
     public func addTags(_ tags: String...) -> TrackItem {
         for tag in tags {
             self.tags.append(tag)
@@ -82,9 +96,9 @@ extension TrackItem {
             do {
                 try modelContext.save()
             } catch {
-#if DEBUG
+                #if DEBUG
                 print(error.localizedDescription)
-#endif
+                #endif
             }
         }
     }
@@ -96,9 +110,9 @@ extension TrackItem {
             do {
                 try modelContext.save()
             } catch {
-#if DEBUG
+                #if DEBUG
                 print(error.localizedDescription)
-#endif
+                #endif
             }
         }
     }
@@ -125,7 +139,7 @@ extension TrackItem {
         self.endDate = date
         return self
     }
-    
+
     public func endsNow() -> TrackItem {
         self.endDate = Date.now
         return self

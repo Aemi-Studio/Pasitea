@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MultipleChoicesItemView: View {
-
     var title: String
     var subtitle: String
 
@@ -32,20 +31,18 @@ struct MultipleChoicesItemView: View {
                     .padding()
             }
         }
-        .foregroundColor(.primary)
-        .background(Color.accentColor.opacity(0.4))
-        .background(.thickMaterial)
-        .cornerRadius(10)
+        .foregroundColor(.accent)
+        .background(.regularMaterial)
+        .cornerRadius(16)
+        .shadow(color: Color.accentColor.opacity(0.05), radius: 16, x: 0, y: 8)
     }
 }
 
 #if DEBUG
 struct MultipleChoicesItemView_Preview: PreviewProvider {
-
     @State var isPresented: Bool = false
 
     static var previews: some View {
-
         Group {
             MultipleChoicesItemView(
                 title: "Lorem Ipsum",

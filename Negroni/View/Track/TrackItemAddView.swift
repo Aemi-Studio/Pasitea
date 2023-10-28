@@ -9,117 +9,154 @@ import SwiftUI
 import SwiftData
 
 struct TrackItemAddView: View {
-
     @Environment(\.modelContext) var modelContext
+    @Environment(\.dismiss) var dismiss: DismissAction
 
-    @Binding var isPresented: Bool
-
-    @State private var title: String = ""
     @State private var desc: String = ""
     @State private var trackTypeId: Int = 4
     @State private var startDate: Date = Date.now
     @State private var endDate: Date = Date.now
 
-    var previousId: UUID? = nil
+    @State private var confirmationRequestPresented: Bool = false
+
+    @FocusState var isTextFieldFocused: Bool
+
+    var previousId: UUID?
 
     var body: some View {
-        NavigationStack {
-            ZStack {
-                ScrollView(.vertical) {
-                    Form {
-                        VStack(alignment: .leading){
-                            Label("Exercise", systemImage: "square.grid.2x2")
-                            Picker(selection: $trackTypeId, label: Text("Type")) {
-                                Text("5 Steps").tag(1)
-                                Text("Breathing").tag(2)
-                                Text("Listening").tag(3)
-                                Text("Feeling").tag(4)
-                            }
-                            .pickerStyle(.segmented)
-                            .labelsHidden()
-                            .focusable()
-                        }
-                        .safeAreaPadding(.bottom)
-
-                        VStack(alignment: .leading) {
-                            Label("Personal Notes", systemImage: "face.smiling.inverse")
-                            VStack(alignment: .leading){
-                                TextField("I've been feeling blue lately...", text: $desc, axis: .vertical)
-                                    .submitLabel(.next)
-                                    .lineLimit(10, reservesSpace: true)
-                                    .labelsHidden()
-                                    .padding(12)
-                            }
-                            .background {
-                                RoundedRectangle(cornerRadius:10)
-                                    .frame(maxWidth: .infinity)
-                                    .background(.ultraThickMaterial)
-                                    .cornerRadius(10)
-                                    .opacity(0.2)
-                            }
-                        }
-                        .safeAreaPadding(.bottom)
-
-                        VStack(alignment: .leading) {
-                            Label("Start Date", systemImage: "calendar")
-                            DatePicker("Starting Date\n", selection: $startDate)
-                                .labelsHidden()
-                                .scaledToFill()
-                                .focusable()
-                        }
-                        .safeAreaPadding(.bottom)
-
-                        VStack(alignment: .leading) {
-                            Label("End Date", systemImage: "calendar")
-                            DatePicker("Ending Date\n", selection: $endDate)
-                                .labelsHidden()
-                                .scaledToFill()
-                                .focusable()
-                        }
-                        .safeAreaPadding(.bottom)
+        VStack {
+            HStack {
+                Button(role: .cancel) {
+                    confirmationRequestPresented.toggle()
+                } label: {
+                    Text("Cancel")
+                        .bold()
+                }.confirmationDialog(
+                    "If you made changes, modifications will be cancelled. Do you really want to cancel them?",
+                    isPresented: $confirmationRequestPresented) {
+                    Button(role: .cancel) {
+                        confirmationRequestPresented.toggle()
+                    } label: {
+                        Text("No")
                     }
-                    .formStyle(.columns)
-                    .safeAreaPadding(.all)
+                    Button(role: .destructive) {
+                        self.dismiss()
+                    } label: {
+                        Text("Yes")
+                    }
+                } message: {
+                    Text("If you made changes, modifications will be cancelled. Do you really want to cancel them?")
                 }
-            }
-        }
-        .navigationTitle("New Tracked Event")
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden()
-        .toolbarBackground(.visible, for: .navigationBar)
-        .toolbarBackground(.ultraThinMaterial, for: .navigationBar)
-        .toolbar {
-            ToolbarItemGroup(placement: .cancellationAction) {
-                Button("Cancel", action: {
-                    isPresented = false
-                })
-            }
-        }
-        .toolbar {
-            ToolbarItemGroup(placement: .confirmationAction) {
-                Button("Save", action: {
+                Spacer()
+                Button("Save") {
                     TrackItem(
-                        type: TrackItem.TrackType.allCases[trackTypeId],
+                        type: TrackType.allCases[trackTypeId],
                         desc: desc,
                         startDate: startDate,
                         endDate: endDate,
                         previousId: previousId
                     ).saveInto(modelContext, endDate)
-                    isPresented = false
-                })
+                    self.dismiss()
+                }
+            }
+            .padding()
+
+            ScrollView(.vertical) {
+                VStack(spacing: 24) {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Label("Typology", systemImage: "square.grid.2x2")
+
+                            Spacer()
+
+                            HStack {
+                                Picker(selection: $trackTypeId, label: Text("Typology")) {
+                                    Text("5 Steps").tag(1)
+                                    Text("Breathing").tag(2)
+                                    Text("Listening").tag(3)
+                                    Text("Feeling").tag(4)
+                                }
+                                .pickerStyle(.menu)
+                                .labelsHidden()
+                                .focusable()
+                                .background {
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .frame(maxWidth: .infinity)
+                                        .background(.regularMaterial)
+                                        .opacity(0.1)
+                                }
+                            }
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                        }
+                    }
+
+                    VStack(alignment: .leading) {
+                        Label("Personal Notes", systemImage: "face.smiling.inverse")
+                        VStack {
+                            VStack(alignment: .leading) {
+                                TextField("I've been feeling blue lately...", text: $desc, axis: .vertical)
+                                    .focused($isTextFieldFocused)
+                                    .submitLabel(.next)
+                                    .lineLimit(10, reservesSpace: true)
+                                    .labelsHidden()
+                                    .padding(12)
+                                    .onSubmit {
+                                        isTextFieldFocused = false
+                                    }
+                            }
+                            .background {
+                                RoundedRectangle(cornerRadius: 16)
+                                    .frame(maxWidth: .infinity)
+                                    .background(.regularMaterial)
+                                    .opacity(0.1)
+                            }
+                            .onTapGesture {
+                                isTextFieldFocused = true
+                            }
+                        }
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                    }
+
+                    if trackTypeId != 4 {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Label("Start Date", systemImage: "calendar")
+                                DatePicker("Starting Date\n", selection: $startDate)
+                                    .labelsHidden()
+                                    .scaledToFill()
+                                    .focusable()
+                            }
+                            Spacer()
+                        }
+
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Label("End Date", systemImage: "calendar")
+                                DatePicker("Ending Date\n", selection: $endDate)
+                                    .labelsHidden()
+                                    .scaledToFill()
+                                    .focusable()
+                            }
+                            Spacer()
+                        }
+                    }
+                }
+                .padding(.horizontal)
             }
         }
+        .inlineTitle("New Tracked Event")
+        .navigationBarBackButtonHidden()
+        .interactiveDismissDisabled()
+        .pasitea()
     }
 }
 
-
 #if DEBUG
-struct TrackItemAddView_Preview: PreviewProvider  {
+struct TrackItemAddView_Preview: PreviewProvider {
     static var previews: some View {
-
         @State var isPresented = true
 
-        TrackItemAddView(isPresented: $isPresented)
+        TrackItemAddView()
             .modelContainer(try! ModelContainer(for: TrackItem.self))
     }
 }
