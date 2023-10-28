@@ -29,7 +29,7 @@ struct TrackFeelingItemRow: View {
     }
 
     var body: some View {
-        HStack {
+        HStack(alignment: .center, spacing: 8) {
             VStack(alignment: .center) {
                 Text(dateInfo.0.description)
                     .font(.largeTitle)
@@ -42,18 +42,18 @@ struct TrackFeelingItemRow: View {
             }
 
             if !trackItem.desc.isEmpty {
-                VStack {
+                VStack(alignment: .leading) {
                     Text(trackItem.desc)
-                        .lineLimit(3)
+                        .dynamicTypeSize(DynamicTypeSize(.small)!)
+                        .lineLimit(4)
                         .frame(maxWidth: 128)
                         .multilineTextAlignment(.leading)
-                    Spacer()
                 }
             }
         }
         .padding()
         .background(.regularMaterial)
-        .cornerRadius(16)
+        .cornerRadius(12)
         .shadow(color: Color.accentColor.opacity(0.05), radius: 16, x: 0, y: 8)
     }
 }

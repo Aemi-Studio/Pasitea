@@ -91,7 +91,7 @@ struct TrackHome: View {
                                         }
                                         .padding()
                                         .background(.regularMaterial)
-                                        .cornerRadius(16)
+                                        .cornerRadius(12)
                                         .shadow(color: Color.accentColor.opacity(0.05), radius: 16, x: 0, y: 8)
                                     }
                                 }

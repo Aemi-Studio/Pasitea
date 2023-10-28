@@ -35,27 +35,10 @@ struct TrackHistoryView: View {
                     }
                 } header: {
                     Text("History")
-                        .font(.largeTitle)
-                        .fontDesign(.serif)
-                        .fontWeight(.bold)
-                        .padding(0)
-                        .padding(.bottom, 16)
-                        .padding(.top, -17)
-                        .padding(.leading, -24)
-                        .textCase(.none)
-                        .foregroundStyle(.foreground)
+                        .sectionToLargeTitle()
                 }
             }
-            .listRowSpacing(8)
-            .listSectionSpacing(0)
-            .listRowBackground( EmptyView() )
-            .scrollContentBackground(.hidden)
-            .padding(0)
-            .toolbar {
-                ToolbarItemGroup(placement: .topBarTrailing) {
-                    EditButton()
-                }
-            }
+            .customListStyle()
             .toolbar {
                 ToolbarItemGroup(placement: .topBarTrailing) {
                     if $editMode.wrappedValue == .active {
