@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct CustomBackButton: View {
-
     @Environment(\.modelContext) var modelContext
 
     @State private var alertPresented = false
 
     var trackItem: TrackItem?
 
-    var dismissAction: DismissAction? = nil
-    var customAction: (() -> Void)? = nil
+    var dismissAction: DismissAction?
+    var customAction: (() -> Void)?
+
     var enforce: Bool = true
     var display: Bool = true
 
@@ -25,41 +25,47 @@ struct CustomBackButton: View {
             Spacer()
             if display {
                 Button(role: .none) {
-                    if (enforce) {
+                    if enforce {
                         alertPresented = true
                     } else {
+                        if trackItem != nil {
+                            TrackItem(trackItem!).saveInto(modelContext)
+                        }
                         dismissAction?()
                     }
                 } label: {
                     Image(systemName: "xmark.circle.fill")
                         .resizable()
-                        .frame(width:22,height:22)
+                        .frame(width: 24, height: 24)
                         .scaledToFit()
-                        .padding([.top,.bottom], 11)
-                        .padding([.leading,.trailing], 18)
+                        .padding([.top, .bottom], 11)
+                        .padding([.leading, .trailing], 18)
                         .foregroundStyle(Color.accentColor)
+                        .accessibilityLabel("Close")
                 }
             } else {
                 EmptyView()
                     .frame(height: 48)
             }
         }
-        .confirmationDialog("Exiting the exercise", isPresented: $alertPresented) {
-            Button("Yes", role: .destructive, action: {
-
-                if trackItem != nil {
-                    print(trackItem!.previousId?.uuidString ?? "")
-                    trackItem!.saveInto(modelContext)
-                }
+        .confirmationDialog(
+            "You're about to exit an ongoing exercise. Are you sure about it?",
+            isPresented: $alertPresented
+        ) {
+            Button(role: .destructive) {
+                // Save the exercise
+                trackItem?.saveInto(modelContext)
 
                 if dismissAction != nil {
                     dismissAction?()
                 } else if customAction != nil {
                     customAction?()
                 }
-            })
+            } label: {
+                Text("Yes")
+            }
         } message: {
-            Text("Are you sure?")
+            Text("You're about to exit an ongoing exercise.\nAre you sure about it?")
         }
         .navigationBarBackButtonHidden()
     }

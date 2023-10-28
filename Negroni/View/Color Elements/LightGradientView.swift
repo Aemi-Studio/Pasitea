@@ -9,15 +9,20 @@ import SwiftUI
 
 struct LightGradientView: View {
     var body: some View {
-        LinearGradient(
-            gradient: Gradient(colors: [
-                .accentColor.opacity(0.1),
-                .accentColor.opacity(0.3)
-            ]),
-            startPoint: .top,
-            endPoint: .bottom
-        )
-            .edgesIgnoringSafeArea(.all)
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    .customBackground.opacity(0.6),
+                    .customBackground.opacity(0.1)
+                ]),
+                startPoint: .bottom,
+                endPoint: .top
+            )
+            .ignoresSafeArea(.all)
+
+            Color.customBackground
+                .ignoresSafeArea(.all)
+        }
     }
 }
 

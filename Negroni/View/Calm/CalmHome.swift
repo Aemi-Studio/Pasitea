@@ -8,56 +8,86 @@
 import SwiftUI
 
 struct CalmHome: View {
-
     @State private var isSteppedExercisePresented = false
     @State private var isBreathingExercisePresented = false
     @State private var isListeningExercisePresented = false
 
     var body: some View {
-
         NavigationStack {
-            
-            ZStack {
+            VStack(spacing: 16) {
+                Button {
+                    isSteppedExercisePresented = true
+                } label: {
+                    Spacer()
+                    Text("5 Steps")
+                        .padding(.vertical, 16)
+                    Spacer()
+                }
+                .font(.title)
+                .fontDesign(.serif)
+                .fontWeight(.bold)
+                .fullScreenCover(isPresented: $isSteppedExercisePresented) {
+                    CalmStepsView()
+                }
+                .transiAction()
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.roundedRectangle(radius: 24))
+                .shadow(color: .white.opacity(0.2), radius: 20, x: 0, y: 5)
+                .frame(maxWidth: .infinity)
 
-                LightGradientView()
-
-                VStack(spacing: 96) {
+                HStack(spacing: 16) {
                     Button {
-                        isSteppedExercisePresented = true
+                        isBreathingExercisePresented = true
                     } label: {
-                        BigButton(title: "Calm Down")
-                    }.navigationDestination(isPresented: $isSteppedExercisePresented) {
-                        CalmStepsView()
+                        Spacer()
+                        Text("Breathe")
+                            .padding(.vertical, 16)
+                        Spacer()
                     }
-
-                    HStack(spacing: 32) {
-
-                        Button {
-                            isBreathingExercisePresented = true
-                        } label: {
-                            Text("Breathe")
-                        }.navigationDestination(isPresented: $isBreathingExercisePresented) {
-                            CalmBreatheView()
-                        }
-                        .buttonStyle(.borderedProminent)
-
-
-                        Button {
-                            isListeningExercisePresented = true
-                        } label: {
-                            Text("Listen")
-                        }.navigationDestination(isPresented: $isListeningExercisePresented) {
-                            CalmListenView()
-                        }
-                        .buttonStyle(.borderedProminent)
-
+                    .font(.title)
+                    .fontDesign(.serif)
+                    .fontWeight(.bold)
+                    .fullScreenCover(isPresented: $isBreathingExercisePresented) {
+                        CalmBreatheView()
                     }
+                    .transiAction()
+                    .buttonStyle(.bordered)
+                    .buttonBorderShape(.roundedRectangle(radius: 24))
+                    .frame(maxWidth: .infinity)
+
+                    Button {
+                        isListeningExercisePresented = true
+                    } label: {
+                        Spacer()
+                        Text("Listen")
+                            .padding(.vertical, 16)
+                        Spacer()
+                    }
+                    .font(.title)
+                    .fontDesign(.serif)
+                    .fontWeight(.bold)
+                    .fullScreenCover(isPresented: $isListeningExercisePresented) {
+                        CalmListenView()
+                    }
+                    .transiAction()
+                    .buttonStyle(.bordered)
+                    .buttonBorderShape(.roundedRectangle(radius: 24))
+                    .frame(maxWidth: .infinity)
+                }
+
+                VStack(alignment: .center) {
+                    Text("You can click on one of these buttons to start a calming exercise.")
+                        .font(.headline)
+                        .fontWeight(.medium)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.secondary)
                 }
                 .padding()
             }
-            .toolbarBackground(.visible, for: .tabBar)
-            .toolbarBackground(.ultraThinMaterial, for: .tabBar)
+            .padding()
+            .pasitea()
         }
+        .ignoresSafeArea(.all)
     }
 }
 

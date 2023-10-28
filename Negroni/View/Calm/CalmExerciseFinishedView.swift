@@ -8,72 +8,61 @@
 import SwiftUI
 
 struct CalmExerciseFinishedView: View {
-
     @Environment(\.dismiss) var dismissAction
     @Environment(\.modelContext) var modelContext
 
     @State private var isPresented = false
 
-    var sourceTrackItem: TrackItem
-    var trackItem: TrackItem {
-        sourceTrackItem.endsNow()
-    }
+    var trackItem: TrackItem
 
     var dismiss: DismissAction?
 
     var body: some View {
-        ZStack {
-
-            LightGradientView()
-
-            VStack {
-                Spacer()
-                VStack(spacing: 20) {
-                    Text("Exercise Finished")
-                        .font(.title)
-                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    Text("Do you still need help ?")
-                        .font(.headline)
-                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                }
-                Spacer()
-                HStack(spacing:20) {
-                    Button(
-                        "Yes",
-                        systemImage: "questionmark.circle.fill",
-                        action: {
-                            trackItem.saveInto(modelContext)
-                            isPresented = true
-                        }
-                    )
-                    .buttonStyle(.borderedProminent)
-                    .navigationDestination(isPresented: $isPresented) {
-                        MultipleChoicesView( trackItem: trackItem )
-                    }
-
-                    Button(
-                        "I'm fine.",
-                        systemImage: "checkmark.circle.fill",
-                        action: {
-                            trackItem.saveInto(modelContext)
-                            dismissAction()
-                            dismiss?()
-                        }
-                    )
-                    .buttonStyle(.borderedProminent)
-                }
-                Spacer()
+        VStack {
+            Spacer()
+            VStack(spacing: 20) {
+                Text("Exercise Finished")
+                    .font(.title)
+                    .fontDesign(.serif)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                Text("Do you still need help ?")
+                    .font(.headline)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
             }
+            Spacer()
+            VStack(spacing: 20) {
+                Button( "I need more help", systemImage: "hand.raised.circle.fill") {
+                    trackItem.saveInto(modelContext)
+                    isPresented = true
+                }
+                .font(.title3)
+                .fontWeight(.medium)
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.roundedRectangle(radius: 12))
+                .fullScreenCover(isPresented: $isPresented) {
+                    MultipleChoicesView( trackItem: trackItem )
+                }
+                .transiAction()
+
+                Button( "I'm fine", systemImage: "hand.thumbsup.circle.fill" ) {
+                    trackItem.saveInto(modelContext)
+                    dismissAction()
+                    dismiss?()
+                }
+                .font(.title3)
+                .fontWeight(.medium)
+                .buttonStyle(.bordered)
+                .buttonBorderShape(.roundedRectangle(radius: 12))
+            }
+            Spacer()
         }
-        .toolbar(.hidden, for: .tabBar)
-        .toolbarBackground(.hidden, for: .tabBar)
         .navigationBarBackButtonHidden()
+        .pasitea()
     }
 }
 
-
 #if DEBUG
 #Preview {
-    CalmExerciseFinishedView( sourceTrackItem: TrackItem() )
+    CalmExerciseFinishedView( trackItem: TrackItem() )
 }
 #endif

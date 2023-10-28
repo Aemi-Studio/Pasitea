@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MultipleChoicesView: View {
-
     @State private var isBreathingExercisePresented = false
     @State private var isListeningExercisePresented = false
     @State private var isTrackingPresented = false
@@ -19,63 +18,56 @@ struct MultipleChoicesView: View {
 
     var body: some View {
         ZStack {
-
             LightGradientView()
 
             VStack(spacing: 64) {
-
                 Text("Choose Next Action")
                     .font(.title)
+                    .fontDesign(.serif)
                     .bold()
+                    .padding(.top)
 
                 VStack(spacing: 16) {
-
                     MultipleChoicesItemView(
                         title: "Breathe",
-                        subtitle: "Lorem ipsum dolor sit amet",
+                        subtitle: "Calm down with breathing exercises",
                         isViewPresented: $isBreathingExercisePresented
-                    ).navigationDestination(isPresented: $isBreathingExercisePresented) {
+                    ).fullScreenCover(isPresented: $isBreathingExercisePresented) {
                         CalmBreatheView(
                             trackItem: TrackItem(type: .breathing, previousId: trackItem.id)
                         )
                     }
 
-
                     MultipleChoicesItemView(
                         title: "Listen",
-                        subtitle: "Lorem ipsum dolor sit amet",
+                        subtitle: "Focus on calming sounds",
                         isViewPresented: $isListeningExercisePresented
                     )
-                    .navigationDestination(isPresented: $isListeningExercisePresented) {
+                    .fullScreenCover(isPresented: $isListeningExercisePresented) {
                         CalmListenView(
                             trackItem: TrackItem(type: .listening, previousId: trackItem.id)
                         )
                     }
 
-
                     MultipleChoicesItemView(
                         title: "Keep Track",
-                        subtitle: "Lorem ipsum dolor sit amet",
+                        subtitle: "Save your thoughts for later",
                         isViewPresented: $isTrackingPresented
                     )
-                    .navigationDestination(isPresented: $isTrackingPresented) {
-                        TrackItemAddView(
-                            isPresented: $isTrackingPresented,
-                            previousId: trackItem.id
-                        )
-                    }
+                    .sheet(isPresented: $isTrackingPresented, content: {
+                        TrackItemAddView( previousId: trackItem.id )
+                    })
 
                     Spacer()
-
                 }
 
                 Spacer()
             }
-            .padding(.top,48)
+            .padding(.top, 48)
             .padding()
 
             VStack {
-                CustomBackButton(dismissAction: dismiss)
+                CustomBackButton(dismissAction: dismiss, enforce: false)
                 Spacer()
             }
         }

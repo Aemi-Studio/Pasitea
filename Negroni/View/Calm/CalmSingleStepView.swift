@@ -8,48 +8,48 @@
 import SwiftUI
 
 struct CalmSingleStepView: View {
-
     @Environment(ModelData.self) var modelData
 
-    let step: CalmStep
-    let getNextScreen: (() -> Void)?
+    @Binding var step: Int
+    var getNextScreen: (() -> Void)?
+    var calmStep: CalmStep {
+        if step < modelData.calmSteps.count {
+            return modelData.calmSteps[step]
+        } else {
+            return modelData.calmSteps[modelData.calmSteps.count - 1]
+        }
+    }
 
     var body: some View {
         VStack {
             Spacer()
             VStack(spacing: 16) {
-                Text(step.headline)
+                Text(calmStep.headline)
                     .font(.title)
-                    .bold()
-                Text(step.subheadline)
-                    .font(.title2)
+                    .fontDesign(.serif)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                Text(calmStep.subheadline)
+                    .font(.headline)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
             }
             Spacer()
             (
-                step.id != 4
-                ? Button("Next",action: getNextScreen!)
-                : Button("Finish",action: getNextScreen!)
+                calmStep.id != 4
+                    ? Button("Next", systemImage: "arrow.right.circle.fill", action: getNextScreen!)
+                    : Button("Finish", systemImage: "checkmark.circle.fill", action: getNextScreen!)
             )
-                .padding([.top, .bottom], 10)
-                .padding([.leading, .trailing], 20)
-                .background(Color.blue)
-                .foregroundColor(Color.white)
-                .cornerRadius(10)
+            .padding(.all, 12)
+            .font(.title3)
+            .fontWeight(.medium)
+            .buttonStyle(.borderedProminent)
+            .buttonBorderShape(.roundedRectangle(radius: 12))
             Spacer()
         }
         .background {
-            Image(step.image)
+            Image(calmStep.image)
                 .resizable()
-                .scaledToFit()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
         }
-        .toolbar(.hidden, for: .tabBar)
-        .toolbarBackground(.hidden, for: .tabBar)
     }
 }
-
-#if DEBUG
-#Preview {
-    CalmSingleStepView(step:ModelData().calmSteps[0], getNextScreen: {})
-        .environment(ModelData())
-}
-#endif
