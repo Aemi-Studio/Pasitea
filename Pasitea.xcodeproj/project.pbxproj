@@ -18,7 +18,6 @@
 		4699DCA52ADE6432008B17F9 /* TrackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCA42ADE6432008B17F9 /* TrackItem.swift */; };
 		4699DCC12ADE8DF5008B17F9 /* CalmBreatheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC02ADE8DF5008B17F9 /* CalmBreatheView.swift */; };
 		4699DCC32ADE8E00008B17F9 /* CalmListenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC22ADE8E00008B17F9 /* CalmListenView.swift */; };
-		4699DCC52ADE92B1008B17F9 /* calmData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4699DCC42ADE92B1008B17F9 /* calmData.json */; };
 		4699DCC72ADE9449008B17F9 /* CalmStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC62ADE9449008B17F9 /* CalmStep.swift */; };
 		4699DCCB2ADEDB72008B17F9 /* CalmExerciseFinishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCCA2ADEDB72008B17F9 /* CalmExerciseFinishedView.swift */; };
 		4699DCCD2ADF04F9008B17F9 /* MultipleChoicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCCC2ADF04F9008B17F9 /* MultipleChoicesView.swift */; };
@@ -40,7 +39,6 @@
 		46A8D8582AEBDEAD0065C54E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D8572AEBDEAD0065C54E /* Helper.swift */; };
 		46A8D85D2AEC051B0065C54E /* UltraThinInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D85C2AEC051B0065C54E /* UltraThinInterface.swift */; };
 		46A8D8682AEC51A70065C54E /* LargeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D8672AEC51A70065C54E /* LargeTitle.swift */; };
-		46C27F1C2ADDF90500038380 /* learnData.json in Resources */ = {isa = PBXBuildFile; fileRef = 46C27F1B2ADDF90500038380 /* learnData.json */; };
 		46C27F1F2ADDF93300038380 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F1E2ADDF93300038380 /* ModelData.swift */; };
 		46C27F212ADDF96800038380 /* Learn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F202ADDF96800038380 /* Learn.swift */; };
 		46C27F2F2ADDFA5300038380 /* CalmHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F2E2ADDFA5300038380 /* CalmHome.swift */; };
@@ -65,7 +63,6 @@
 		4699DCA42ADE6432008B17F9 /* TrackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItem.swift; sourceTree = "<group>"; };
 		4699DCC02ADE8DF5008B17F9 /* CalmBreatheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmBreatheView.swift; sourceTree = "<group>"; };
 		4699DCC22ADE8E00008B17F9 /* CalmListenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmListenView.swift; sourceTree = "<group>"; };
-		4699DCC42ADE92B1008B17F9 /* calmData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = calmData.json; sourceTree = "<group>"; };
 		4699DCC62ADE9449008B17F9 /* CalmStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmStep.swift; sourceTree = "<group>"; };
 		4699DCCA2ADEDB72008B17F9 /* CalmExerciseFinishedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmExerciseFinishedView.swift; sourceTree = "<group>"; };
 		4699DCCC2ADF04F9008B17F9 /* MultipleChoicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoicesView.swift; sourceTree = "<group>"; };
@@ -87,7 +84,6 @@
 		46A8D8572AEBDEAD0065C54E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		46A8D85C2AEC051B0065C54E /* UltraThinInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltraThinInterface.swift; sourceTree = "<group>"; };
 		46A8D8672AEC51A70065C54E /* LargeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTitle.swift; sourceTree = "<group>"; };
-		46C27F1B2ADDF90500038380 /* learnData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = learnData.json; sourceTree = "<group>"; };
 		46C27F1E2ADDF93300038380 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		46C27F202ADDF96800038380 /* Learn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn.swift; sourceTree = "<group>"; };
 		46C27F2E2ADDFA5300038380 /* CalmHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmHome.swift; sourceTree = "<group>"; };
@@ -182,9 +178,7 @@
 		46C27F1A2ADDF8EF00038380 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1D75D7992AEA69F40014F488 /* water.mp3 */,
-				46C27F1B2ADDF90500038380 /* learnData.json */,
-				4699DCC42ADE92B1008B17F9 /* calmData.json */,
+				46ECD0D82AED6E3A007057D5 /* Sounds */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -282,6 +276,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		46ECD0D82AED6E3A007057D5 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				1D75D7992AEA69F40014F488 /* water.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		46FE3EED2AE321E90049A56B /* Color Elements */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,7 +329,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 46E4BAC62ADDA9DF004BFA9F /* Build configuration list for PBXProject "Negroni" */;
+			buildConfigurationList = 46E4BAC62ADDA9DF004BFA9F /* Build configuration list for PBXProject "Pasitea" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -350,9 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4699DCC52ADE92B1008B17F9 /* calmData.json in Resources */,
 				1D75D79A2AEA69F40014F488 /* water.mp3 in Resources */,
-				46C27F1C2ADDF90500038380 /* learnData.json in Resources */,
 				46E4BAD62ADDA9E0004BFA9F /* Preview Assets.xcassets in Resources */,
 				46E4BAD32ADDA9E0004BFA9F /* Assets.xcassets in Resources */,
 			);
@@ -557,7 +557,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Negroni/Preview Content\"";
-				DEVELOPMENT_TEAM = 3JFY6MM7AN;
+				DEVELOPMENT_TEAM = NP94WB3P75;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Negroni/Info.plist;
@@ -574,7 +574,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ada.global.Pasitea;
+				PRODUCT_BUNDLE_IDENTIFIER = studio.aemi.Pasitea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -590,7 +590,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Negroni/Preview Content\"";
-				DEVELOPMENT_TEAM = 3JFY6MM7AN;
+				DEVELOPMENT_TEAM = NP94WB3P75;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Negroni/Info.plist;
@@ -607,7 +607,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ada.global.Pasitea;
+				PRODUCT_BUNDLE_IDENTIFIER = studio.aemi.Pasitea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -618,7 +618,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		46E4BAC62ADDA9DF004BFA9F /* Build configuration list for PBXProject "Negroni" */ = {
+		46E4BAC62ADDA9DF004BFA9F /* Build configuration list for PBXProject "Pasitea" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46E4BAD72ADDA9E0004BFA9F /* Debug */,

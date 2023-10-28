@@ -26,17 +26,21 @@ struct TrackHome: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(spacing: 16) {
-                    HStack {
-                        Text("Track")
-                            .font(.largeTitle)
-                            .fontDesign(.serif)
-                            .fontWeight(.bold)
-                            .bold()
-                        Spacer()
-                    }
-                    Divider()
-                    VStack(alignment: .leading, spacing: 16) {
+                HStack {
+                    Text("Track")
+                        .font(.largeTitle)
+                        .fontDesign(.serif)
+                        .fontWeight(.bold)
+                        .bold()
+                    Spacer()
+                }
+                .padding(.horizontal)
+
+                Divider()
+                    .padding(.bottom)
+
+                VStack(alignment: .leading, spacing: 16) {
+                    VStack(spacing: 16) {
                         HStack {
                             NavigationLink {
                                 TrackJournalView(items: feelingItems)
@@ -50,61 +54,66 @@ struct TrackHome: View {
                             .font(.title2)
                             .bold()
                         }
-                        ScrollView(.horizontal) {
-                            HStack(spacing: 16) {
-                                ForEach(feelingItems) { item in
-                                    NavigationLink {
-                                        TrackItemView(trackItem: item)
-                                    } label: {
-                                        TrackFeelingItemRow(trackItem: item)
+                    }
+                    .padding(.horizontal)
+                    ScrollView(.horizontal) {
+                        HStack(spacing: 16) {
+                            ForEach(feelingItems) { item in
+                                NavigationLink {
+                                    TrackItemView(trackItem: item)
+                                } label: {
+                                    TrackFeelingItemRow(trackItem: item)
+                                }
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    .scrollClipDisabled()
+                }
+
+                Divider()
+                    .padding(.vertical)
+
+                VStack(alignment: .leading, spacing: 16) {
+                    HStack {
+                        NavigationLink {
+                            TrackHistoryView(items: notFeelingItems)
+                        } label: {
+                            Text("History")
+                                .fontDesign(.serif)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .fontWeight(.medium)
+                        }
+                        .font(.title2)
+                        .bold()
+                    }
+                    VStack(alignment: .leading, spacing: 32) {
+                        ScrollView {
+                            ForEach(notFeelingItems) { item in
+                                NavigationLink {
+                                    TrackItemView(trackItem: item)
+                                } label: {
+                                    HStack {
+                                        TrackItemRow(trackItem: item)
+                                        Spacer()
+                                        Image(systemName: "chevron.right")
                                     }
+                                    .padding()
+                                    .background(.regularMaterial)
+                                    .cornerRadius(12)
+                                    .shadow(color: Color.accentColor.opacity(0.05), radius: 16, x: 0, y: 8)
                                 }
                             }
                         }
                         .scrollClipDisabled()
                     }
-                    Divider()
-                    VStack(alignment: .leading, spacing: 16) {
-                        HStack {
-                            NavigationLink {
-                                TrackHistoryView(items: notFeelingItems)
-                            } label: {
-                                Text("History")
-                                    .fontDesign(.serif)
-                                Spacer()
-                                Image(systemName: "chevron.right")
-                                    .fontWeight(.medium)
-                            }
-                            .font(.title2)
-                            .bold()
-                        }
-                        VStack(alignment: .leading, spacing: 32) {
-                            ScrollView {
-                                ForEach(notFeelingItems) { item in
-                                    NavigationLink {
-                                        TrackItemView(trackItem: item)
-                                    } label: {
-                                        HStack {
-                                            TrackItemRow(trackItem: item)
-                                            Spacer()
-                                            Image(systemName: "chevron.right")
-                                        }
-                                        .padding()
-                                        .background(.regularMaterial)
-                                        .cornerRadius(12)
-                                        .shadow(color: Color.accentColor.opacity(0.05), radius: 16, x: 0, y: 8)
-                                    }
-                                }
-                            }
-                            .scrollClipDisabled()
-                        }
-                    }
                 }
-                .sheet(isPresented: $addViewIsPresented) {
-                    TrackItemAddView()
-                }
+                .padding([.bottom, .horizontal])
             }
-            .padding(.horizontal)
+            .sheet(isPresented: $addViewIsPresented) {
+                TrackItemAddView()
+            }
             .toolbar {
                 ToolbarItemGroup(placement: .primaryAction) {
                     Button("Add", systemImage: "plus") {
