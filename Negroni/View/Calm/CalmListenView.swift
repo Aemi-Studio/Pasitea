@@ -14,8 +14,9 @@ struct CalmListenView: View {
     @State private var audioPlayer: AVAudioPlayer!
     @State private var moveBars = false
     @State private var transparency = 0.0
+    @State private var alreadyPlayed = false
 
-    var trackItem: TrackItem = TrackItem()
+    var trackItem: TrackItem = TrackItem(type: .listening)
 
     var animation: Animation {
         moveBars ? .timingCurve(0.3, 0, 0.8, 1, duration: 0.5).repeatForever() : .timingCurve(0.3, 0, 0.8, 1, duration: 0.5)
@@ -56,7 +57,7 @@ struct CalmListenView: View {
                             .frame(width: 80, height: 80)
                             .onDisappear {
                                 moveBars = false
-                                self.audioPlayer.pause()
+                                self.audioPlayer.stop()
                             }
                         }
                         .padding(.all, 32)
@@ -73,9 +74,12 @@ struct CalmListenView: View {
 
                 HStack {
                     Button(
-                        moveBars ? "Pause" : "Start",
-                        systemImage: moveBars ? "pause" : "play"
+                        moveBars ? "Pause" : alreadyPlayed ? "Resume" : "Start",
+                        systemImage: moveBars ? "pause" : alreadyPlayed ? "arrow.clockwise" : "play"
                     ) {
+                        if !alreadyPlayed {
+                            alreadyPlayed = true
+                        }
                         if moveBars {
                             self.audioPlayer.pause()
                         } else {

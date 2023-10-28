@@ -31,7 +31,7 @@ struct CalmHome: View {
                 }
                 .transiAction()
                 .buttonStyle(.borderedProminent)
-                .buttonBorderShape(.roundedRectangle(radius: 24))
+                .buttonBorderShape(.roundedRectangle(radius: 20))
                 .shadow(color: .white.opacity(0.2), radius: 20, x: 0, y: 5)
                 .frame(maxWidth: .infinity)
 
@@ -52,7 +52,7 @@ struct CalmHome: View {
                     }
                     .transiAction()
                     .buttonStyle(.bordered)
-                    .buttonBorderShape(.roundedRectangle(radius: 24))
+                    .buttonBorderShape(.roundedRectangle(radius: 20))
                     .frame(maxWidth: .infinity)
 
                     Button {
@@ -71,7 +71,7 @@ struct CalmHome: View {
                     }
                     .transiAction()
                     .buttonStyle(.bordered)
-                    .buttonBorderShape(.roundedRectangle(radius: 24))
+                    .buttonBorderShape(.roundedRectangle(radius: 20))
                     .frame(maxWidth: .infinity)
                 }
 
