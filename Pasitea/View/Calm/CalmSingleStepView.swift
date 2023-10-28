@@ -15,9 +15,8 @@ struct CalmSingleStepView: View {
     var calmStep: CalmStep {
         if step < modelData.calmSteps.count {
             return modelData.calmSteps[step]
-        } else {
-            return modelData.calmSteps[modelData.calmSteps.count - 1]
         }
+        return modelData.calmSteps[modelData.calmSteps.count - 1]
     }
 
     var body: some View {

@@ -9,10 +9,10 @@ import Foundation
 
 public final class Helper {
     public static var dateFormatter: DateComponentsFormatter {
-        let dateFormatter = DateComponentsFormatter()
-        dateFormatter.allowedUnits = [.day, .hour, .minute]
-        dateFormatter.unitsStyle = .brief
-        return dateFormatter
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.day, .hour, .minute]
+        formatter.unitsStyle = .brief
+        return formatter
     }
 }
 
@@ -20,18 +20,16 @@ public final class Helper {
 public func maybeEvery(_ count: Int, _ condition: Bool = false) -> String {
     if count == 0 || condition {
         return "every"
-    } else {
-        return count.description
     }
+    return count.description
 }
 
 // MARK: This is another shit.
 public func plural(_ count: Int) -> String {
     if count == 0 || count > 1 {
         return "s"
-    } else {
-        return ""
     }
+    return ""
 }
 
 // MARK: This is yet again another shit.
