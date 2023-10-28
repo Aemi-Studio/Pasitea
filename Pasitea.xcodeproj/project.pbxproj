@@ -87,7 +87,7 @@
 		46C27F1E2ADDF93300038380 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		46C27F202ADDF96800038380 /* Learn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn.swift; sourceTree = "<group>"; };
 		46C27F2E2ADDFA5300038380 /* CalmHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmHome.swift; sourceTree = "<group>"; };
-		46E4BACB2ADDA9DF004BFA9F /* Negroni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Negroni.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46E4BACB2ADDA9DF004BFA9F /* Pasitea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pasitea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E4BACE2ADDA9DF004BFA9F /* NegroniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NegroniApp.swift; sourceTree = "<group>"; };
 		46E4BAD02ADDA9DF004BFA9F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		46E4BAD22ADDA9E0004BFA9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 		46E4BAC22ADDA9DF004BFA9F = {
 			isa = PBXGroup;
 			children = (
-				46E4BACD2ADDA9DF004BFA9F /* Negroni */,
+				46E4BACD2ADDA9DF004BFA9F /* Pasitea */,
 				46E4BACC2ADDA9DF004BFA9F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -249,12 +249,12 @@
 		46E4BACC2ADDA9DF004BFA9F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				46E4BACB2ADDA9DF004BFA9F /* Negroni.app */,
+				46E4BACB2ADDA9DF004BFA9F /* Pasitea.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		46E4BACD2ADDA9DF004BFA9F /* Negroni */ = {
+		46E4BACD2ADDA9DF004BFA9F /* Pasitea */ = {
 			isa = PBXGroup;
 			children = (
 				46E4BACE2ADDA9DF004BFA9F /* NegroniApp.swift */,
@@ -265,7 +265,7 @@
 				46E4BAD22ADDA9E0004BFA9F /* Assets.xcassets */,
 				46E4BAD42ADDA9E0004BFA9F /* Preview Content */,
 			);
-			path = Negroni;
+			path = Pasitea;
 			sourceTree = "<group>";
 		};
 		46E4BAD42ADDA9E0004BFA9F /* Preview Content */ = {
@@ -296,9 +296,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		46E4BACA2ADDA9DF004BFA9F /* Negroni */ = {
+		46E4BACA2ADDA9DF004BFA9F /* Pasitea */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46E4BAD92ADDA9E0004BFA9F /* Build configuration list for PBXNativeTarget "Negroni" */;
+			buildConfigurationList = 46E4BAD92ADDA9E0004BFA9F /* Build configuration list for PBXNativeTarget "Pasitea" */;
 			buildPhases = (
 				46E4BAC72ADDA9DF004BFA9F /* Sources */,
 				46E4BAC82ADDA9DF004BFA9F /* Frameworks */,
@@ -309,9 +309,9 @@
 			);
 			dependencies = (
 			);
-			name = Negroni;
+			name = Pasitea;
 			productName = Negroni;
-			productReference = 46E4BACB2ADDA9DF004BFA9F /* Negroni.app */;
+			productReference = 46E4BACB2ADDA9DF004BFA9F /* Pasitea.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -342,7 +342,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				46E4BACA2ADDA9DF004BFA9F /* Negroni */,
+				46E4BACA2ADDA9DF004BFA9F /* Pasitea */,
 			);
 		};
 /* End PBXProject section */
@@ -556,11 +556,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Negroni/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Pasitea/Preview Content\"";
 				DEVELOPMENT_TEAM = NP94WB3P75;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Negroni/Info.plist;
+				INFOPLIST_FILE = Pasitea/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Pasitea;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -589,11 +589,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Negroni/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Pasitea/Preview Content\"";
 				DEVELOPMENT_TEAM = NP94WB3P75;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Negroni/Info.plist;
+				INFOPLIST_FILE = Pasitea/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Pasitea;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -627,7 +627,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46E4BAD92ADDA9E0004BFA9F /* Build configuration list for PBXNativeTarget "Negroni" */ = {
+		46E4BAD92ADDA9E0004BFA9F /* Build configuration list for PBXNativeTarget "Pasitea" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46E4BADA2ADDA9E0004BFA9F /* Debug */,
