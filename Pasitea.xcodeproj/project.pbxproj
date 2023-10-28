@@ -11,6 +11,7 @@
 		1D75D79A2AEA69F40014F488 /* water.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1D75D7992AEA69F40014F488 /* water.mp3 */; };
 		4600682E2AE2663200BA571E /* MultipleChoicesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4600682D2AE2663200BA571E /* MultipleChoicesItemView.swift */; };
 		4609E7572ADFD33000CAD374 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */; };
+		460E8A4C2AEDBFA4003DC9AC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 460E8A4B2AEDBFA4003DC9AC /* Localizable.xcstrings */; };
 		465F174F2AEC5908002FC335 /* OverGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465F174E2AEC5908002FC335 /* OverGradient.swift */; };
 		465F17512AEC5A5C002FC335 /* PasiteaStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465F17502AEC5A5C002FC335 /* PasiteaStyle.swift */; };
 		465F17532AEC5B31002FC335 /* InlineTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465F17522AEC5B31002FC335 /* InlineTitle.swift */; };
@@ -42,7 +43,7 @@
 		46C27F1F2ADDF93300038380 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F1E2ADDF93300038380 /* ModelData.swift */; };
 		46C27F212ADDF96800038380 /* Learn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F202ADDF96800038380 /* Learn.swift */; };
 		46C27F2F2ADDFA5300038380 /* CalmHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F2E2ADDFA5300038380 /* CalmHome.swift */; };
-		46E4BACF2ADDA9DF004BFA9F /* NegroniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4BACE2ADDA9DF004BFA9F /* NegroniApp.swift */; };
+		46E4BACF2ADDA9DF004BFA9F /* PasiteaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4BACE2ADDA9DF004BFA9F /* PasiteaApp.swift */; };
 		46E4BAD12ADDA9DF004BFA9F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4BAD02ADDA9DF004BFA9F /* MainView.swift */; };
 		46E4BAD32ADDA9E0004BFA9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E4BAD22ADDA9E0004BFA9F /* Assets.xcassets */; };
 		46E4BAD62ADDA9E0004BFA9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E4BAD52ADDA9E0004BFA9F /* Preview Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		1D75D7992AEA69F40014F488 /* water.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = water.mp3; sourceTree = "<group>"; };
 		4600682D2AE2663200BA571E /* MultipleChoicesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoicesItemView.swift; sourceTree = "<group>"; };
 		4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
+		460E8A4B2AEDBFA4003DC9AC /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		465F174E2AEC5908002FC335 /* OverGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverGradient.swift; sourceTree = "<group>"; };
 		465F17502AEC5A5C002FC335 /* PasiteaStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasiteaStyle.swift; sourceTree = "<group>"; };
 		465F17522AEC5B31002FC335 /* InlineTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineTitle.swift; sourceTree = "<group>"; };
@@ -88,7 +90,7 @@
 		46C27F202ADDF96800038380 /* Learn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn.swift; sourceTree = "<group>"; };
 		46C27F2E2ADDFA5300038380 /* CalmHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmHome.swift; sourceTree = "<group>"; };
 		46E4BACB2ADDA9DF004BFA9F /* Pasitea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pasitea.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		46E4BACE2ADDA9DF004BFA9F /* NegroniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NegroniApp.swift; sourceTree = "<group>"; };
+		46E4BACE2ADDA9DF004BFA9F /* PasiteaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasiteaApp.swift; sourceTree = "<group>"; };
 		46E4BAD02ADDA9DF004BFA9F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		46E4BAD22ADDA9E0004BFA9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46E4BAD52ADDA9E0004BFA9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		46C27F1A2ADDF8EF00038380 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				460E8A4B2AEDBFA4003DC9AC /* Localizable.xcstrings */,
 				46ECD0D82AED6E3A007057D5 /* Sounds */,
 			);
 			path = Resources;
@@ -257,7 +260,7 @@
 		46E4BACD2ADDA9DF004BFA9F /* Pasitea */ = {
 			isa = PBXGroup;
 			children = (
-				46E4BACE2ADDA9DF004BFA9F /* NegroniApp.swift */,
+				46E4BACE2ADDA9DF004BFA9F /* PasiteaApp.swift */,
 				46C27F222ADDF9BF00038380 /* View */,
 				46C27F1D2ADDF92600038380 /* Model */,
 				46A8D8562AEBDE9B0065C54E /* Helper */,
@@ -336,6 +339,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 46E4BAC22ADDA9DF004BFA9F;
 			productRefGroup = 46E4BACC2ADDA9DF004BFA9F /* Products */;
@@ -353,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D75D79A2AEA69F40014F488 /* water.mp3 in Resources */,
+				460E8A4C2AEDBFA4003DC9AC /* Localizable.xcstrings in Resources */,
 				46E4BAD62ADDA9E0004BFA9F /* Preview Assets.xcassets in Resources */,
 				46E4BAD32ADDA9E0004BFA9F /* Assets.xcassets in Resources */,
 			);
@@ -416,7 +421,7 @@
 				46A8D8462AEBACFC0065C54E /* TrackItemView.swift in Sources */,
 				46E4BAD12ADDA9DF004BFA9F /* MainView.swift in Sources */,
 				46A8D8372AEBAC6D0065C54E /* CalmSingleStepView.swift in Sources */,
-				46E4BACF2ADDA9DF004BFA9F /* NegroniApp.swift in Sources */,
+				46E4BACF2ADDA9DF004BFA9F /* PasiteaApp.swift in Sources */,
 				46A8D8682AEC51A70065C54E /* LargeTitle.swift in Sources */,
 				46A8D8552AEBB2C10065C54E /* ColorGradient.swift in Sources */,
 				46C27F1F2ADDF93300038380 /* ModelData.swift in Sources */,
@@ -573,8 +578,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = studio.aemi.Pasitea;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = studio.aemi.ada23.Pasitea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -606,8 +611,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = studio.aemi.Pasitea;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = studio.aemi.ada23.Pasitea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

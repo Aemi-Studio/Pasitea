@@ -9,6 +9,12 @@
             "value" : " Delete %1$@ exercise%2$@"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer %1$@ exercice%2$@"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -25,6 +31,12 @@
             "value" : " Delete %1$@ feeling%2$@"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer %1$@ ressenti%2$@"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -35,6 +47,12 @@
     },
     "5 Steps" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 Étapes"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -45,6 +63,12 @@
     },
     "Add" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -55,6 +79,12 @@
     },
     "Breathe" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Respirer"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -65,6 +95,12 @@
     },
     "Breathe In" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inspirez"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -75,6 +111,12 @@
     },
     "Breathe Out" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expirez"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -85,6 +127,12 @@
     },
     "Breathing" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Respiration"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -105,6 +153,12 @@
     },
     "Cancel" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -125,6 +179,12 @@
     },
     "Close" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fermer"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -135,6 +195,12 @@
     },
     "Date" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -145,6 +211,12 @@
     },
     "Delete" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -221,6 +293,12 @@
     },
     "Do you still need help ?" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avez-vous encore besoin d'aide ?"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -231,6 +309,12 @@
     },
     "Edit" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Éditer"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -241,6 +325,12 @@
     },
     "End Date" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date de fin"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -251,6 +341,12 @@
     },
     "Ending Date" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date de fin"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -261,6 +357,12 @@
     },
     "Ending Date\n" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date de fin"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -271,6 +373,12 @@
     },
     "Exercise Finished" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exercice Fini"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -281,6 +389,12 @@
     },
     "Feeling" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ressenti"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -291,6 +405,12 @@
     },
     "Finish" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finir"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -301,6 +421,12 @@
     },
     "Hello" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bonjour"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -311,6 +437,12 @@
     },
     "History" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Historique"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -321,6 +453,12 @@
     },
     "I need more help" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "J'ai encore besoin d'aide"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -331,6 +469,12 @@
     },
     "I'm fine" : {
       "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je vais bien"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",

@@ -19,7 +19,9 @@ struct CalmListenView: View {
     var trackItem: TrackItem = TrackItem(type: .listening)
 
     var animation: Animation {
-        moveBars ? .timingCurve(0.3, 0, 0.8, 1, duration: 0.5).repeatForever() : .timingCurve(0.3, 0, 0.8, 1, duration: 0.5)
+        moveBars
+            ? .timingCurve(0.3, 0, 0.8, 1, duration: 0.5).repeatForever()
+            : .timingCurve(0.3, 0, 0.8, 1, duration: 0.5)
     }
 
     private func bar(low: CGFloat = -1.0, high: CGFloat = 1.0) -> some View {

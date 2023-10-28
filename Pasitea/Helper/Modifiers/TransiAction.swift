@@ -10,10 +10,10 @@ import SwiftUI
 struct TransiAction: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .transaction({ transaction in
+            .transaction { transaction in
                 transaction.disablesAnimations = true
                 transaction.animation = .smooth(duration: 0.5)
-            })
+            }
     }
 }
 
