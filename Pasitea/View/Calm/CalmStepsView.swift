@@ -58,7 +58,7 @@ struct CalmStepsView: View {
                     dismissAction: dismiss,
                     customDismiss: customDismiss,
                     enforce: false,
-                    display: !lastStep ? .both : .none
+                    display: !lastStep ? .both : .info
                 ) {
                     Text("Something")
                 }

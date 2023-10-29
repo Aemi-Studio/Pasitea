@@ -12,43 +12,52 @@ class ModelData {
     let calmSteps: [CalmStep] = [
         CalmStep(
             title: "Look",
-            headline: "Look around you",
-            subheadline: "Focus on 5 different objects",
+            headline: "Explore Your Surroundings",
+            subheadline: "Focus on 5 Different Objects",
             items: 5,
-            image: "calm_step_1.png",
+            image: "eye.fill",
             id: 0
         ),
         CalmStep(
             title: "Listen",
-            headline: "Listen to 4 different sounds",
-            subheadline: "",
+            headline: "Tune into Your Environment",
+            subheadline: "Listen to 4 Different Sounds",
             items: 4,
-            image: "calm_step_2.png",
+            image: "ear.fill",
             id: 1
         ),
         CalmStep(
             title: "Touch",
-            headline: "Touch 3 objects",
-            subheadline: "",
+            headline: "Engage Your Sense of Touch",
+            subheadline: "Touch 3 Objects",
             items: 3,
-            image: "calm_step_3.png",
+            image: "hand.tap.fill",
             id: 2
         ),
         CalmStep(
             title: "Smell",
-            headline: "Identify 2 different smells",
-            subheadline: "",
+            headline: "Identify Soothing Scents",
+            subheadline: "Distinguish 2 Different Smells",
             items: 2,
-            image: "calm_step_4.png",
+            image: "nose.fill",
             id: 3
         ),
         CalmStep(
             title: "Taste",
-            headline: "Name 1 thing you can taste",
-            subheadline: "",
+            headline: "Remember Something You Like",
+            subheadline: "Focus on Something You Can Taste",
             items: 1,
-            image: "calm_step_5.png",
+            image: "cup.and.saucer.fill",
             id: 4
         )
+    ]
+    let calmSounds: [CalmSound] = [
+        CalmSound(title: "Birds", filename: "birds-1"),
+        CalmSound(title: "Cat Purring #1", filename: "cat-1"),
+        CalmSound(title: "Cat Purring #2", filename: "cat-2"),
+        CalmSound(title: "River", filename: "river-1"),
+        CalmSound(title: "Sea", filename: "sea-1"),
+        CalmSound(title: "Wind #1", filename: "wind-1"),
+        CalmSound(title: "Wind #2", filename: "wind-2")
     ]
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D75D7922AE9611D0014F488 /* FlowerAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D75D7912AE9611D0014F488 /* FlowerAnimationView.swift */; };
-		1D75D79A2AEA69F40014F488 /* water.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1D75D7992AEA69F40014F488 /* water.mp3 */; };
+		1D75D79A2AEA69F40014F488 /* sea-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1D75D7992AEA69F40014F488 /* sea-1.mp3 */; };
 		460032702AEE1BA400135FE3 /* TopBarIconSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4600326F2AEE1BA400135FE3 /* TopBarIconSet.swift */; };
 		4600682E2AE2663200BA571E /* MultipleChoicesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4600682D2AE2663200BA571E /* MultipleChoicesItemView.swift */; };
 		4609E7572ADFD33000CAD374 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */; };
@@ -49,6 +49,13 @@
 		46C27F1F2ADDF93300038380 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F1E2ADDF93300038380 /* ModelData.swift */; };
 		46C27F212ADDF96800038380 /* Learn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F202ADDF96800038380 /* Learn.swift */; };
 		46C27F2F2ADDFA5300038380 /* CalmHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F2E2ADDFA5300038380 /* CalmHome.swift */; };
+		46C4A46D2AEE499F0051A9E7 /* cat-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 46C4A4672AEE499F0051A9E7 /* cat-1.mp3 */; };
+		46C4A46E2AEE499F0051A9E7 /* cat-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 46C4A4682AEE499F0051A9E7 /* cat-2.mp3 */; };
+		46C4A46F2AEE499F0051A9E7 /* wind-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 46C4A4692AEE499F0051A9E7 /* wind-2.mp3 */; };
+		46C4A4702AEE499F0051A9E7 /* wind-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 46C4A46A2AEE499F0051A9E7 /* wind-1.mp3 */; };
+		46C4A4712AEE499F0051A9E7 /* birds-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 46C4A46B2AEE499F0051A9E7 /* birds-1.mp3 */; };
+		46C4A4722AEE499F0051A9E7 /* river-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 46C4A46C2AEE499F0051A9E7 /* river-1.mp3 */; };
+		46C4A4742AEE49C60051A9E7 /* CalmSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C4A4732AEE49C60051A9E7 /* CalmSound.swift */; };
 		46E4BACF2ADDA9DF004BFA9F /* PasiteaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4BACE2ADDA9DF004BFA9F /* PasiteaApp.swift */; };
 		46E4BAD12ADDA9DF004BFA9F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4BAD02ADDA9DF004BFA9F /* MainView.swift */; };
 		46E4BAD32ADDA9E0004BFA9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E4BAD22ADDA9E0004BFA9F /* Assets.xcassets */; };
@@ -59,7 +66,7 @@
 
 /* Begin PBXFileReference section */
 		1D75D7912AE9611D0014F488 /* FlowerAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerAnimationView.swift; sourceTree = "<group>"; };
-		1D75D7992AEA69F40014F488 /* water.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = water.mp3; sourceTree = "<group>"; };
+		1D75D7992AEA69F40014F488 /* sea-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sea-1.mp3"; sourceTree = "<group>"; };
 		4600326F2AEE1BA400135FE3 /* TopBarIconSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarIconSet.swift; sourceTree = "<group>"; };
 		4600682D2AE2663200BA571E /* MultipleChoicesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoicesItemView.swift; sourceTree = "<group>"; };
 		4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
@@ -100,6 +107,13 @@
 		46C27F1E2ADDF93300038380 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		46C27F202ADDF96800038380 /* Learn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn.swift; sourceTree = "<group>"; };
 		46C27F2E2ADDFA5300038380 /* CalmHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmHome.swift; sourceTree = "<group>"; };
+		46C4A4672AEE499F0051A9E7 /* cat-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "cat-1.mp3"; sourceTree = "<group>"; };
+		46C4A4682AEE499F0051A9E7 /* cat-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "cat-2.mp3"; sourceTree = "<group>"; };
+		46C4A4692AEE499F0051A9E7 /* wind-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "wind-2.mp3"; sourceTree = "<group>"; };
+		46C4A46A2AEE499F0051A9E7 /* wind-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "wind-1.mp3"; sourceTree = "<group>"; };
+		46C4A46B2AEE499F0051A9E7 /* birds-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "birds-1.mp3"; sourceTree = "<group>"; };
+		46C4A46C2AEE499F0051A9E7 /* river-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "river-1.mp3"; sourceTree = "<group>"; };
+		46C4A4732AEE49C60051A9E7 /* CalmSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmSound.swift; sourceTree = "<group>"; };
 		46E4BACB2ADDA9DF004BFA9F /* Pasitea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pasitea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E4BACE2ADDA9DF004BFA9F /* PasiteaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasiteaApp.swift; sourceTree = "<group>"; };
 		46E4BAD02ADDA9DF004BFA9F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -217,6 +231,7 @@
 				46C27F202ADDF96800038380 /* Learn.swift */,
 				4699DCA42ADE6432008B17F9 /* TrackItem.swift */,
 				4699DCC62ADE9449008B17F9 /* CalmStep.swift */,
+				46C4A4732AEE49C60051A9E7 /* CalmSound.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,7 +313,13 @@
 		46ECD0D82AED6E3A007057D5 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				1D75D7992AEA69F40014F488 /* water.mp3 */,
+				46C4A46B2AEE499F0051A9E7 /* birds-1.mp3 */,
+				46C4A4672AEE499F0051A9E7 /* cat-1.mp3 */,
+				46C4A4682AEE499F0051A9E7 /* cat-2.mp3 */,
+				46C4A46C2AEE499F0051A9E7 /* river-1.mp3 */,
+				46C4A46A2AEE499F0051A9E7 /* wind-1.mp3 */,
+				46C4A4692AEE499F0051A9E7 /* wind-2.mp3 */,
+				1D75D7992AEA69F40014F488 /* sea-1.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -372,10 +393,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46C4A4702AEE499F0051A9E7 /* wind-1.mp3 in Resources */,
 				46BB751D2AEDD3ED00A226D0 /* Preview Assets.xcassets in Resources */,
-				1D75D79A2AEA69F40014F488 /* water.mp3 in Resources */,
+				1D75D79A2AEA69F40014F488 /* sea-1.mp3 in Resources */,
 				460E8A4C2AEDBFA4003DC9AC /* Localizable.xcstrings in Resources */,
+				46C4A46F2AEE499F0051A9E7 /* wind-2.mp3 in Resources */,
+				46C4A4712AEE499F0051A9E7 /* birds-1.mp3 in Resources */,
+				46C4A46D2AEE499F0051A9E7 /* cat-1.mp3 in Resources */,
+				46C4A46E2AEE499F0051A9E7 /* cat-2.mp3 in Resources */,
 				46E4BAD32ADDA9E0004BFA9F /* Assets.xcassets in Resources */,
+				46C4A4722AEE499F0051A9E7 /* river-1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +469,7 @@
 				46A8D8372AEBAC6D0065C54E /* CalmSingleStepView.swift in Sources */,
 				46E4BACF2ADDA9DF004BFA9F /* PasiteaApp.swift in Sources */,
 				46BB751F2AEDD62700A226D0 /* CustomCover.swift in Sources */,
+				46C4A4742AEE49C60051A9E7 /* CalmSound.swift in Sources */,
 				46A8D8682AEC51A70065C54E /* LargeTitle.swift in Sources */,
 				46A8D8552AEBB2C10065C54E /* ColorGradient.swift in Sources */,
 				46C27F1F2ADDF93300038380 /* ModelData.swift in Sources */,

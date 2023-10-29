@@ -10,12 +10,15 @@ import AVKit
 
 struct CalmListenView: View {
     @Environment(\.dismiss) var dismiss: DismissAction
+    @Environment(ModelData.self) var modelData
 
     @State private var audioPlayer: AVAudioPlayer!
     @State private var moveBars = false
     @State private var transparency = 0.0
     @State private var alreadyPlayed = false
+    @State private var selectedSound = 1
 
+    var sounds: [CalmSound] { modelData.calmSounds }
     var trackItem: TrackItem = TrackItem(type: .listening)
 
     var animation: Animation {
@@ -68,15 +71,42 @@ struct CalmListenView: View {
                     }
                 }
 
-                Text("Listen to this sound")
-                    .font(.title)
-                    .fontDesign(.serif)
-                    .bold()
-                    .frame(height: 64)
+                Picker(selection: $selectedSound, label: Text("Sounds")) {
+                    ForEach(sounds) { sound in
+                        Text(sound.title).tag(sounds.firstIndex(where: { item in sound.title == item.title })! + 1)
+                    }
+                }
+                .pickerStyle(.menu)
+                .focusable()
+                .background {
+                    RoundedRectangle(cornerRadius: 8)
+                        .frame(maxWidth: .infinity)
+                        .background(.regularMaterial)
+                        .opacity(0.1)
+                }
+                .onChange(of: selectedSound) {
+                    DispatchQueue.global(qos: .background).async {
+                        if self.audioPlayer != nil {
+                            self.audioPlayer.stop()
+                        }
+                        let sound = Bundle.main.path(forResource: sounds[selectedSound - 1].filename, ofType: "mp3")
+                        self.audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+                        self.audioPlayer.stop()
+                        self.moveBars = false
+                        self.alreadyPlayed = false
+                    }
+                }
+                .onAppear {
+                    let sound = Bundle.main.path(forResource: sounds[selectedSound - 1].filename, ofType: "mp3")
+                    self.audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+                    self.audioPlayer.stop()
+                    self.moveBars = false
+                    self.alreadyPlayed = false
+                }
 
                 HStack {
                     Button(
-                        moveBars ? "Pause" : alreadyPlayed ? "Resume" : "Start",
+                        moveBars ? "Pause" : alreadyPlayed ? "Resume" : "Play",
                         systemImage: moveBars ? "pause" : alreadyPlayed ? "arrow.clockwise" : "play"
                     ) {
                         if !alreadyPlayed {
@@ -85,7 +115,15 @@ struct CalmListenView: View {
                         if moveBars {
                             self.audioPlayer.pause()
                         } else {
-                            self.audioPlayer.play()
+                            if audioPlayer != nil {
+                                self.audioPlayer.play()
+                            } else {
+                                let sound = Bundle.main.path(forResource: sounds[selectedSound - 1].filename, ofType: "mp3")
+                                self.audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+                                self.audioPlayer.stop()
+                                self.moveBars = false
+                                self.alreadyPlayed = false
+                            }
                         }
                         moveBars.toggle()
                         withAnimation(.easeOut(duration: 0.2)) {
@@ -99,12 +137,6 @@ struct CalmListenView: View {
                     .buttonBorderShape(.roundedRectangle(radius: 16))
                     .buttonStyle(.bordered)
                     .controlSize(.large)
-                }
-
-                .onAppear {
-                    let sound = Bundle.main.path(forResource: "water", ofType: "mp3")
-                    self.audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
-                    self.audioPlayer.pause()
                 }
             }
 

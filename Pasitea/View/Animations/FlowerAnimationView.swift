@@ -131,7 +131,7 @@ struct FlowerAnimationView: View {
             .background {
                 GeometryReader { geo in
                     ProgressView(value: Double(breatheCount), total: Double(numberOrBreathing)) {
-                        Label(isPreparing ? "Play" : isRunning ? "Stop" : "Restart",
+                        Label(isPreparing ? "Start" : isRunning ? "Stop" : "Restart",
                               systemImage: isPreparing ? "play" : isRunning ? "stop" : "arrow.clockwise")
                             .font(.title3)
                             .fontWeight(.semibold)

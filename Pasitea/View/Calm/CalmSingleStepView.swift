@@ -23,18 +23,40 @@ struct CalmSingleStepView: View {
         VStack {
             Spacer()
             HStack(alignment: .center) {
-                VStack(spacing: 16) {
-                    Text(calmStep.headline)
-                        .font(.title)
+                ZStack(alignment: .center) {
+                    Text(calmStep.items.description)
+                        .font(.system(size: 156))
                         .fontDesign(.serif)
-                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    Text(calmStep.subheadline)
-                        .font(.headline)
-                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .fontWeight(.black)
+                        .foregroundStyle(.secondary)
+                        .shadow(color: .secondary.opacity(0.8), radius: 20, x: 0, y: 0)
+                        .blendMode(.overlay)
+
+                    VStack(spacing: 16) {
+                        Text(calmStep.headline)
+                            .font(.title2)
+                            .fontDesign(.serif)
+                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        if !calmStep.subheadline.isEmpty {
+                            Text(calmStep.subheadline)
+                                .font(.headline)
+                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        }
+                    }
                 }
             }
-            .frame(height: 160)
-            Spacer()
+            .frame(height: 128)
+            Spacer(minLength: 16)
+            VStack(alignment: .center) {
+                HStack(alignment: .center) {
+                    Label(calmStep.headline, systemImage: calmStep.image)
+                        .font(.system(size: 60))
+                        .foregroundStyle(.foreground)
+                        .labelStyle(.iconOnly)
+                }
+                .frame(width: 160, height: 160)
+            }
+            Spacer(minLength: 16)
             HStack(alignment: .center) {
                 (
                     calmStep.id != 4
@@ -47,14 +69,9 @@ struct CalmSingleStepView: View {
                 .buttonBorderShape(.roundedRectangle(radius: 16))
                 .controlSize(.large)
             }
-            .frame(height: 160)
+            .frame(height: 128)
             Spacer()
         }
-        .background {
-            Image(calmStep.image)
-                .resizable()
-                .scaledToFill()
-                .edgesIgnoringSafeArea(.all)
-        }
+        .transition(.blur)
     }
 }

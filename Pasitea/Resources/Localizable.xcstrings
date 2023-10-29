@@ -540,6 +540,7 @@
       }
     },
     "Listen to this sound" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -687,6 +688,9 @@
       }
     },
     "Something" : {
+
+    },
+    "Sounds" : {
 
     },
     "Start" : {
