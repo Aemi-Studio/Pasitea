@@ -20,34 +20,29 @@ struct MultipleChoicesView: View {
         ZStack {
             LightGradientView()
 
-            VStack(spacing: 64) {
-                Text("Choose Next Action")
-                    .font(.title)
-                    .fontDesign(.serif)
-                    .bold()
-                    .padding(.top)
+            VStack(spacing: 32) {
+                HStack {
+                    Spacer()
+                    Text("Choose Next Action")
+                        .font(.title2)
+                        .fontDesign(.serif)
+                        .bold()
+                        .padding(.top)
+                    Spacer()
+                }
 
                 VStack(spacing: 16) {
                     MultipleChoicesItemView(
                         title: "Breathe",
                         subtitle: "Calm down with breathing exercises",
                         isViewPresented: $isBreathingExercisePresented
-                    ).fullScreenCover(isPresented: $isBreathingExercisePresented) {
-                        CalmBreatheView(
-                            trackItem: TrackItem(type: .breathing, previousId: trackItem.id)
-                        )
-                    }
+                    )
 
                     MultipleChoicesItemView(
                         title: "Listen",
                         subtitle: "Focus on calming sounds",
                         isViewPresented: $isListeningExercisePresented
                     )
-                    .fullScreenCover(isPresented: $isListeningExercisePresented) {
-                        CalmListenView(
-                            trackItem: TrackItem(type: .listening, previousId: trackItem.id)
-                        )
-                    }
 
                     MultipleChoicesItemView(
                         title: "Keep Track",
@@ -63,15 +58,19 @@ struct MultipleChoicesView: View {
 
                 Spacer()
             }
-            .padding(.top, 48)
             .padding()
-
-            VStack {
-                CustomBackButton(dismissAction: dismiss, enforce: false)
-                Spacer()
-            }
         }
         .navigationBarBackButtonHidden()
+        .fullScreenCover(isPresented: $isBreathingExercisePresented) {
+            CalmBreatheView(
+                trackItem: TrackItem(type: .breathing, previousId: trackItem.id)
+            )
+        }
+        .fullScreenCover(isPresented: $isListeningExercisePresented) {
+            CalmListenView(
+                trackItem: TrackItem(type: .listening, previousId: trackItem.id)
+            )
+        }
     }
 }
 

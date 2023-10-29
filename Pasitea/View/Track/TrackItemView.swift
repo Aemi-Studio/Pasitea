@@ -76,7 +76,7 @@ struct TrackItemView: View {
                                 Text(isFeeling(trackItem) ? "Written on" : "Saved on")
                                     .font(.subheadline)
                                     .foregroundStyle(.secondary)
-                                Text(trackItem.startDate.formatted())
+                                Text(trackItem.endDate.formatted())
                                     .fontWeight(.medium)
                             }
                             Spacer()

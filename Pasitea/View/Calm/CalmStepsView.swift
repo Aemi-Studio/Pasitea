@@ -13,6 +13,7 @@ struct CalmStepsView: View {
     @Environment(ModelData.self) private var modelData
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) var dismiss
+    @Environment(\.customDismiss) var customDismiss
 
     @State private var currentStep: Int = 0
     @State private var lastStep: Bool = false
@@ -25,10 +26,14 @@ struct CalmStepsView: View {
             trackItem.addTags(currentStep.description)
         }
         if lastStep {
-            exerciseFinished = true
+            withAnimation {
+                exerciseFinished = true
+            }
         } else {
-            currentStep += 1
-            lastStep = currentStep == modelData.calmSteps.count - 1
+            withAnimation {
+                currentStep += 1
+                lastStep = currentStep == modelData.calmSteps.count - 1
+            }
         }
     }
 
@@ -38,22 +43,25 @@ struct CalmStepsView: View {
 
             VStack(spacing: 10) {
                 CalmSingleStepView( step: $currentStep, getNextScreen: getNextScreen )
-                    .fullScreenCover(isPresented: $exerciseFinished) {
+                    .customCover(isPresented: $exerciseFinished, transition: .blur, animation: .easeInOut(duration: 2)) {
                         CalmExerciseFinishedView(
                             trackItem: TrackItem( trackItem ).endsNow(),
-                            dismiss: dismiss
+                            dismiss: dismiss,
+                            customDismiss: customDismiss
                         )
                     }
-                    .transiAction()
             }
 
             VStack {
                 CustomBackButton(
                     trackItem: trackItem,
                     dismissAction: dismiss,
+                    customDismiss: customDismiss,
                     enforce: false,
-                    display: !lastStep
-                )
+                    display: !lastStep ? .both : .none
+                ) {
+                    Text("Something")
+                }
                 Spacer()
             }
         }

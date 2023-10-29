@@ -12,7 +12,7 @@ struct TransiAction: ViewModifier {
         content
             .transaction { transaction in
                 transaction.disablesAnimations = true
-                transaction.animation = .smooth(duration: 0.5)
+                transaction.animation = .easeInOut(duration: 0.5)
             }
     }
 }

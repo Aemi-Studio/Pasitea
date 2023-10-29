@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var isSteppedExercisePresented = false
+    @State private var isBreathingExercisePresented = false
+    @State private var isListeningExercisePresented = false
+    @State private var addViewIsPresented = false
+
     enum Tab: Int {
         case calm = 1
         case track = 2

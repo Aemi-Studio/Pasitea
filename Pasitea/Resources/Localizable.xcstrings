@@ -419,6 +419,9 @@
         }
       }
     },
+    "Finished!" : {
+
+    },
     "Hello" : {
       "localizations" : {
         "fr" : {
@@ -502,6 +505,9 @@
           }
         }
       }
+    },
+    "Informations" : {
+
     },
     "Journal" : {
       "localizations" : {
@@ -613,6 +619,12 @@
         }
       }
     },
+    "Restart" : {
+
+    },
+    "Restart when you're ready" : {
+
+    },
     "Resume" : {
       "localizations" : {
         "it" : {
@@ -624,6 +636,7 @@
       }
     },
     "Resume when you're ready" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -673,6 +686,9 @@
         }
       }
     },
+    "Something" : {
+
+    },
     "Start" : {
       "localizations" : {
         "it" : {
@@ -712,6 +728,9 @@
           }
         }
       }
+    },
+    "Stop" : {
+
     },
     "Track" : {
       "localizations" : {

@@ -16,7 +16,9 @@ struct CalmHome: View {
         NavigationStack {
             VStack(spacing: 16) {
                 Button {
-                    isSteppedExercisePresented = true
+                    withAnimation {
+                        isSteppedExercisePresented = true
+                    }
                 } label: {
                     Spacer()
                     Text("5 Steps")
@@ -26,10 +28,6 @@ struct CalmHome: View {
                 .font(.title)
                 .fontDesign(.serif)
                 .fontWeight(.bold)
-                .fullScreenCover(isPresented: $isSteppedExercisePresented) {
-                    CalmStepsView()
-                }
-                .transiAction()
                 .buttonStyle(.borderedProminent)
                 .buttonBorderShape(.roundedRectangle(radius: 20))
                 .shadow(color: .white.opacity(0.2), radius: 20, x: 0, y: 5)
@@ -37,7 +35,9 @@ struct CalmHome: View {
 
                 HStack(spacing: 16) {
                     Button {
-                        isBreathingExercisePresented = true
+                        withAnimation {
+                            isBreathingExercisePresented = true
+                        }
                     } label: {
                         Spacer()
                         Text("Breathe")
@@ -47,16 +47,15 @@ struct CalmHome: View {
                     .font(.title)
                     .fontDesign(.serif)
                     .fontWeight(.bold)
-                    .fullScreenCover(isPresented: $isBreathingExercisePresented) {
-                        CalmBreatheView()
-                    }
-                    .transiAction()
+
                     .buttonStyle(.bordered)
                     .buttonBorderShape(.roundedRectangle(radius: 20))
                     .frame(maxWidth: .infinity)
 
                     Button {
-                        isListeningExercisePresented = true
+                        withAnimation {
+                            isListeningExercisePresented = true
+                        }
                     } label: {
                         Spacer()
                         Text("Listen")
@@ -66,10 +65,6 @@ struct CalmHome: View {
                     .font(.title)
                     .fontDesign(.serif)
                     .fontWeight(.bold)
-                    .fullScreenCover(isPresented: $isListeningExercisePresented) {
-                        CalmListenView()
-                    }
-                    .transiAction()
                     .buttonStyle(.bordered)
                     .buttonBorderShape(.roundedRectangle(radius: 20))
                     .frame(maxWidth: .infinity)
@@ -86,6 +81,18 @@ struct CalmHome: View {
             }
             .padding()
             .pasitea()
+            .fullScreenCover(isPresented: $isListeningExercisePresented) {
+                CalmListenView()
+                    .transition(.blur)
+            }
+            .fullScreenCover(isPresented: $isBreathingExercisePresented) {
+                CalmBreatheView()
+                    .transition(.blur)
+            }
+            .fullScreenCover(isPresented: $isSteppedExercisePresented) {
+                CalmStepsView()
+                    .transition(.blur)
+            }
         }
         .ignoresSafeArea(.all)
     }

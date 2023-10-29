@@ -9,7 +9,7 @@ import SwiftUI
 import AVKit
 
 struct CalmListenView: View {
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) var dismiss: DismissAction
 
     @State private var audioPlayer: AVAudioPlayer!
     @State private var moveBars = false
@@ -94,10 +94,11 @@ struct CalmListenView: View {
                             }
                         }
                     }
-                    .font(.headline)
-                    .fontWeight(.medium)
-                    .buttonBorderShape(.roundedRectangle)
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .buttonBorderShape(.roundedRectangle(radius: 16))
                     .buttonStyle(.bordered)
+                    .controlSize(.large)
                 }
 
                 .onAppear {
@@ -111,8 +112,11 @@ struct CalmListenView: View {
                 CustomBackButton(
                     trackItem: trackItem,
                     dismissAction: dismiss,
-                    enforce: false
-                )
+                    enforce: false,
+                    display: .close
+                ) {
+                    Text("Something")
+                }
                 Spacer()
             }
         }

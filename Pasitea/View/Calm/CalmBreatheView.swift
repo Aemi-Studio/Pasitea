@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct CalmBreatheView: View {
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) var dismiss: DismissAction
 
     @State private var started: Bool = false
     @State private var running: Bool = false
-    @State private var exercises: [(Int, Int)] = []
 
     var trackItem: TrackItem = TrackItem(type: .breathing)
 
@@ -26,8 +25,11 @@ struct CalmBreatheView: View {
                 CustomBackButton(
                     trackItem: trackItem.endsNow(),
                     dismissAction: dismiss,
-                    enforce: false
-                )
+                    enforce: false,
+                    display: .both
+                ) {
+                    Text("Something")
+                }
                 Spacer()
             }
         }

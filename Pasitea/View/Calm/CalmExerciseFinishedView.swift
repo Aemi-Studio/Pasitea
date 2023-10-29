@@ -16,48 +16,62 @@ struct CalmExerciseFinishedView: View {
     var trackItem: TrackItem
 
     var dismiss: DismissAction?
+    var customDismiss: CustomDismiss?
 
     var body: some View {
         VStack {
             Spacer()
-            VStack(spacing: 20) {
-                Text("Exercise Finished")
-                    .font(.title)
-                    .fontDesign(.serif)
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                Text("Do you still need help ?")
-                    .font(.headline)
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+            HStack(alignment: .center) {
+                VStack(spacing: 20) {
+                    Text("Exercise Finished")
+                        .font(.title)
+                        .fontDesign(.serif)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    Text("Do you still need help ?")
+                        .font(.headline)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                }
             }
+            .frame(height: 160)
             Spacer()
-            VStack(spacing: 20) {
-                Button( "I need more help", systemImage: "hand.raised.circle.fill") {
-                    trackItem.saveInto(modelContext)
-                    isPresented = true
-                }
-                .font(.title3)
-                .fontWeight(.medium)
-                .buttonStyle(.borderedProminent)
-                .buttonBorderShape(.roundedRectangle(radius: 12))
-                .fullScreenCover(isPresented: $isPresented) {
-                    MultipleChoicesView( trackItem: trackItem )
-                }
-                .transiAction()
+            HStack(alignment: .center) {
+                VStack(spacing: 20) {
+                    Button( "I need more help", systemImage: "hand.raised.circle.fill") {
+                        trackItem.saveInto(modelContext)
+                        withAnimation {
+                            isPresented = true
+                        }
+                    }
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .buttonStyle(.borderedProminent)
+                    .buttonBorderShape(.roundedRectangle(radius: 16))
+                    .controlSize(.large)
 
-                Button( "I'm fine", systemImage: "hand.thumbsup.circle.fill" ) {
-                    trackItem.saveInto(modelContext)
-                    dismissAction()
-                    dismiss?()
+                    Button( "I'm fine", systemImage: "hand.thumbsup.circle.fill" ) {
+                        trackItem.saveInto(modelContext)
+                        withAnimation {
+                            dismissAction()
+                            dismiss?()
+                            customDismiss?()
+                        }
+                    }
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .buttonStyle(.bordered)
+                    .buttonBorderShape(.roundedRectangle(radius: 16))
+                    .controlSize(.large)
                 }
-                .font(.title3)
-                .fontWeight(.medium)
-                .buttonStyle(.bordered)
-                .buttonBorderShape(.roundedRectangle(radius: 12))
             }
+            .frame(height: 160)
             Spacer()
         }
         .navigationBarBackButtonHidden()
         .pasitea()
+        .sheet(isPresented: $isPresented) {
+            MultipleChoicesView( trackItem: trackItem )
+                .presentationDetents([.medium])
+        }
     }
 }
 

@@ -22,26 +22,32 @@ struct CalmSingleStepView: View {
     var body: some View {
         VStack {
             Spacer()
-            VStack(spacing: 16) {
-                Text(calmStep.headline)
-                    .font(.title)
-                    .fontDesign(.serif)
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                Text(calmStep.subheadline)
-                    .font(.headline)
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+            HStack(alignment: .center) {
+                VStack(spacing: 16) {
+                    Text(calmStep.headline)
+                        .font(.title)
+                        .fontDesign(.serif)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    Text(calmStep.subheadline)
+                        .font(.headline)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                }
             }
+            .frame(height: 160)
             Spacer()
-            (
-                calmStep.id != 4
-                    ? Button("Next", systemImage: "arrow.right.circle.fill", action: getNextScreen!)
-                    : Button("Finish", systemImage: "checkmark.circle.fill", action: getNextScreen!)
-            )
-            .padding(.all, 12)
-            .font(.title3)
-            .fontWeight(.medium)
-            .buttonStyle(.borderedProminent)
-            .buttonBorderShape(.roundedRectangle(radius: 12))
+            HStack(alignment: .center) {
+                (
+                    calmStep.id != 4
+                        ? Button("Next", systemImage: "arrow.right.circle.fill", action: getNextScreen!)
+                        : Button("Finish", systemImage: "checkmark.circle.fill", action: getNextScreen!)
+                )
+                .font(.title3)
+                .fontWeight(.semibold)
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.roundedRectangle(radius: 16))
+                .controlSize(.large)
+            }
+            .frame(height: 160)
             Spacer()
         }
         .background {

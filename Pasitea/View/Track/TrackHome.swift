@@ -63,6 +63,13 @@ struct TrackHome: View {
                                     TrackItemView(trackItem: item)
                                 } label: {
                                     TrackFeelingItemRow(trackItem: item)
+                                        .contextMenu {
+                                            Button("Delete", systemImage: "trash", role: .destructive) {
+                                                item.deleteFrom(modelContext)
+                                            }
+                                        } preview: {
+                                            TrackItemPreviewView(trackItem: item)
+                                        }
                                 }
                             }
                         }
@@ -103,6 +110,13 @@ struct TrackHome: View {
                                     .background(.regularMaterial)
                                     .cornerRadius(12)
                                     .shadow(color: Color.accentColor.opacity(0.05), radius: 16, x: 0, y: 8)
+                                    .contextMenu {
+                                        Button("Delete", systemImage: "trash", role: .destructive) {
+                                            item.deleteFrom(modelContext)
+                                        }
+                                    } preview: {
+                                        TrackItemPreviewView(trackItem: item)
+                                    }
                                 }
                             }
                         }

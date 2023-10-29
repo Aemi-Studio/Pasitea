@@ -7,41 +7,66 @@
 
 import SwiftUI
 
-struct CustomBackButton: View {
+struct CustomBackButton<Content: View>: View {
     @Environment(\.modelContext) var modelContext
 
+    @State private var infoPresented = false
     @State private var alertPresented = false
 
     var trackItem: TrackItem?
 
     var dismissAction: DismissAction?
     var customAction: (() -> Void)?
+    var customDismiss: CustomDismiss?
 
     var enforce: Bool = true
-    var display: Bool = true
+    var display: TopBarIconSet = .close
+
+    @ViewBuilder var content: Content
 
     var body: some View {
         HStack {
-            Spacer()
-            if display {
-                Button(role: .none) {
-                    if enforce {
-                        alertPresented = true
-                    } else {
-                        if trackItem != nil {
-                            TrackItem(trackItem!).saveInto(modelContext)
-                        }
-                        dismissAction?()
+            if display.isSubset(of: .both) {
+                if display.contains(.info) {
+                    Button {
+                        infoPresented = true
+                    } label: {
+                        Label("Informations", systemImage: "info.circle")
+                            .labelStyle(.iconOnly)
+                            .font(.title2)
+                            .padding(.vertical, 11)
+                            .padding(.horizontal, 18)
+                            .foregroundStyle(Color.accentColor)
                     }
-                } label: {
-                    Image(systemName: "xmark.circle.fill")
-                        .resizable()
-                        .frame(width: 24, height: 24)
-                        .scaledToFit()
-                        .padding([.top, .bottom], 11)
-                        .padding([.leading, .trailing], 18)
-                        .foregroundStyle(Color.accentColor)
-                        .accessibilityLabel("Close")
+                    .sheet(isPresented: $infoPresented) {
+                        content
+                            .pasitea()
+                            .presentationDetents([.medium])
+                    }
+                }
+                Spacer()
+                if display.contains(.close) {
+                    Button(role: .none) {
+                        if enforce {
+                            alertPresented = true
+                        } else {
+                            if trackItem != nil {
+                                TrackItem(trackItem!).saveInto(modelContext)
+                            }
+                            withAnimation {
+                                dismissAction?()
+                                customAction?()
+                                customDismiss?()
+                            }
+                        }
+                    } label: {
+                        Label("Close", systemImage: "xmark.circle.fill")
+                            .labelStyle(.iconOnly)
+                            .font(.title2)
+                            .padding(.vertical, 11)
+                            .padding(.horizontal, 18)
+                            .foregroundStyle(Color.accentColor)
+                    }
                 }
             } else {
                 EmptyView()
@@ -55,11 +80,10 @@ struct CustomBackButton: View {
             Button(role: .destructive) {
                 // Save the exercise
                 trackItem?.saveInto(modelContext)
-
-                if dismissAction != nil {
+                withAnimation {
                     dismissAction?()
-                } else if customAction != nil {
                     customAction?()
+                    customDismiss?()
                 }
             } label: {
                 Text("Yes")
@@ -71,8 +95,8 @@ struct CustomBackButton: View {
     }
 }
 
-#if DEBUG
-#Preview {
-    CustomBackButton( trackItem: TrackItem() )
-}
-#endif
+// #if DEBUG
+// #Preview {
+//    CustomBackButton( trackItem: TrackItem() )
+// }
+// #endif

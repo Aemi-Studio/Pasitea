@@ -13,9 +13,7 @@ struct CustomListStyle: ViewModifier {
             .listRowSpacing(8)
             .listItemTint(.accent)
             .listSectionSpacing(0)
-            .listRowBackground( EmptyView() )
             .scrollContentBackground(.hidden)
-            .padding(0)
             .toolbar {
                 ToolbarItemGroup(placement: .topBarTrailing) {
                     EditButton()
