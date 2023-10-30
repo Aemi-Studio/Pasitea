@@ -208,9 +208,12 @@ struct CalmListenView: View {
                             .fontWeight(.bold)
                         Group {
                             Text("""
-Listening to calming sounds is a powerful way to find relaxation and reduce stress. Whether it's the gentle rush of waves, raindrops falling, or cats purring, these sounds have the ability to soothe and calm your mind.
+Listening to calming sounds is a powerful way to find relaxation and reduce \
+stress. Whether it's the gentle rush of waves, raindrops falling, \
+or cats purring, these sounds have the ability to soothe and calm your mind.
 
-By immersing yourself in these serene auditory experiences, you can lower stress levels, ease anxiety, and create a sense of tranquility.
+By immersing yourself in these serene auditory experiences, you can lower \
+stress levels, ease anxiety, and create a sense of tranquility.
 
 It's a simple yet effective method to find peace in a noisy world.
 """)
@@ -219,7 +222,7 @@ It's a simple yet effective method to find peace in a noisy world.
                         .fontWeight(.medium)
                     }
                     .padding()
-                        .informationModalStyle()
+                    .informationModalStyle()
                 }
                 Spacer()
             }
