@@ -201,7 +201,24 @@ struct CalmListenView: View {
                     enforce: false,
                     display: .both
                 ) {
-                    Text("Something")
+                    VStack(alignment: .leading, spacing: 24) {
+                        Text("Listen")
+                            .font(.title2)
+                            .fontDesign(.serif)
+                            .fontWeight(.bold)
+                        Group {
+                            Text("""
+Listening to calming sounds is a powerful way to find relaxation and reduce stress. Whether it's the gentle rush of waves, raindrops falling, or cats purring, these sounds have the ability to soothe and calm your mind.
+
+By immersing yourself in these serene auditory experiences, you can lower stress levels, ease anxiety, and create a sense of tranquility.
+
+It's a simple yet effective method to find peace in a noisy world.
+""")
+                        }
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.medium)
+                    }
+                    .padding()
                         .informationModalStyle()
                 }
                 Spacer()

@@ -53,8 +53,31 @@ struct CalmStepsView: View {
                     enforce: false,
                     display: !lastStep ? .both : .info
                 ) {
-                    Text("Something")
-                        .informationModalStyle()
+                    VStack(alignment: .leading, spacing: 24) {
+                        Text("5-steps")
+                            .font(.title2)
+                            .fontDesign(.serif)
+                            .fontWeight(.bold)
+                        Group {
+                            Text("""
+The 5-4-3-2-1 method is a scientifically proven quick anxiety and stress reduction technique.
+
+To calm down:
+
+1. See: Identify 5 things around you.
+2. Touch: Acknowledge 4 things you can physically feel.
+3. Hear: Note 3 sounds in your environment.
+4. Smell: Focus on 2 scents.
+5. Taste: Experience 1 taste, like a sip of water.
+
+Engaging your senses this way helps you stay present and reduce anxiety.
+""")
+                        }
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.medium)
+                    }
+                    .padding()
+                    .informationModalStyle()
                 }
                 Spacer()
             }

@@ -31,18 +31,18 @@ struct CalmBreatheView: View {
                     enforce: false,
                     display: .both
                 ) {
-                    VStack(alignment: .leading, spacing: 12) {
+                    VStack(alignment: .leading, spacing: 24) {
                         Text("Breathe")
                             .font(.title2)
                             .fontDesign(.serif)
                             .fontWeight(.bold)
                         Group {
                             Text("""
-This specific breathing exercise is based on Cardiac Coherence which a relies on the 3-6-5 method.
+Cardiac coherence is a breathing technique designed to synchronize your breath with your heart rate for improved emotional well-being and stress reduction.
 
-This method consists in practicing 3 times a day, 6 breathing per minutes for 5 minutes.
+It involves slow, rhythmic breathing, typically at a rate of around six breaths per minute, which helps balance the autonomic nervous system.
 
-The button which act also as a progress bar indicates your current progress for the exercise.
+By practicing cardiac coherence, you can enhance your ability to manage stress and enhance your overall sense of well-being.
 """)
                         }
                         .multilineTextAlignment(.leading)
