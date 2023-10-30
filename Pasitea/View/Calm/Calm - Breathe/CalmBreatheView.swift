@@ -15,10 +15,6 @@ struct CalmBreatheView: View {
     @State private var started: Bool = false
     @State private var running: Bool = false
 
-    func action() {
-        item.saveInto(modelContext)
-    }
-
     var trackItem: TrackItem = TrackItem(type: .breathing)
 
     var item: TrackItemWrapper { TrackItemWrapper( trackItem ) }
@@ -32,7 +28,6 @@ struct CalmBreatheView: View {
             VStack {
                 CustomBackButton(
                     dismissAction: dismiss,
-                    customAction: action,
                     enforce: false,
                     display: .both
                 ) {

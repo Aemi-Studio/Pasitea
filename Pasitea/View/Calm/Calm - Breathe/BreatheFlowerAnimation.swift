@@ -28,7 +28,10 @@ struct BreatheFlowerAnimation: View {
     var numberOrBreathing: Double {
         minutes * 60 / animationDuration
     }
-    var timer: Publishers.Autoconnect<Timer.TimerPublisher> { Timer.publish(every: animationDuration / animationSteps, on: .main, in: .common).autoconnect() }
+
+    var timer: Publishers.Autoconnect<Timer.TimerPublisher> {
+        Timer.publish(every: animationDuration / animationSteps, on: .main, in: .common).autoconnect()
+    }
 
     var flowerAnimation: Animation {
         isRunning
@@ -164,6 +167,11 @@ struct BreatheFlowerAnimation: View {
             }
             .clipShape(RoundedRectangle(cornerRadius: 16))
             .frame(height: 64)
+        }
+        .onDisappear {
+            if isRunning {
+                trackItem.endsNow().saveInto(modelContext)
+            }
         }
     }
 }
