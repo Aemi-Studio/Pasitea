@@ -62,7 +62,14 @@
       }
     },
     "5-steps" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 Passaggi"
+          }
+        }
+      }
     },
     "Add" : {
       "localizations" : {
@@ -171,7 +178,14 @@
       }
     },
     "Cardiac coherence is a breathing technique designed to synchronize your breath with your heart rate for improved emotional well-being and stress reduction.\n\nIt involves slow, rhythmic breathing, typically at a rate of around six breaths per minute, which helps balance the autonomic nervous system.\n\nBy practicing cardiac coherence, you can enhance your ability to manage stress and enhance your overall sense of well-being." : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La coerenza cardiaca è una tecnica di respirazione progettata per sincronizzare il respiro con la frequenza cardiaca al fine di migliorare il benessere emotivo e ridurre lo stress.   Essa coinvolge una respirazione lenta e ritmica, tipicamente a un ritmo di circa sei respiri al minuto, che aiuta a bilanciare il sistema nervoso autonomo.   Praticando la coerenza cardiaca, è possibile migliorare la capacità di gestire lo stress e accrescere il proprio senso generale di benessere."
+          }
+        }
+      }
     },
     "Choose Next Action" : {
       "localizations" : {
@@ -428,7 +442,14 @@
       }
     },
     "Finished!" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finito!"
+          }
+        }
+      }
     },
     "Hello" : {
       "extractionState" : "stale",
@@ -516,7 +537,14 @@
       }
     },
     "Informations" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informazioni"
+          }
+        }
+      }
     },
     "Journal" : {
       "localizations" : {
@@ -570,7 +598,14 @@
       }
     },
     "Listening to calming sounds is a powerful way to find relaxation and reduce stress. Whether it's the gentle rush of waves, raindrops falling, or cats purring, these sounds have the ability to soothe and calm your mind.\n\nBy immersing yourself in these serene auditory experiences, you can lower stress levels, ease anxiety, and create a sense of tranquility.\n\nIt's a simple yet effective method to find peace in a noisy world." : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ascoltare suoni rilassanti è un potente modo per trovare relax e ridurre lo stress. Che si tratti del dolce fruscio delle onde, delle gocce di pioggia che cadono o dei gatti che fanno le fusa, questi suoni hanno la capacità di lenire e tranquillizzare la mente.\n\nImmergendoti in queste serene esperienze uditive, puoi abbassare i livelli di stress, alleviare l'ansia e creare una sensazione di tranquillità. È un metodo semplice ma efficace per trovare pace in un mondo rumoroso."
+          }
+        }
+      }
     },
     "Next" : {
       "localizations" : {
@@ -613,7 +648,14 @@
       }
     },
     "Placeholder" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder"
+          }
+        }
+      }
     },
     "Play" : {
       "localizations" : {
@@ -636,10 +678,24 @@
       }
     },
     "Restart" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riavvia"
+          }
+        }
+      }
     },
     "Restart when you're ready" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riavvia quando sei pronto"
+          }
+        }
+      }
     },
     "Resume" : {
       "localizations" : {
@@ -703,7 +759,14 @@
       }
     },
     "Sounds" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suoni"
+          }
+        }
+      }
     },
     "Start" : {
       "localizations" : {
@@ -746,13 +809,34 @@
       }
     },
     "Stop" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop"
+          }
+        }
+      }
     },
     "The 5-4-3-2-1 method is a scientifically proven quick anxiety and stress reduction technique.\n\nTo calm down:\n\n1. See: Identify 5 things around you.\n2. Touch: Acknowledge 4 things you can physically feel.\n3. Hear: Note 3 sounds in your environment.\n4. Smell: Focus on 2 scents.\n5. Taste: Experience 1 taste, like a sip of water.\n\nEngaging your senses this way helps you stay present and reduce anxiety." : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il metodo 5-4-3-2-1 è una tecnica scientificamente provata per ridurre rapidamente l'ansia e lo stress.\n\nPer calmarti:\n\n1. Vedi: Identifica 5 cose che ti circondano.\n2. Tocca: Riconosci 4 cose che puoi fisicamente sentire.\n3. Senti: Nota 3 suoni nell'ambiente intorno a te.\n4. Odora: Concentrati su 2 profumi.\n5. Gusta: Sperimenta 1 gusto, come un sorso d'acqua.\n\nCoinvolgendo i tuoi sensi in questo modo, ti aiuta a rimanere nel presente e a ridurre l'ansia."
+          }
+        }
+      }
     },
     "The three buttons of this screen provides 3 types of exercises or actions that can help you calm down or manage your anxiety." : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I tre pulsanti di questa schermata forniscono 3 tipi di esercizi o azioni che possono aiutarti a calmarti o a gestire l'ansia."
+          }
+        }
+      }
     },
     "Track" : {
       "localizations" : {
