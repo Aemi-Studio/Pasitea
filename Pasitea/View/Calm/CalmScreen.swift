@@ -101,7 +101,17 @@ struct CalmScreen: View {
                                 .fontWeight(.bold)
                             Group {
                                 Text("""
-The three buttons of this screen provides 3 types of exercises or actions that can help you calm down or manage your anxiety.
+The three buttons of this screen provides 3 types of exercises \
+or actions that can help you calm down or manage your anxiety.
+
+The "5 Steps" exercise provides a focus-based exercise to calm \
+down efficiently during a panic attack.
+
+The "Breathe" exercise helps you relaxing by using Cardiac \
+Coherence breathing technique.
+
+The "Listen" exercise is meant to provide familiar and isolating \
+sounds to listen to focus on something.
 """)
                             }
                             .multilineTextAlignment(.leading)
