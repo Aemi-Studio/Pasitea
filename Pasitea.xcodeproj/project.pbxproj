@@ -1,0 +1,740 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D75D7922AE9611D0014F488 /* BreatheFlowerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D75D7912AE9611D0014F488 /* BreatheFlowerAnimation.swift */; };
+		1D75D79A2AEA69F40014F488 /* sea-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1D75D7992AEA69F40014F488 /* sea-1.mp3 */; };
+		460032702AEE1BA400135FE3 /* TopBarIconSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4600326F2AEE1BA400135FE3 /* TopBarIconSet.swift */; };
+		4600682E2AE2663200BA571E /* CalmChoicesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4600682D2AE2663200BA571E /* CalmChoicesItemView.swift */; };
+		4609E7572ADFD33000CAD374 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */; };
+		460E8A4C2AEDBFA4003DC9AC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 460E8A4B2AEDBFA4003DC9AC /* Localizable.xcstrings */; };
+		465F174F2AEC5908002FC335 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465F174E2AEC5908002FC335 /* BackgroundGradient.swift */; };
+		465F17512AEC5A5C002FC335 /* PasiteaStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465F17502AEC5A5C002FC335 /* PasiteaStyle.swift */; };
+		465F17532AEC5B31002FC335 /* InlineTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465F17522AEC5B31002FC335 /* InlineTitle.swift */; };
+		4685E8052AEF20B700DCBC72 /* CustomSingleBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4685E8042AEF20B700DCBC72 /* CustomSingleBackButton.swift */; };
+		4685E80B2AEF222A00DCBC72 /* PasiteaButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4685E80A2AEF222A00DCBC72 /* PasiteaButtonStyle.swift */; };
+		4685E80D2AEF250300DCBC72 /* PasiteaHeadlineStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4685E80C2AEF250300DCBC72 /* PasiteaHeadlineStyle.swift */; };
+		4685E80F2AEF257800DCBC72 /* PasiteaSubheadlineStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4685E80E2AEF257800DCBC72 /* PasiteaSubheadlineStyle.swift */; };
+		4685E8122AEF260B00DCBC72 /* PasiteaHeadlines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4685E8112AEF260B00DCBC72 /* PasiteaHeadlines.swift */; };
+		4685E8142AEF291C00DCBC72 /* InformationModalStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4685E8132AEF291C00DCBC72 /* InformationModalStyle.swift */; };
+		4685E8162AEF495C00DCBC72 /* TrackItemWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4685E8152AEF495C00DCBC72 /* TrackItemWrapper.swift */; };
+		4699DCA52ADE6432008B17F9 /* TrackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCA42ADE6432008B17F9 /* TrackItem.swift */; };
+		4699DCC12ADE8DF5008B17F9 /* CalmBreatheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC02ADE8DF5008B17F9 /* CalmBreatheView.swift */; };
+		4699DCC32ADE8E00008B17F9 /* CalmListenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC22ADE8E00008B17F9 /* CalmListenView.swift */; };
+		4699DCC72ADE9449008B17F9 /* CalmStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC62ADE9449008B17F9 /* CalmStep.swift */; };
+		4699DCCB2ADEDB72008B17F9 /* CalmExerciseFinishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCCA2ADEDB72008B17F9 /* CalmExerciseFinishedView.swift */; };
+		4699DCCD2ADF04F9008B17F9 /* CalmChoicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCCC2ADF04F9008B17F9 /* CalmChoicesView.swift */; };
+		46A8D8362AEBAC6D0065C54E /* CalmStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D8342AEBAC6D0065C54E /* CalmStepsView.swift */; };
+		46A8D8372AEBAC6D0065C54E /* CalmSingleStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D8352AEBAC6D0065C54E /* CalmSingleStepView.swift */; };
+		46A8D8462AEBACFC0065C54E /* TrackItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D83D2AEBACFC0065C54E /* TrackItemView.swift */; };
+		46A8D8472AEBACFC0065C54E /* TrackItemRowEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D83E2AEBACFC0065C54E /* TrackItemRowEmpty.swift */; };
+		46A8D8482AEBACFC0065C54E /* TrackItemAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D83F2AEBACFC0065C54E /* TrackItemAddView.swift */; };
+		46A8D8492AEBACFC0065C54E /* TrackItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D8402AEBACFC0065C54E /* TrackItemRow.swift */; };
+		46A8D84A2AEBACFC0065C54E /* TrackJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D8412AEBACFC0065C54E /* TrackJournalView.swift */; };
+		46A8D84B2AEBACFC0065C54E /* TrackItemEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D8422AEBACFC0065C54E /* TrackItemEditView.swift */; };
+		46A8D84C2AEBACFC0065C54E /* TrackHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D8432AEBACFC0065C54E /* TrackHistoryView.swift */; };
+		46A8D84D2AEBACFC0065C54E /* TrackFeelingItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D8442AEBACFC0065C54E /* TrackFeelingItemRow.swift */; };
+		46A8D84E2AEBACFC0065C54E /* TrackScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D8452AEBACFC0065C54E /* TrackScreen.swift */; };
+		46A8D8512AEBAD160065C54E /* TrackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D8502AEBAD160065C54E /* TrackType.swift */; };
+		46A8D8582AEBDEAD0065C54E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D8572AEBDEAD0065C54E /* Utils.swift */; };
+		46A8D85D2AEC051B0065C54E /* UltraThinInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D85C2AEC051B0065C54E /* UltraThinInterface.swift */; };
+		46A8D8682AEC51A70065C54E /* LargeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D8672AEC51A70065C54E /* LargeTitle.swift */; };
+		46BB751D2AEDD3ED00A226D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46BB751C2AEDD3ED00A226D0 /* Preview Assets.xcassets */; };
+		46BB751F2AEDD62700A226D0 /* CustomCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BB751E2AEDD62700A226D0 /* CustomCover.swift */; };
+		46BB75212AEDE38D00A226D0 /* BlurTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BB75202AEDE38D00A226D0 /* BlurTransition.swift */; };
+		46BB75232AEDF48500A226D0 /* TrackItemPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BB75222AEDF48500A226D0 /* TrackItemPreviewView.swift */; };
+		46BB75252AEE0C4500A226D0 /* CustomProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BB75242AEE0C4500A226D0 /* CustomProgressStyle.swift */; };
+		46C27F1F2ADDF93300038380 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F1E2ADDF93300038380 /* ModelData.swift */; };
+		46C27F212ADDF96800038380 /* Learn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F202ADDF96800038380 /* Learn.swift */; };
+		46C27F2F2ADDFA5300038380 /* CalmScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C27F2E2ADDFA5300038380 /* CalmScreen.swift */; };
+		46C4A46D2AEE499F0051A9E7 /* cat-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 46C4A4672AEE499F0051A9E7 /* cat-1.mp3 */; };
+		46C4A46E2AEE499F0051A9E7 /* cat-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 46C4A4682AEE499F0051A9E7 /* cat-2.mp3 */; };
+		46C4A46F2AEE499F0051A9E7 /* wind-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 46C4A4692AEE499F0051A9E7 /* wind-2.mp3 */; };
+		46C4A4702AEE499F0051A9E7 /* wind-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 46C4A46A2AEE499F0051A9E7 /* wind-1.mp3 */; };
+		46C4A4712AEE499F0051A9E7 /* birds-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 46C4A46B2AEE499F0051A9E7 /* birds-1.mp3 */; };
+		46C4A4722AEE499F0051A9E7 /* river-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 46C4A46C2AEE499F0051A9E7 /* river-1.mp3 */; };
+		46C4A4742AEE49C60051A9E7 /* CalmSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C4A4732AEE49C60051A9E7 /* CalmSound.swift */; };
+		46E4BACF2ADDA9DF004BFA9F /* PasiteaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4BACE2ADDA9DF004BFA9F /* PasiteaApp.swift */; };
+		46E4BAD12ADDA9DF004BFA9F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4BAD02ADDA9DF004BFA9F /* MainView.swift */; };
+		46E4BAD32ADDA9E0004BFA9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E4BAD22ADDA9E0004BFA9F /* Assets.xcassets */; };
+		46ECD0D32AED4DED007057D5 /* SectionToLargeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ECD0D22AED4DED007057D5 /* SectionToLargeTitle.swift */; };
+		46ECD0D52AED511D007057D5 /* CustomListStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ECD0D42AED511D007057D5 /* CustomListStyle.swift */; };
+		46FE3EEF2AE321FB0049A56B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE3EEE2AE321FB0049A56B /* GradientView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D75D7912AE9611D0014F488 /* BreatheFlowerAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheFlowerAnimation.swift; sourceTree = "<group>"; };
+		1D75D7992AEA69F40014F488 /* sea-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sea-1.mp3"; sourceTree = "<group>"; };
+		4600326F2AEE1BA400135FE3 /* TopBarIconSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarIconSet.swift; sourceTree = "<group>"; };
+		4600682D2AE2663200BA571E /* CalmChoicesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmChoicesItemView.swift; sourceTree = "<group>"; };
+		4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
+		460E8A4B2AEDBFA4003DC9AC /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		465F174E2AEC5908002FC335 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
+		465F17502AEC5A5C002FC335 /* PasiteaStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasiteaStyle.swift; sourceTree = "<group>"; };
+		465F17522AEC5B31002FC335 /* InlineTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineTitle.swift; sourceTree = "<group>"; };
+		4685E8042AEF20B700DCBC72 /* CustomSingleBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSingleBackButton.swift; sourceTree = "<group>"; };
+		4685E80A2AEF222A00DCBC72 /* PasiteaButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasiteaButtonStyle.swift; sourceTree = "<group>"; };
+		4685E80C2AEF250300DCBC72 /* PasiteaHeadlineStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasiteaHeadlineStyle.swift; sourceTree = "<group>"; };
+		4685E80E2AEF257800DCBC72 /* PasiteaSubheadlineStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasiteaSubheadlineStyle.swift; sourceTree = "<group>"; };
+		4685E8112AEF260B00DCBC72 /* PasiteaHeadlines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasiteaHeadlines.swift; sourceTree = "<group>"; };
+		4685E8132AEF291C00DCBC72 /* InformationModalStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationModalStyle.swift; sourceTree = "<group>"; };
+		4685E8152AEF495C00DCBC72 /* TrackItemWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemWrapper.swift; sourceTree = "<group>"; };
+		4699DCA42ADE6432008B17F9 /* TrackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItem.swift; sourceTree = "<group>"; };
+		4699DCC02ADE8DF5008B17F9 /* CalmBreatheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmBreatheView.swift; sourceTree = "<group>"; };
+		4699DCC22ADE8E00008B17F9 /* CalmListenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmListenView.swift; sourceTree = "<group>"; };
+		4699DCC62ADE9449008B17F9 /* CalmStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmStep.swift; sourceTree = "<group>"; };
+		4699DCCA2ADEDB72008B17F9 /* CalmExerciseFinishedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmExerciseFinishedView.swift; sourceTree = "<group>"; };
+		4699DCCC2ADF04F9008B17F9 /* CalmChoicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmChoicesView.swift; sourceTree = "<group>"; };
+		46A8D8342AEBAC6D0065C54E /* CalmStepsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalmStepsView.swift; sourceTree = "<group>"; };
+		46A8D8352AEBAC6D0065C54E /* CalmSingleStepView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalmSingleStepView.swift; sourceTree = "<group>"; };
+		46A8D83D2AEBACFC0065C54E /* TrackItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackItemView.swift; sourceTree = "<group>"; };
+		46A8D83E2AEBACFC0065C54E /* TrackItemRowEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackItemRowEmpty.swift; sourceTree = "<group>"; };
+		46A8D83F2AEBACFC0065C54E /* TrackItemAddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackItemAddView.swift; sourceTree = "<group>"; };
+		46A8D8402AEBACFC0065C54E /* TrackItemRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackItemRow.swift; sourceTree = "<group>"; };
+		46A8D8412AEBACFC0065C54E /* TrackJournalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackJournalView.swift; sourceTree = "<group>"; };
+		46A8D8422AEBACFC0065C54E /* TrackItemEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackItemEditView.swift; sourceTree = "<group>"; };
+		46A8D8432AEBACFC0065C54E /* TrackHistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackHistoryView.swift; sourceTree = "<group>"; };
+		46A8D8442AEBACFC0065C54E /* TrackFeelingItemRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackFeelingItemRow.swift; sourceTree = "<group>"; };
+		46A8D8452AEBACFC0065C54E /* TrackScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackScreen.swift; sourceTree = "<group>"; };
+		46A8D8502AEBAD160065C54E /* TrackType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackType.swift; sourceTree = "<group>"; };
+		46A8D8572AEBDEAD0065C54E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		46A8D85C2AEC051B0065C54E /* UltraThinInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltraThinInterface.swift; sourceTree = "<group>"; };
+		46A8D8672AEC51A70065C54E /* LargeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTitle.swift; sourceTree = "<group>"; };
+		46BB751C2AEDD3ED00A226D0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Preview Assets.xcassets"; path = "Pasitea/Preview Content/Preview Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		46BB751E2AEDD62700A226D0 /* CustomCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCover.swift; sourceTree = "<group>"; };
+		46BB75202AEDE38D00A226D0 /* BlurTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurTransition.swift; sourceTree = "<group>"; };
+		46BB75222AEDF48500A226D0 /* TrackItemPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemPreviewView.swift; sourceTree = "<group>"; };
+		46BB75242AEE0C4500A226D0 /* CustomProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressStyle.swift; sourceTree = "<group>"; };
+		46C27F1E2ADDF93300038380 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		46C27F202ADDF96800038380 /* Learn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn.swift; sourceTree = "<group>"; };
+		46C27F2E2ADDFA5300038380 /* CalmScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmScreen.swift; sourceTree = "<group>"; };
+		46C4A4672AEE499F0051A9E7 /* cat-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "cat-1.mp3"; sourceTree = "<group>"; };
+		46C4A4682AEE499F0051A9E7 /* cat-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "cat-2.mp3"; sourceTree = "<group>"; };
+		46C4A4692AEE499F0051A9E7 /* wind-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "wind-2.mp3"; sourceTree = "<group>"; };
+		46C4A46A2AEE499F0051A9E7 /* wind-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "wind-1.mp3"; sourceTree = "<group>"; };
+		46C4A46B2AEE499F0051A9E7 /* birds-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "birds-1.mp3"; sourceTree = "<group>"; };
+		46C4A46C2AEE499F0051A9E7 /* river-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "river-1.mp3"; sourceTree = "<group>"; };
+		46C4A4732AEE49C60051A9E7 /* CalmSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmSound.swift; sourceTree = "<group>"; };
+		46E4BACB2ADDA9DF004BFA9F /* Pasitea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pasitea.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46E4BACE2ADDA9DF004BFA9F /* PasiteaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasiteaApp.swift; sourceTree = "<group>"; };
+		46E4BAD02ADDA9DF004BFA9F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		46E4BAD22ADDA9E0004BFA9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		46ECD0D22AED4DED007057D5 /* SectionToLargeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionToLargeTitle.swift; sourceTree = "<group>"; };
+		46ECD0D42AED511D007057D5 /* CustomListStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListStyle.swift; sourceTree = "<group>"; };
+		46FE3EEE2AE321FB0049A56B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		46E4BAC82ADDA9DF004BFA9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4600682F2AE26C3300BA571E /* Calm - Choices */ = {
+			isa = PBXGroup;
+			children = (
+				4699DCCC2ADF04F9008B17F9 /* CalmChoicesView.swift */,
+				4600682D2AE2663200BA571E /* CalmChoicesItemView.swift */,
+			);
+			path = "Calm - Choices";
+			sourceTree = "<group>";
+		};
+		4685E7FE2AEF1B8500DCBC72 /* Calm - Listen */ = {
+			isa = PBXGroup;
+			children = (
+				4699DCC22ADE8E00008B17F9 /* CalmListenView.swift */,
+			);
+			path = "Calm - Listen";
+			sourceTree = "<group>";
+		};
+		4685E7FF2AEF1BAE00DCBC72 /* Track - Items */ = {
+			isa = PBXGroup;
+			children = (
+				46A8D83D2AEBACFC0065C54E /* TrackItemView.swift */,
+				46BB75222AEDF48500A226D0 /* TrackItemPreviewView.swift */,
+				46A8D83F2AEBACFC0065C54E /* TrackItemAddView.swift */,
+				46A8D8422AEBACFC0065C54E /* TrackItemEditView.swift */,
+				4685E8002AEF1CA500DCBC72 /* Items - Row */,
+			);
+			path = "Track - Items";
+			sourceTree = "<group>";
+		};
+		4685E8002AEF1CA500DCBC72 /* Items - Row */ = {
+			isa = PBXGroup;
+			children = (
+				46A8D8402AEBACFC0065C54E /* TrackItemRow.swift */,
+				46A8D83E2AEBACFC0065C54E /* TrackItemRowEmpty.swift */,
+				46A8D8442AEBACFC0065C54E /* TrackFeelingItemRow.swift */,
+			);
+			path = "Items - Row";
+			sourceTree = "<group>";
+		};
+		4685E8012AEF1D7A00DCBC72 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				46A8D8572AEBDEAD0065C54E /* Utils.swift */,
+				46A538A42AE16ECB0042A375 /* Components */,
+				46A8D85B2AEC05040065C54E /* Modifiers */,
+				4685E8022AEF1DDB00DCBC72 /* Styles */,
+				4685E8032AEF1DF000DCBC72 /* Transition */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4685E8022AEF1DDB00DCBC72 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				46BB75242AEE0C4500A226D0 /* CustomProgressStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		4685E8032AEF1DF000DCBC72 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				46BB75202AEDE38D00A226D0 /* BlurTransition.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		4685E8102AEF25B200DCBC72 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				46ECD0D42AED511D007057D5 /* CustomListStyle.swift */,
+				4685E80A2AEF222A00DCBC72 /* PasiteaButtonStyle.swift */,
+				4685E80C2AEF250300DCBC72 /* PasiteaHeadlineStyle.swift */,
+				4685E80E2AEF257800DCBC72 /* PasiteaSubheadlineStyle.swift */,
+				465F17502AEC5A5C002FC335 /* PasiteaStyle.swift */,
+				4685E8132AEF291C00DCBC72 /* InformationModalStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		46A538A42AE16ECB0042A375 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4609E7562ADFD32F00CAD374 /* CustomBackButton.swift */,
+				46FE3EEE2AE321FB0049A56B /* GradientView.swift */,
+				4685E8112AEF260B00DCBC72 /* PasiteaHeadlines.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		46A8D85B2AEC05040065C54E /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				4685E8102AEF25B200DCBC72 /* Styles */,
+				465F174E2AEC5908002FC335 /* BackgroundGradient.swift */,
+				4685E8042AEF20B700DCBC72 /* CustomSingleBackButton.swift */,
+				46BB751E2AEDD62700A226D0 /* CustomCover.swift */,
+				465F17522AEC5B31002FC335 /* InlineTitle.swift */,
+				46A8D8672AEC51A70065C54E /* LargeTitle.swift */,
+				46ECD0D22AED4DED007057D5 /* SectionToLargeTitle.swift */,
+				46A8D85C2AEC051B0065C54E /* UltraThinInterface.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		46BB751B2AEDD3ED00A226D0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				46BB751C2AEDD3ED00A226D0 /* Preview Assets.xcassets */,
+			);
+			name = "Preview Content";
+			path = "Pasitea/Preview Content";
+			sourceTree = SOURCE_ROOT;
+		};
+		46C27F1A2ADDF8EF00038380 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				460E8A4B2AEDBFA4003DC9AC /* Localizable.xcstrings */,
+				46ECD0D82AED6E3A007057D5 /* Sounds */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		46C27F1D2ADDF92600038380 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4600326F2AEE1BA400135FE3 /* TopBarIconSet.swift */,
+				46C27F1E2ADDF93300038380 /* ModelData.swift */,
+				46C27F202ADDF96800038380 /* Learn.swift */,
+				4699DCA42ADE6432008B17F9 /* TrackItem.swift */,
+				46A8D8502AEBAD160065C54E /* TrackType.swift */,
+				4699DCC62ADE9449008B17F9 /* CalmStep.swift */,
+				46C4A4732AEE49C60051A9E7 /* CalmSound.swift */,
+				4685E8152AEF495C00DCBC72 /* TrackItemWrapper.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46C27F222ADDF9BF00038380 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46E4BAD02ADDA9DF004BFA9F /* MainView.swift */,
+				46C27F2B2ADDFA3500038380 /* Calm */,
+				46C27F2A2ADDFA2200038380 /* Track */,
+				4685E8012AEF1D7A00DCBC72 /* Utils */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46C27F2A2ADDFA2200038380 /* Track */ = {
+			isa = PBXGroup;
+			children = (
+				46A8D8452AEBACFC0065C54E /* TrackScreen.swift */,
+				46A8D8432AEBACFC0065C54E /* TrackHistoryView.swift */,
+				46A8D8412AEBACFC0065C54E /* TrackJournalView.swift */,
+				4685E7FF2AEF1BAE00DCBC72 /* Track - Items */,
+			);
+			path = Track;
+			sourceTree = "<group>";
+		};
+		46C27F2B2ADDFA3500038380 /* Calm */ = {
+			isa = PBXGroup;
+			children = (
+				46C27F2E2ADDFA5300038380 /* CalmScreen.swift */,
+				4699DCCA2ADEDB72008B17F9 /* CalmExerciseFinishedView.swift */,
+				4600682F2AE26C3300BA571E /* Calm - Choices */,
+				46F0BF762AEF1AA50082F7FE /* Calm - 5 Steps */,
+				46F0BF752AEF1A970082F7FE /* Calm - Breathe */,
+				4685E7FE2AEF1B8500DCBC72 /* Calm - Listen */,
+			);
+			path = Calm;
+			sourceTree = "<group>";
+		};
+		46E4BAC22ADDA9DF004BFA9F = {
+			isa = PBXGroup;
+			children = (
+				46E4BACD2ADDA9DF004BFA9F /* Pasitea */,
+				46E4BACC2ADDA9DF004BFA9F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		46E4BACC2ADDA9DF004BFA9F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46E4BACB2ADDA9DF004BFA9F /* Pasitea.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46E4BACD2ADDA9DF004BFA9F /* Pasitea */ = {
+			isa = PBXGroup;
+			children = (
+				46E4BAD22ADDA9E0004BFA9F /* Assets.xcassets */,
+				46E4BACE2ADDA9DF004BFA9F /* PasiteaApp.swift */,
+				46C27F222ADDF9BF00038380 /* View */,
+				46C27F1D2ADDF92600038380 /* Model */,
+				46C27F1A2ADDF8EF00038380 /* Resources */,
+				46BB751B2AEDD3ED00A226D0 /* Preview Content */,
+			);
+			path = Pasitea;
+			sourceTree = "<group>";
+		};
+		46ECD0D82AED6E3A007057D5 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				46C4A46B2AEE499F0051A9E7 /* birds-1.mp3 */,
+				46C4A4672AEE499F0051A9E7 /* cat-1.mp3 */,
+				46C4A4682AEE499F0051A9E7 /* cat-2.mp3 */,
+				46C4A46C2AEE499F0051A9E7 /* river-1.mp3 */,
+				46C4A46A2AEE499F0051A9E7 /* wind-1.mp3 */,
+				46C4A4692AEE499F0051A9E7 /* wind-2.mp3 */,
+				1D75D7992AEA69F40014F488 /* sea-1.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		46F0BF752AEF1A970082F7FE /* Calm - Breathe */ = {
+			isa = PBXGroup;
+			children = (
+				4699DCC02ADE8DF5008B17F9 /* CalmBreatheView.swift */,
+				1D75D7912AE9611D0014F488 /* BreatheFlowerAnimation.swift */,
+			);
+			path = "Calm - Breathe";
+			sourceTree = "<group>";
+		};
+		46F0BF762AEF1AA50082F7FE /* Calm - 5 Steps */ = {
+			isa = PBXGroup;
+			children = (
+				46A8D8352AEBAC6D0065C54E /* CalmSingleStepView.swift */,
+				46A8D8342AEBAC6D0065C54E /* CalmStepsView.swift */,
+			);
+			path = "Calm - 5 Steps";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		46E4BACA2ADDA9DF004BFA9F /* Pasitea */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46E4BAD92ADDA9E0004BFA9F /* Build configuration list for PBXNativeTarget "Pasitea" */;
+			buildPhases = (
+				46E4BAC72ADDA9DF004BFA9F /* Sources */,
+				46E4BAC82ADDA9DF004BFA9F /* Frameworks */,
+				46E4BAC92ADDA9DF004BFA9F /* Resources */,
+				465F17562AED2A04002FC335 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pasitea;
+			productName = Negroni;
+			productReference = 46E4BACB2ADDA9DF004BFA9F /* Pasitea.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46E4BAC32ADDA9DF004BFA9F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					46E4BACA2ADDA9DF004BFA9F = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 46E4BAC62ADDA9DF004BFA9F /* Build configuration list for PBXProject "Pasitea" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				fr,
+			);
+			mainGroup = 46E4BAC22ADDA9DF004BFA9F;
+			productRefGroup = 46E4BACC2ADDA9DF004BFA9F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				46E4BACA2ADDA9DF004BFA9F /* Pasitea */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		46E4BAC92ADDA9DF004BFA9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46C4A4702AEE499F0051A9E7 /* wind-1.mp3 in Resources */,
+				46BB751D2AEDD3ED00A226D0 /* Preview Assets.xcassets in Resources */,
+				1D75D79A2AEA69F40014F488 /* sea-1.mp3 in Resources */,
+				460E8A4C2AEDBFA4003DC9AC /* Localizable.xcstrings in Resources */,
+				46C4A46F2AEE499F0051A9E7 /* wind-2.mp3 in Resources */,
+				46C4A4712AEE499F0051A9E7 /* birds-1.mp3 in Resources */,
+				46C4A46D2AEE499F0051A9E7 /* cat-1.mp3 in Resources */,
+				46C4A46E2AEE499F0051A9E7 /* cat-2.mp3 in Resources */,
+				46E4BAD32ADDA9E0004BFA9F /* Assets.xcassets in Resources */,
+				46C4A4722AEE499F0051A9E7 /* river-1.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		465F17562AED2A04002FC335 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -e /opt/homebrew/bin/swiftlint ]]; then\n    /opt/homebrew/bin/swiftlint --fix --format && /opt/homebrew/bin/swiftlint\nelse\n    echo \"warning:SwiftLint has not been found on your computer. You should install it with Homebrew (https://brew.sh/)\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		46E4BAC72ADDA9DF004BFA9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46A8D84A2AEBACFC0065C54E /* TrackJournalView.swift in Sources */,
+				4609E7572ADFD33000CAD374 /* CustomBackButton.swift in Sources */,
+				465F174F2AEC5908002FC335 /* BackgroundGradient.swift in Sources */,
+				4699DCCB2ADEDB72008B17F9 /* CalmExerciseFinishedView.swift in Sources */,
+				4699DCA52ADE6432008B17F9 /* TrackItem.swift in Sources */,
+				4699DCCD2ADF04F9008B17F9 /* CalmChoicesView.swift in Sources */,
+				46A8D84C2AEBACFC0065C54E /* TrackHistoryView.swift in Sources */,
+				46ECD0D32AED4DED007057D5 /* SectionToLargeTitle.swift in Sources */,
+				4699DCC32ADE8E00008B17F9 /* CalmListenView.swift in Sources */,
+				46A8D8582AEBDEAD0065C54E /* Utils.swift in Sources */,
+				465F17512AEC5A5C002FC335 /* PasiteaStyle.swift in Sources */,
+				46A8D84B2AEBACFC0065C54E /* TrackItemEditView.swift in Sources */,
+				46A8D8492AEBACFC0065C54E /* TrackItemRow.swift in Sources */,
+				4600682E2AE2663200BA571E /* CalmChoicesItemView.swift in Sources */,
+				46C27F2F2ADDFA5300038380 /* CalmScreen.swift in Sources */,
+				46FE3EEF2AE321FB0049A56B /* GradientView.swift in Sources */,
+				46BB75252AEE0C4500A226D0 /* CustomProgressStyle.swift in Sources */,
+				1D75D7922AE9611D0014F488 /* BreatheFlowerAnimation.swift in Sources */,
+				4685E80B2AEF222A00DCBC72 /* PasiteaButtonStyle.swift in Sources */,
+				46C27F212ADDF96800038380 /* Learn.swift in Sources */,
+				4685E8122AEF260B00DCBC72 /* PasiteaHeadlines.swift in Sources */,
+				46A8D85D2AEC051B0065C54E /* UltraThinInterface.swift in Sources */,
+				4685E8162AEF495C00DCBC72 /* TrackItemWrapper.swift in Sources */,
+				46A8D84E2AEBACFC0065C54E /* TrackScreen.swift in Sources */,
+				4685E8052AEF20B700DCBC72 /* CustomSingleBackButton.swift in Sources */,
+				46A8D8482AEBACFC0065C54E /* TrackItemAddView.swift in Sources */,
+				46A8D8512AEBAD160065C54E /* TrackType.swift in Sources */,
+				4685E80F2AEF257800DCBC72 /* PasiteaSubheadlineStyle.swift in Sources */,
+				4685E8142AEF291C00DCBC72 /* InformationModalStyle.swift in Sources */,
+				46A8D84D2AEBACFC0065C54E /* TrackFeelingItemRow.swift in Sources */,
+				46A8D8362AEBAC6D0065C54E /* CalmStepsView.swift in Sources */,
+				46ECD0D52AED511D007057D5 /* CustomListStyle.swift in Sources */,
+				46A8D8462AEBACFC0065C54E /* TrackItemView.swift in Sources */,
+				46BB75212AEDE38D00A226D0 /* BlurTransition.swift in Sources */,
+				46BB75232AEDF48500A226D0 /* TrackItemPreviewView.swift in Sources */,
+				46E4BAD12ADDA9DF004BFA9F /* MainView.swift in Sources */,
+				46A8D8372AEBAC6D0065C54E /* CalmSingleStepView.swift in Sources */,
+				46E4BACF2ADDA9DF004BFA9F /* PasiteaApp.swift in Sources */,
+				4685E80D2AEF250300DCBC72 /* PasiteaHeadlineStyle.swift in Sources */,
+				46BB751F2AEDD62700A226D0 /* CustomCover.swift in Sources */,
+				46C4A4742AEE49C60051A9E7 /* CalmSound.swift in Sources */,
+				46A8D8682AEC51A70065C54E /* LargeTitle.swift in Sources */,
+				46C27F1F2ADDF93300038380 /* ModelData.swift in Sources */,
+				4699DCC12ADE8DF5008B17F9 /* CalmBreatheView.swift in Sources */,
+				460032702AEE1BA400135FE3 /* TopBarIconSet.swift in Sources */,
+				465F17532AEC5B31002FC335 /* InlineTitle.swift in Sources */,
+				4699DCC72ADE9449008B17F9 /* CalmStep.swift in Sources */,
+				46A8D8472AEBACFC0065C54E /* TrackItemRowEmpty.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		46E4BAD72ADDA9E0004BFA9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		46E4BAD82ADDA9E0004BFA9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		46E4BADA2ADDA9E0004BFA9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Pasitea/Preview Content\"";
+				DEVELOPMENT_TEAM = NP94WB3P75;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pasitea/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Pasitea;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = studio.aemgi.ada23.Pasitea;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		46E4BADB2ADDA9E0004BFA9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Pasitea/Preview Content\"";
+				DEVELOPMENT_TEAM = NP94WB3P75;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pasitea/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Pasitea;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = studio.aemgi.ada23.Pasitea;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		46E4BAC62ADDA9DF004BFA9F /* Build configuration list for PBXProject "Pasitea" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46E4BAD72ADDA9E0004BFA9F /* Debug */,
+				46E4BAD82ADDA9E0004BFA9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46E4BAD92ADDA9E0004BFA9F /* Build configuration list for PBXNativeTarget "Pasitea" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46E4BADA2ADDA9E0004BFA9F /* Debug */,
+				46E4BADB2ADDA9E0004BFA9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46E4BAC32ADDA9DF004BFA9F /* Project object */;
+}

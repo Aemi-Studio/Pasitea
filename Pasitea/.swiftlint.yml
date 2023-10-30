@@ -1,0 +1,29 @@
+opt_in_rules:
+    - indentation_width
+    - operator_usage_whitespace
+    - accessibility_label_for_image
+    - accessibility_trait_for_button
+    - anonymous_argument_in_multiline_closure
+    - closure_end_indentation
+    - closure_spacing
+    - collection_alignment
+    - comma_inheritance
+    - empty_collection_literal
+    - superfluous_else
+    - toggle_bool
+    - trailing_closure
+    - vertical_whitespace_between_cases
+    - vertical_whitespace_opening_braces
+    - vertical_whitespace_closing_braces
+    - yoda_condition
+analyzer_rules:
+    - explicit_self
+
+allow_zero_lintable_files: false
+
+force_cast: warning
+force_try:
+    severity: warning
+
+type_name:
+    allowed_symbols: ["_"]

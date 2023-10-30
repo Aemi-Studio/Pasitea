@@ -1,0 +1,1288 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    " Delete %@ exercise%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : " Delete %1$@ exercise%2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer %1$@ exercice%2$@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancella %1$@ esercizio"
+          }
+        }
+      }
+    },
+    " Delete %@ feeling%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : " Delete %1$@ feeling%2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer %1$@ ressenti%2$@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancella %1$@ sentimento"
+          }
+        }
+      }
+    },
+    "5 Steps" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 Étapes"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 Passaggi"
+          }
+        }
+      }
+    },
+    "5-steps" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5-étapes"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 Passaggi"
+          }
+        }
+      }
+    },
+    "Add" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi"
+          }
+        }
+      }
+    },
+    "Breathe" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Respirez"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Respira"
+          }
+        }
+      }
+    },
+    "Breathe In" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inspirez"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inspira"
+          }
+        }
+      }
+    },
+    "Breathe Out" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expirez"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espira"
+          }
+        }
+      }
+    },
+    "Breathing" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Respiration"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Respirazione"
+          }
+        }
+      }
+    },
+    "Calm" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calme"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calma"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
+          }
+        }
+      }
+    },
+    "Cardiac coherence is a breathing technique designed to synchronize your breath with your heart rate for improved emotional well-being and stress reduction.\n\nIt involves slow, rhythmic breathing, typically at a rate of around six breaths per minute, which helps balance the autonomic nervous system.\n\nBy practicing cardiac coherence, you can enhance your ability to manage stress and enhance your overall sense of well-being." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La cohérence cardiaque est une technique respiratoire conçue pour synchroniser la respiration avec le rythme cardiaque afin d'améliorer le bien-être émotionnel et de réduire le stress.\n\nElle implique une respiration lente et rythmée, généralement à un rythme d'environ six respirations par minute, qui aide à équilibrer le système nerveux autonome.\n\nEn pratiquant la cohérence cardiaque, vous pouvez améliorer votre capacité à gérer le stress et votre sentiment général de bien-être."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La coerenza cardiaca è una tecnica di respirazione progettata per sincronizzare il respiro con la frequenza cardiaca al fine di migliorare il benessere emotivo e ridurre lo stress.   Essa coinvolge una respirazione lenta e ritmica, tipicamente a un ritmo di circa sei respiri al minuto, che aiuta a bilanciare il sistema nervoso autonomo.   Praticando la coerenza cardiaca, è possibile migliorare la capacità di gestire lo stress e accrescere il proprio senso generale di benessere."
+          }
+        }
+      }
+    },
+    "Choose Next Action" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisir l'Action Suivante"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli Prossima Azione"
+          }
+        }
+      }
+    },
+    "Close" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fermer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chiudi"
+          }
+        }
+      }
+    },
+    "Date" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina"
+          }
+        }
+      }
+    },
+    "Delete %lld Exercise%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Delete %1$lld Exercise%2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer %1$lld Exercice%2$@"
+          }
+        },
+        "it" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Elimina %1$lld Esercizio"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Elimina %1$lld Esercizi"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Delete %lld Feeling%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Delete %1$lld Feeling%2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer %1$lld Ressenti%2$@"
+          }
+        },
+        "it" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Elimina %1$lld Sentimento"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Elimina %1$lld Sentimenti"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Delete Everything" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tout Supprimer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina Tutto"
+          }
+        }
+      }
+    },
+    "Do you still need help ?" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avez-vous encore besoin d'aide ?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hai ancora bisogno di aiuto?"
+          }
+        }
+      }
+    },
+    "Edit" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Éditer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifica"
+          }
+        }
+      }
+    },
+    "End Date" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date de fin"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data Fine"
+          }
+        }
+      }
+    },
+    "Ending Date" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date de fin"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data di Fine"
+          }
+        }
+      }
+    },
+    "Ending Date\n" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date de fin"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data di Fine"
+          }
+        }
+      }
+    },
+    "Exercise Finished" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exercice Fini"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esercizio Completato"
+          }
+        }
+      }
+    },
+    "Feeling" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ressenti"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sentimento"
+          }
+        }
+      }
+    },
+    "Finish" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finir"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termina"
+          }
+        }
+      }
+    },
+    "Finished!" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fini !"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finito!"
+          }
+        }
+      }
+    },
+    "Hello" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bonjour"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciao"
+          }
+        }
+      }
+    },
+    "History" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Historique"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cronologia"
+          }
+        }
+      }
+    },
+    "I need more help" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "J'ai encore besoin d'aide"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ho ancora bisogno di aiuto"
+          }
+        }
+      }
+    },
+    "I'm fine" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je vais bien"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sto bene"
+          }
+        }
+      }
+    },
+    "I've been feeling blue lately..." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je ne sens pas très bien ces derniers temps..."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ultimamente mi sento..."
+          }
+        }
+      }
+    },
+    "If you made changes, modifications will be cancelled. Do you really want to cancel them?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si vous avez fait des changements, les modifications seront annulées. Voulez-vous vraiment les annuler ?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutte le modifiche saranno annullate. Sei sicuro?"
+          }
+        }
+      }
+    },
+    "Informations" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informations"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informazioni"
+          }
+        }
+      }
+    },
+    "Journal" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Journal"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diario"
+          }
+        }
+      }
+    },
+    "Lasted" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cela a duré"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durata"
+          }
+        }
+      }
+    },
+    "Listen" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Écoutez"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ascolta"
+          }
+        }
+      }
+    },
+    "Listen to this sound" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Écoutez ce som"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ascolta questo suono"
+          }
+        }
+      }
+    },
+    "Listening" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Écoute"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ascoltare"
+          }
+        }
+      }
+    },
+    "Listening to calming sounds is a powerful way to find relaxation and reduce stress. Whether it's the gentle rush of waves, raindrops falling, or cats purring, these sounds have the ability to soothe and calm your mind.\n\nBy immersing yourself in these serene auditory experiences, you can lower stress levels, ease anxiety, and create a sense of tranquility.\n\nIt's a simple yet effective method to find peace in a noisy world." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Écouter des sons apaisants est un moyen efficace de se détendre et de réduire le stress. Qu'il s'agisse du doux bruit des vagues, des gouttes de pluie qui tombent ou du ronronnement des chats, ces sons ont la capacité d'apaiser et de calmer votre esprit.\n\nEn vous immergeant dans ces expériences auditives sereines, vous pouvez réduire votre niveau de stress, apaiser votre anxiété et créer un sentiment de tranquillité.\n\nC'est une méthode simple mais efficace pour trouver la paix dans un monde bruyant.\n\nTraduit avec www.DeepL.com/Translator (version gratuite)"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ascoltare suoni rilassanti è un potente modo per trovare relax e ridurre lo stress. Che si tratti del dolce fruscio delle onde, delle gocce di pioggia che cadono o dei gatti che fanno le fusa, questi suoni hanno la capacità di lenire e tranquillizzare la mente.\n\nImmergendoti in queste serene esperienze uditive, puoi abbassare i livelli di stress, alleviare l'ansia e creare una sensazione di tranquillità. È un metodo semplice ma efficace per trovare pace in un mondo rumoroso."
+          }
+        }
+      }
+    },
+    "Next" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suivant"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avanti"
+          }
+        }
+      }
+    },
+    "No" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No"
+          }
+        }
+      }
+    },
+    "Pause" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pause"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pausa"
+          }
+        }
+      }
+    },
+    "Personal Notes" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notes Personnelles"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Note Personali"
+          }
+        }
+      }
+    },
+    "Placeholder" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder"
+          }
+        }
+      }
+    },
+    "Play" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lecture"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Play"
+          }
+        }
+      }
+    },
+    "Prepare Yourself" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préparez-vous"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparati"
+          }
+        }
+      }
+    },
+    "Restart" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recommencer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riavvia"
+          }
+        }
+      }
+    },
+    "Restart when you're ready" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redémarrez quand vous êtes prêt"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riavvia quando sei pronto"
+          }
+        }
+      }
+    },
+    "Resume" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reprendre"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riprendi"
+          }
+        }
+      }
+    },
+    "Resume when you're ready" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redémarrez quand vous êtes prêt"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riprendi quando sei pronto"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salva"
+          }
+        }
+      }
+    },
+    "Saved on" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer le"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvato il"
+          }
+        }
+      }
+    },
+    "See the details" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voir les détails"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guarda dettagli"
+          }
+        }
+      }
+    },
+    "Session Exercises" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exercices de la session"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esercizi della Sessione"
+          }
+        }
+      }
+    },
+    "Sounds" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sons"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suoni"
+          }
+        }
+      }
+    },
+    "Start" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Début"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inizia"
+          }
+        }
+      }
+    },
+    "Start Date" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date de début"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data Inizio"
+          }
+        }
+      }
+    },
+    "Starting Date" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date de début"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data di Inizio"
+          }
+        }
+      }
+    },
+    "Starting Date\n" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date de début"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data di Inizio"
+          }
+        }
+      }
+    },
+    "Stop" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arrêter"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop"
+          }
+        }
+      }
+    },
+    "The 5-4-3-2-1 method is a scientifically proven quick anxiety and stress reduction technique.\n\nTo calm down:\n\n1. See: Identify 5 things around you.\n2. Touch: Acknowledge 4 things you can physically feel.\n3. Hear: Note 3 sounds in your environment.\n4. Smell: Focus on 2 scents.\n5. Taste: Experience 1 taste, like a sip of water.\n\nEngaging your senses this way helps you stay present and reduce anxiety." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La méthode 5-4-3-2-1 est une technique de réduction rapide de l'anxiété et du stress scientifiquement prouvée.\n\nPour se calmer :\n\n1. Regardez : Identifiez 5 choses autour de vous.\n2. Touchez : Identifiez 4 choses que vous pouvez toucher ou touchez les.\n3. Entendre : Distinguez 3 sons dans votre environnement.\n4. Sentir : Concentrez-vous sur 2 odeurs.\n5. Goût : Faites l'expérience d'un goût, comme une gorgée d'eau.\n\nEn sollicitant vos sens de cette manière, vous restez ancré dans l'instant et cela vous aide à diminuer votre anxiété."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il metodo 5-4-3-2-1 è una tecnica scientificamente provata per ridurre rapidamente l'ansia e lo stress.\n\nPer calmarti:\n\n1. Vedi: Identifica 5 cose che ti circondano.\n2. Tocca: Riconosci 4 cose che puoi fisicamente sentire.\n3. Senti: Nota 3 suoni nell'ambiente intorno a te.\n4. Odora: Concentrati su 2 profumi.\n5. Gusta: Sperimenta 1 gusto, come un sorso d'acqua.\n\nCoinvolgendo i tuoi sensi in questo modo, ti aiuta a rimanere nel presente e a ridurre l'ansia."
+          }
+        }
+      }
+    },
+    "The three buttons of this screen provides 3 types of exercises or actions that can help you calm down or manage your anxiety." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les trois boutons de cet écran proposent trois types d'exercices ou d'actions qui peuvent vous aider à vous calmer ou à gérer votre anxiété."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I tre pulsanti di questa schermata forniscono 3 tipi di esercizi o azioni che possono aiutarti a calmarti o a gestire l'ansia."
+          }
+        }
+      }
+    },
+    "The three buttons of this screen provides 3 types of exercises or actions that can help you calm down or manage your anxiety.\n\nThe \"5 Steps\" exercise provides a focus-based exercise to calm down efficiently during a panic attack.\n\nThe \"Breathe\" exercise helps you relaxing by using Cardiac Coherence breathing technique.\n\nThe \"Listen\" exercise is meant to provide familiar and isolating sounds to listen to focus on something." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les trois boutons de cet écran proposent trois types d'exercices ou d'actions qui peuvent vous aider à vous calmer ou à gérer votre anxiété.\n\nL'exercice \"5 étapes\" est un exercice de concentration qui permet de se calmer efficacement lors d'une crise de panique.\n\nL'exercice \"Respirer\" vous aide à vous détendre en utilisant la technique de respiration par cohérence cardiaque.\n\nL'exercice \"Écouter\" est destiné à fournir des sons familiers et isolants à écouter pour se concentrer sur quelque chose."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I tre pulsanti di questa schermata forniscono 3 tipi di esercizi o azioni che possono aiutare a calmarsi o a gestire l'ansia.\n\nL'esercizio \"5 Passaggi\" è un esercizio basato sulla concentrazione per calmarsi efficacemente durante un attacco di panico.\n\nL'esercizio \"Respira\" aiuta a rilassarsi utilizzando la tecnica di respirazione a coerenza cardiaca.\n\nL'esercizio \"Ascolta\" ha lo scopo di fornire suoni familiari e isolati da ascoltare per concentrarsi su qualcosa."
+          }
+        }
+      }
+    },
+    "Track" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suivre"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traccia"
+          }
+        }
+      }
+    },
+    "Type" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tipo"
+          }
+        }
+      }
+    },
+    "Typology" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tipologia"
+          }
+        }
+      }
+    },
+    "Written on" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Écrite le"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scritto il"
+          }
+        }
+      }
+    },
+    "Yes" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oui"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si"
+          }
+        }
+      }
+    },
+    "You can click on one of these buttons to start a calming exercise." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous pouvez cliquer sur l'un de ces boutons pour commencer un exercice apaisant."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tocca uno dei pulsanti per iniziare un esercizio"
+          }
+        }
+      }
+    },
+    "You're about to delete this \"%@\" exercise." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous êtes sur le point de supprimer cet exercice \"%@\"."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stai per eliminare questo \"%@\" esercizio"
+          }
+        }
+      }
+    },
+    "You're about to exit an ongoing exercise.\nAre you sure about it?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous êtes sur le point de quitter un exercice en cours.\nÊtes-vous sûr de vous ?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stai uscendo da un esercizio in corso. Sei sicuro?"
+          }
+        }
+      }
+    },
+    "You're about to exit an ongoing exercise. Are you sure about it?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous êtes sur le point de quitter un exercice en cours. Êtes-vous sûr de vous ?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stai uscendo da un esercizio in corso. Sei sicuro?"
+          }
+        }
+      }
+    },
+    "You're about to remove %@ saved exercise%@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You're about to remove %1$@ saved exercise%2$@."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous êtes sur le point de supprimer %1$@  exercice%2$@ enregistré%2$@."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stai per rimuovere %1$@ esercizio %2$@ salvato"
+          }
+        }
+      }
+    },
+    "You're about to remove %@ saved feeling%@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You're about to remove %1$@ saved feeling%2$@."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous êtes sur le point de supprimer %1$@  ressenti%2$@ enregistré%2$@."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stai per rimuovere %1$@ sentimento%2$@ salvato"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
