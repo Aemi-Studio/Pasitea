@@ -292,6 +292,7 @@
       }
     },
     "Do you still need help ?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -372,6 +373,7 @@
       }
     },
     "Exercise Finished" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -419,7 +421,11 @@
         }
       }
     },
+    "Finished!" : {
+
+    },
     "Hello" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -503,6 +509,9 @@
         }
       }
     },
+    "Informations" : {
+
+    },
     "Journal" : {
       "localizations" : {
         "it" : {
@@ -534,6 +543,7 @@
       }
     },
     "Listen to this sound" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -593,6 +603,9 @@
         }
       }
     },
+    "Placeholder" : {
+
+    },
     "Play" : {
       "localizations" : {
         "it" : {
@@ -613,6 +626,12 @@
         }
       }
     },
+    "Restart" : {
+
+    },
+    "Restart when you're ready" : {
+
+    },
     "Resume" : {
       "localizations" : {
         "it" : {
@@ -624,6 +643,7 @@
       }
     },
     "Resume when you're ready" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -673,6 +693,12 @@
         }
       }
     },
+    "Something" : {
+
+    },
+    "Sounds" : {
+
+    },
     "Start" : {
       "localizations" : {
         "it" : {
@@ -712,6 +738,15 @@
           }
         }
       }
+    },
+    "Stop" : {
+
+    },
+    "The three buttons of this screen provides 3 types of exercises or actions that can help you calm down or manage your anxiety." : {
+
+    },
+    "This specific breathing exercise is based on Cardiac Coherence which a relies on the 3-6-5 method.\n\nThis method consists in practicing 3 times a day, 6 breathing per minutes for 5 minutes.\n\nThe button which act also as a progress bar indicates your current progress for the exercise." : {
+
     },
     "Track" : {
       "localizations" : {

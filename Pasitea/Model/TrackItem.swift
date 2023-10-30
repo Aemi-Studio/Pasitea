@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import SwiftUI
 
 @Model
 public final class TrackItem: Identifiable {
@@ -88,10 +89,10 @@ extension TrackItem {
         return self
     }
 
-    public func saveInto(_ modelContext: ModelContext, _ endDate: Date? = Date.now) {
+    public func saveInto(_ modelContext: ModelContext, _ endDate: Date? = nil) {
         if !saved {
             self.saved = true
-            self.endDate = endDate!
+            self.endDate = endDate ?? self.endDate
             modelContext.insert(self)
             do {
                 try modelContext.save()

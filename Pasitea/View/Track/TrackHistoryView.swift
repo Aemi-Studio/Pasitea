@@ -31,8 +31,6 @@ struct TrackHistoryView: View {
                                         item.deleteFrom(modelContext)
                                     }
                                 }
-                                .listRowInsets(EdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4))
-                                .listItemTint(.accent)
                         }
                     }
                 } header: {
