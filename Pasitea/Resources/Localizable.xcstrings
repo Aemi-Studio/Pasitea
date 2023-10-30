@@ -61,6 +61,9 @@
         }
       }
     },
+    "5-steps" : {
+
+    },
     "Add" : {
       "localizations" : {
         "fr" : {
@@ -166,6 +169,9 @@
           }
         }
       }
+    },
+    "Cardiac coherence is a breathing technique designed to synchronize your breath with your heart rate for improved emotional well-being and stress reduction.\n\nIt involves slow, rhythmic breathing, typically at a rate of around six breaths per minute, which helps balance the autonomic nervous system.\n\nBy practicing cardiac coherence, you can enhance your ability to manage stress and enhance your overall sense of well-being." : {
+
     },
     "Choose Next Action" : {
       "localizations" : {
@@ -563,6 +569,9 @@
         }
       }
     },
+    "Listening to calming sounds is a powerful way to find relaxation and reduce stress. Whether it's the gentle rush of waves, raindrops falling, or cats purring, these sounds have the ability to soothe and calm your mind.\n\nBy immersing yourself in these serene auditory experiences, you can lower stress levels, ease anxiety, and create a sense of tranquility.\n\nIt's a simple yet effective method to find peace in a noisy world." : {
+
+    },
     "Next" : {
       "localizations" : {
         "it" : {
@@ -693,9 +702,6 @@
         }
       }
     },
-    "Something" : {
-
-    },
     "Sounds" : {
 
     },
@@ -742,10 +748,10 @@
     "Stop" : {
 
     },
-    "The three buttons of this screen provides 3 types of exercises or actions that can help you calm down or manage your anxiety." : {
+    "The 5-4-3-2-1 method is a scientifically proven quick anxiety and stress reduction technique.\n\nTo calm down:\n\n1. See: Identify 5 things around you.\n2. Touch: Acknowledge 4 things you can physically feel.\n3. Hear: Note 3 sounds in your environment.\n4. Smell: Focus on 2 scents.\n5. Taste: Experience 1 taste, like a sip of water.\n\nEngaging your senses this way helps you stay present and reduce anxiety." : {
 
     },
-    "This specific breathing exercise is based on Cardiac Coherence which a relies on the 3-6-5 method.\n\nThis method consists in practicing 3 times a day, 6 breathing per minutes for 5 minutes.\n\nThe button which act also as a progress bar indicates your current progress for the exercise." : {
+    "The three buttons of this screen provides 3 types of exercises or actions that can help you calm down or manage your anxiety." : {
 
     },
     "Track" : {

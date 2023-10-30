@@ -94,7 +94,7 @@ struct CalmScreen: View {
 
                 VStack {
                     CustomBackButton(display: .info) {
-                        VStack(alignment: .leading, spacing: 12) {
+                        VStack(alignment: .leading, spacing: 24) {
                             Text("Calm")
                                 .font(.title2)
                                 .fontDesign(.serif)

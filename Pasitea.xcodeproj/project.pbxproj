@@ -655,7 +655,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pasitea/Preview Content\"";
-				DEVELOPMENT_TEAM = NP94WB3P75;
+				DEVELOPMENT_TEAM = 7YCDK4684M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pasitea/Info.plist;
@@ -672,7 +672,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = studio.aemi.ada23.Pasitea;
+				PRODUCT_BUNDLE_IDENTIFIER = studio.aemgi.ada23.Pasitea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -688,7 +688,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pasitea/Preview Content\"";
-				DEVELOPMENT_TEAM = NP94WB3P75;
+				DEVELOPMENT_TEAM = 7YCDK4684M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pasitea/Info.plist;
@@ -705,7 +705,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = studio.aemi.ada23.Pasitea;
+				PRODUCT_BUNDLE_IDENTIFIER = studio.aemgi.ada23.Pasitea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
