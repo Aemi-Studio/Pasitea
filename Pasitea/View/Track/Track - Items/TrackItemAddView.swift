@@ -96,13 +96,9 @@ struct TrackItemAddView: View {
                             VStack(alignment: .leading) {
                                 TextField("I've been feeling blue lately...", text: $desc, axis: .vertical)
                                     .focused($isTextFieldFocused)
-                                    .submitLabel(.next)
                                     .lineLimit(10, reservesSpace: true)
                                     .labelsHidden()
                                     .padding(12)
-                                    .onSubmit {
-                                        isTextFieldFocused = false
-                                    }
                             }
                             .background {
                                 RoundedRectangle(cornerRadius: 16)
@@ -148,6 +144,9 @@ struct TrackItemAddView: View {
         .navigationBarBackButtonHidden()
         .interactiveDismissDisabled()
         .pasitea()
+        .onTapGesture {
+            isTextFieldFocused = false
+        }
     }
 }
 
