@@ -15,6 +15,8 @@ struct CustomCover<Content: View>: View {
     var body: some View {
         ZStack {
             content
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                .ignoresSafeArea(.all)
                 .environment(\.customDismiss, CustomDismiss {
                     withAnimation(animation) {
                         isPresented = false

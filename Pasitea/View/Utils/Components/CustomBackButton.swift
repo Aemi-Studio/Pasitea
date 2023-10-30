@@ -32,16 +32,10 @@ struct CustomBackButton<Content: View>: View {
                         infoPresented = true
                     } label: {
                         Label("Informations", systemImage: "info.circle")
-                            .labelStyle(.iconOnly)
-                            .font(.title2)
-                            .padding(.vertical, 11)
-                            .padding(.horizontal, 18)
-                            .foregroundStyle(Color.accentColor)
+                            .customSingleBackButton()
                     }
                     .sheet(isPresented: $infoPresented) {
                         content
-                            .pasitea()
-                            .presentationDetents([.medium])
                     }
                 }
                 Spacer()
@@ -50,9 +44,7 @@ struct CustomBackButton<Content: View>: View {
                         if enforce {
                             alertPresented = true
                         } else {
-                            if trackItem != nil {
-                                TrackItem(trackItem!).saveInto(modelContext)
-                            }
+                            trackItem?.saveInto(modelContext)
                             withAnimation {
                                 dismissAction?()
                                 customAction?()
@@ -61,11 +53,7 @@ struct CustomBackButton<Content: View>: View {
                         }
                     } label: {
                         Label("Close", systemImage: "xmark.circle.fill")
-                            .labelStyle(.iconOnly)
-                            .font(.title2)
-                            .padding(.vertical, 11)
-                            .padding(.horizontal, 18)
-                            .foregroundStyle(Color.accentColor)
+                            .customSingleBackButton()
                     }
                 }
             } else {
@@ -94,9 +82,3 @@ struct CustomBackButton<Content: View>: View {
         .navigationBarBackButtonHidden()
     }
 }
-
-// #if DEBUG
-// #Preview {
-//    CustomBackButton( trackItem: TrackItem() )
-// }
-// #endif

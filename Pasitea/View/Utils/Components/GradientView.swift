@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LightGradientView: View {
+struct GradientView: View {
     var body: some View {
         ZStack {
             LinearGradient(
@@ -28,6 +28,6 @@ struct LightGradientView: View {
 
 #if DEBUG
 #Preview {
-    LightGradientView()
+    GradientView()
 }
 #endif

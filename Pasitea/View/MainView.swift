@@ -20,13 +20,13 @@ struct MainView: View {
 
     var body: some View {
         TabView {
-            CalmHome()
+            CalmScreen()
                 .tabItem {
                     Label("Calm", systemImage: "water.waves")
                 }
                 .tag(Tab.calm.rawValue)
 
-            TrackHome()
+            TrackScreen()
                 .tabItem {
                     Label("Track", systemImage: "point.bottomleft.filled.forward.to.point.topright.scurvepath")
                 }

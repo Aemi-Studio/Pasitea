@@ -32,17 +32,10 @@ struct CalmSingleStepView: View {
                         .shadow(color: .secondary.opacity(0.8), radius: 20, x: 0, y: 0)
                         .blendMode(.overlay)
 
-                    VStack(spacing: 16) {
-                        Text(calmStep.headline)
-                            .font(.title2)
-                            .fontDesign(.serif)
-                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                        if !calmStep.subheadline.isEmpty {
-                            Text(calmStep.subheadline)
-                                .font(.headline)
-                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                        }
-                    }
+                    PasiteaHeadlines(
+                        calmStep.headline,
+                        subheadline: calmStep.subheadline
+                    )
                 }
             }
             .frame(height: 128)
@@ -50,7 +43,7 @@ struct CalmSingleStepView: View {
             VStack(alignment: .center) {
                 HStack(alignment: .center) {
                     Label(calmStep.headline, systemImage: calmStep.image)
-                        .font(.system(size: 60))
+                        .font(.system(size: 48))
                         .foregroundStyle(.foreground)
                         .labelStyle(.iconOnly)
                 }
@@ -63,11 +56,7 @@ struct CalmSingleStepView: View {
                         ? Button("Next", systemImage: "arrow.right.circle.fill", action: getNextScreen!)
                         : Button("Finish", systemImage: "checkmark.circle.fill", action: getNextScreen!)
                 )
-                .font(.title3)
-                .fontWeight(.semibold)
-                .buttonStyle(.borderedProminent)
-                .buttonBorderShape(.roundedRectangle(radius: 16))
-                .controlSize(.large)
+                .pasiteaButtonStyle(.borderedProminent)
             }
             .frame(height: 128)
             Spacer()

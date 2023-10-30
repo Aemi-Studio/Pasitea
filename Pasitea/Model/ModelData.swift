@@ -15,7 +15,7 @@ class ModelData {
             headline: "Explore Your Surroundings",
             subheadline: "Focus on 5 Different Objects",
             items: 5,
-            image: "eye.fill",
+            image: "eye",
             id: 0
         ),
         CalmStep(
@@ -23,7 +23,7 @@ class ModelData {
             headline: "Tune into Your Environment",
             subheadline: "Listen to 4 Different Sounds",
             items: 4,
-            image: "ear.fill",
+            image: "ear",
             id: 1
         ),
         CalmStep(
@@ -31,7 +31,7 @@ class ModelData {
             headline: "Engage Your Sense of Touch",
             subheadline: "Touch 3 Objects",
             items: 3,
-            image: "hand.tap.fill",
+            image: "hand.tap",
             id: 2
         ),
         CalmStep(
@@ -39,7 +39,7 @@ class ModelData {
             headline: "Identify Soothing Scents",
             subheadline: "Distinguish 2 Different Smells",
             items: 2,
-            image: "nose.fill",
+            image: "nose",
             id: 3
         ),
         CalmStep(
@@ -47,7 +47,7 @@ class ModelData {
             headline: "Remember Something You Like",
             subheadline: "Focus on Something You Can Taste",
             items: 1,
-            image: "cup.and.saucer.fill",
+            image: "cup.and.saucer",
             id: 4
         )
     ]

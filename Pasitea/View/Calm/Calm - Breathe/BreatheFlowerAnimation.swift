@@ -8,20 +8,22 @@
 import SwiftUI
 import Combine
 
-struct FlowerAnimationView: View {
+struct BreatheFlowerAnimation: View {
+    @Environment(\.modelContext) var modelContext
+
     @State private var isRunning = false
     @State private var isDone = false
     @State private var isFlowerOpen = false
     @State private var isFlowerOpenForText = false
     @State private var isPreparing = true
-    #if DEBUG
-    @State private var minutes: Double = 2
-    #else
     @State private var minutes: Double = 5
-    #endif
     @State private var animationDuration: Double = 5
     @State private var animationSteps: Double = 100
     @State private var breatheCount: Double = 0
+
+    @Binding var started: Bool
+
+    var trackItem: TrackItemWrapper
 
     var numberOrBreathing: Double {
         minutes * 60 / animationDuration
@@ -52,29 +54,32 @@ struct FlowerAnimationView: View {
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
-        VStack(spacing: 48) {
-            ZStack {
-                // Middle Left Petal - Second
-                Image("flower")
-                    .rotationEffect(.degrees( isFlowerOpen ? -25 : -5), anchor: .bottom)
+        VStack(spacing: 56) {
+            VStack {
+                ZStack {
+                    // Middle Left Petal - Second
+                    Image("flower")
+                        .rotationEffect(.degrees( isFlowerOpen ? -25 : -5), anchor: .bottom)
 
-                // Middle Right Petal - Fourth
-                Image("flower")
-                    .rotationEffect(.degrees( isFlowerOpen ? 25 : 5), anchor: .bottom)
+                    // Middle Right Petal - Fourth
+                    Image("flower")
+                        .rotationEffect(.degrees( isFlowerOpen ? 25 : 5), anchor: .bottom)
 
-                // Middle Petal - Third
-                Image("flower")
+                    // Middle Petal - Third
+                    Image("flower")
 
-                // Left Petal - First
-                Image("flower")
-                    .rotationEffect(.degrees( isFlowerOpen ? -50 : -10), anchor: .bottom)
+                    // Left Petal - First
+                    Image("flower")
+                        .rotationEffect(.degrees( isFlowerOpen ? -50 : -10), anchor: .bottom)
 
-                // Right Petal - Fifth
-                Image("flower")
-                    .rotationEffect(.degrees( isFlowerOpen ? 50 : 10), anchor: .bottom)
+                    // Right Petal - Fifth
+                    Image("flower")
+                        .rotationEffect(.degrees( isFlowerOpen ? 50 : 10), anchor: .bottom)
+                }
+                .shadow(radius: isFlowerOpen ? 20 : 0)
+                .hueRotation(Angle(degrees: isFlowerOpen ? -170 : 0))
             }
-            .shadow(radius: isFlowerOpen ? 20 : 0)
-            .hueRotation(Angle(degrees: isFlowerOpen ? -170 : 0))
+            .frame(width: 154, height: 154)
 
             ZStack {
                 if !isDone {
@@ -101,17 +106,23 @@ struct FlowerAnimationView: View {
             .font(.title)
             .fontDesign(.serif)
             .fontWeight(.bold)
-            .frame(height: 64)
 
-            Button("Breathing") {
+            Button("Placeholder") {
                 DispatchQueue.global(qos: .background).async {
                     if isPreparing {
                         isPreparing = false
+                        started = true
                     } else if !isRunning {
                         breatheCount = 0
                     }
 
                     isRunning.toggle()
+
+                    if isRunning {
+                        trackItem.startsNow()
+                    } else {
+                        trackItem.reset(modelContext, tags: self.breatheCount.description)
+                    }
 
                     withAnimation( flowerAnimation ) {
                         isFlowerOpen.toggle()
@@ -123,11 +134,7 @@ struct FlowerAnimationView: View {
                 }
             }
             .foregroundStyle(.clear)
-            .font(.title3)
-            .fontWeight(.semibold)
-            .buttonStyle(.bordered)
-            .buttonBorderShape(.roundedRectangle(radius: 16))
-            .controlSize(.large)
+            .pasiteaButtonStyle(.bordered)
             .background {
                 GeometryReader { geo in
                     ProgressView(value: Double(breatheCount), total: Double(numberOrBreathing)) {
@@ -156,10 +163,7 @@ struct FlowerAnimationView: View {
                 }
             }
             .clipShape(RoundedRectangle(cornerRadius: 16))
+            .frame(height: 64)
         }
     }
-}
-
-#Preview {
-    FlowerAnimationView()
 }

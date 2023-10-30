@@ -1,5 +1,5 @@
 //
-//  OverFradient.swift
+//  BackgroundGradient.swift
 //  Pasitea
 //
 //  Created by Guillaume Coquard on 27/10/23.
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct OverGradient: ViewModifier {
+struct BackgroundGradient: ViewModifier {
     func body(content: Content) -> some View {
         ZStack {
-            LightGradientView()
+            GradientView()
             content
         }
     }
 }
 
 extension View {
-    func overGradient() -> some View {
-        modifier(OverGradient())
+    func backgroundGradient() -> some View {
+        modifier(BackgroundGradient())
     }
 }

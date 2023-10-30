@@ -11,7 +11,7 @@ struct PasiteaStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .ultraThinInterface()
-            .overGradient()
+            .backgroundGradient()
     }
 }
 

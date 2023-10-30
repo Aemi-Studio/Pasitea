@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct TrackHome: View {
+struct TrackScreen: View {
     @Environment(\.modelContext) private var modelContext
 
     @State private var addViewIsPresented: Bool = false
@@ -142,7 +142,7 @@ struct TrackHome: View {
 
 #if DEBUG
 #Preview {
-    TrackHome()
+    TrackScreen()
         .environment(ModelData())
         .modelContainer(try! ModelContainer(for: TrackItem.self))
 }

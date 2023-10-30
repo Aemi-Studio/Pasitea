@@ -1,5 +1,5 @@
 //
-//  MultipleChoicesView.swift
+//  CalmChoicesView.swift
 //  Pasitea
 //
 //  Created by Guillaume Coquard on 17/10/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MultipleChoicesView: View {
+struct CalmChoicesView: View {
     @State private var isBreathingExercisePresented = false
     @State private var isListeningExercisePresented = false
     @State private var isTrackingPresented = false
@@ -18,7 +18,7 @@ struct MultipleChoicesView: View {
 
     var body: some View {
         ZStack {
-            LightGradientView()
+            GradientView()
 
             VStack(spacing: 32) {
                 HStack {
@@ -32,19 +32,19 @@ struct MultipleChoicesView: View {
                 }
 
                 VStack(spacing: 16) {
-                    MultipleChoicesItemView(
+                    CalmChoicesItemView(
                         title: "Breathe",
                         subtitle: "Calm down with breathing exercises",
                         isViewPresented: $isBreathingExercisePresented
                     )
 
-                    MultipleChoicesItemView(
+                    CalmChoicesItemView(
                         title: "Listen",
                         subtitle: "Focus on calming sounds",
                         isViewPresented: $isListeningExercisePresented
                     )
 
-                    MultipleChoicesItemView(
+                    CalmChoicesItemView(
                         title: "Keep Track",
                         subtitle: "Save your thoughts for later",
                         isViewPresented: $isTrackingPresented
@@ -76,6 +76,6 @@ struct MultipleChoicesView: View {
 
 #if DEBUG
 #Preview {
-    MultipleChoicesView( trackItem: TrackItem() )
+    CalmChoicesView( trackItem: TrackItem() )
 }
 #endif

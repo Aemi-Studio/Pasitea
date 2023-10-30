@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  CustomListStyle.swift
 //  Pasitea
 //
 //  Created by Guillaume Coquard on 28/10/23.

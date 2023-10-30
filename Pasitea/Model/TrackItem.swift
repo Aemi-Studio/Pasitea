@@ -20,7 +20,6 @@ public final class TrackItem: Identifiable {
     public var previousId: UUID?
     private var saved: Bool = false
     private var deleted: Bool = false
-    private var popoverPresented: Bool = false
 
     enum TrackItemCodingKeys: CodingKey {
         case id
@@ -62,12 +61,6 @@ public final class TrackItem: Identifiable {
 
 extension TrackItem {
     @Transient
-    public var isPopoverPresented: Binding<Bool> {
-        get { Binding.constant(self.popoverPresented) }
-        set { if self.popoverPresented != newValue.wrappedValue { self.popoverPresented.toggle() } }
-    }
-
-    @Transient
     public var typeAsTrackType: TrackType {
         get {
             (TrackType(rawValue: self.type))!
@@ -96,10 +89,10 @@ extension TrackItem {
         return self
     }
 
-    public func saveInto(_ modelContext: ModelContext, _ endDate: Date? = Date.now) {
+    public func saveInto(_ modelContext: ModelContext, _ endDate: Date? = nil) {
         if !saved {
             self.saved = true
-            self.endDate = endDate!
+            self.endDate = endDate ?? self.endDate
             modelContext.insert(self)
             do {
                 try modelContext.save()

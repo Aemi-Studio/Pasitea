@@ -19,58 +19,47 @@ struct CalmExerciseFinishedView: View {
     var customDismiss: CustomDismiss?
 
     var body: some View {
-        VStack {
-            Spacer()
-            HStack(alignment: .center) {
-                VStack(spacing: 20) {
-                    Text("Exercise Finished")
-                        .font(.title)
-                        .fontDesign(.serif)
-                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    Text("Do you still need help ?")
-                        .font(.headline)
-                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                }
-            }
-            .frame(height: 160)
-            Spacer()
-            HStack(alignment: .center) {
-                VStack(spacing: 20) {
-                    Button( "I need more help", systemImage: "hand.raised.circle.fill") {
-                        trackItem.saveInto(modelContext)
-                        withAnimation {
-                            isPresented = true
-                        }
-                    }
-                    .font(.title3)
-                    .fontWeight(.semibold)
-                    .buttonStyle(.borderedProminent)
-                    .buttonBorderShape(.roundedRectangle(radius: 16))
-                    .controlSize(.large)
+        ZStack {
+            GradientView()
 
-                    Button( "I'm fine", systemImage: "hand.thumbsup.circle.fill" ) {
-                        trackItem.saveInto(modelContext)
-                        withAnimation {
-                            dismissAction()
-                            dismiss?()
-                            customDismiss?()
-                        }
-                    }
-                    .font(.title3)
-                    .fontWeight(.semibold)
-                    .buttonStyle(.bordered)
-                    .buttonBorderShape(.roundedRectangle(radius: 16))
-                    .controlSize(.large)
+            VStack {
+                Spacer()
+                HStack(alignment: .center) {
+                    PasiteaHeadlines(
+                        "Exercise Finished",
+                        subheadline: "Do you still need help ?"
+                    )
                 }
+                .frame(height: 160)
+                Spacer()
+                HStack(alignment: .center) {
+                    VStack(spacing: 20) {
+                        Button( "I need more help", systemImage: "hand.raised.circle.fill") {
+                            trackItem.saveInto(modelContext)
+                            withAnimation { isPresented.toggle() }
+                        }
+                        .pasiteaButtonStyle(.borderedProminent)
+
+                        Button( "I'm fine", systemImage: "hand.thumbsup.circle.fill" ) {
+                            trackItem.saveInto(modelContext)
+                            withAnimation {
+                                dismissAction()
+                                dismiss?()
+                                customDismiss?()
+                            }
+                        }
+                        .pasiteaButtonStyle(.bordered)
+                    }
+                }
+                .frame(height: 160)
+                Spacer()
             }
-            .frame(height: 160)
-            Spacer()
+            .navigationBarBackButtonHidden()
         }
-        .navigationBarBackButtonHidden()
-        .pasitea()
+        .ultraThinInterface()
         .sheet(isPresented: $isPresented) {
-            MultipleChoicesView( trackItem: trackItem )
-                .presentationDetents([.medium])
+            CalmChoicesView( trackItem: trackItem )
+                .informationModalStyle(false)
         }
     }
 }

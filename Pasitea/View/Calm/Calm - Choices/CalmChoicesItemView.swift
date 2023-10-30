@@ -1,5 +1,5 @@
 //
-//  MultipleChoiceItemView.swift
+//  CalmChoiceItemView.swift
 //  Pasitea
 //
 //  Created by Guillaume Coquard on 20/10/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MultipleChoicesItemView: View {
+struct CalmChoicesItemView: View {
     var title: String
     var subtitle: String
 
@@ -39,17 +39,17 @@ struct MultipleChoicesItemView: View {
 }
 
 #if DEBUG
-struct MultipleChoicesItemView_Preview: PreviewProvider {
+struct ChoicesItemView_Preview: PreviewProvider {
     @State var isPresented: Bool = false
 
     static var previews: some View {
         Group {
-            MultipleChoicesItemView(
+            CalmChoicesItemView(
                 title: "Lorem Ipsum",
                 subtitle: "Lorem ipsum dolor sit amet",
                 isViewPresented: .constant(true)
             )
-            MultipleChoicesItemView(
+            CalmChoicesItemView(
                 title: "Lorem Ipsum",
                 subtitle: "Lorem ipsum dolor sit amet",
                 isViewPresented: .constant(false)

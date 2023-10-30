@@ -39,17 +39,10 @@ struct CalmStepsView: View {
 
     var body: some View {
         ZStack {
-            LightGradientView()
+            GradientView()
 
             VStack(spacing: 10) {
                 CalmSingleStepView( step: $currentStep, getNextScreen: getNextScreen )
-                    .customCover(isPresented: $exerciseFinished, transition: .blur, animation: .easeInOut(duration: 2)) {
-                        CalmExerciseFinishedView(
-                            trackItem: TrackItem( trackItem ).endsNow(),
-                            dismiss: dismiss,
-                            customDismiss: customDismiss
-                        )
-                    }
             }
 
             VStack {
@@ -61,11 +54,19 @@ struct CalmStepsView: View {
                     display: !lastStep ? .both : .info
                 ) {
                     Text("Something")
+                        .informationModalStyle()
                 }
                 Spacer()
             }
         }
         .ultraThinInterface()
+        .customCover(isPresented: $exerciseFinished, transition: .blur, animation: .easeInOut(duration: 2)) {
+            CalmExerciseFinishedView(
+                trackItem: TrackItem( trackItem ).endsNow(),
+                dismiss: dismiss,
+                customDismiss: customDismiss
+            )
+        }
     }
 }
 
