@@ -13,6 +13,7 @@ struct TrackItemEditView: View {
     @Environment(\.dismiss) var dismiss
 
     @State private var confirmationRequestPresented: Bool = false
+    @FocusState private var isTextFieldFocused
 
     @State var trackItem: TrackItem
 
@@ -82,7 +83,7 @@ struct TrackItemEditView: View {
                         Label("Personal Notes", systemImage: "face.smiling.inverse")
                         VStack(alignment: .leading) {
                             TextField("I've been feeling blue lately...", text: $trackItem.desc, axis: .vertical)
-                                .submitLabel(.next)
+                                .focused($isTextFieldFocused)
                                 .lineLimit(10, reservesSpace: true)
                                 .labelsHidden()
                                 .padding(12)
@@ -95,6 +96,9 @@ struct TrackItemEditView: View {
                         }
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .onTapGesture {
+                        isTextFieldFocused = true
+                    }
 
                     HStack {
                         VStack(alignment: .leading) {
@@ -127,6 +131,9 @@ struct TrackItemEditView: View {
         .navigationBarBackButtonHidden()
         .interactiveDismissDisabled()
         .pasitea()
+        .onTapGesture {
+            isTextFieldFocused = false
+        }
     }
 }
 
