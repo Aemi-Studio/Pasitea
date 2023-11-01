@@ -54,6 +54,7 @@ struct CalmExerciseFinishedView: View {
                 .frame(height: 160)
                 Spacer()
             }
+            .customHaptic(isPresented)
             .navigationBarBackButtonHidden()
         }
         .ultraThinInterface()

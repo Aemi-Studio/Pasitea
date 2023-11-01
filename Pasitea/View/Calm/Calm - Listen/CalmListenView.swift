@@ -161,6 +161,7 @@ struct CalmListenView: View {
 
                 HStack {
                     Button( "Placeholder", action: action )
+                        .customHaptic(moveBars)
                         .foregroundStyle(.clear)
                         .pasiteaButtonStyle(.bordered)
                         .background {

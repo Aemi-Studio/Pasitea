@@ -11,7 +11,9 @@ struct CalmSingleStepView: View {
     @Environment(ModelData.self) var modelData
 
     @Binding var step: Int
-    var getNextScreen: (() -> Void)?
+    @State var currentStep: Int = 0
+
+    var getNextScreen: (() -> Binding<Int>)
     var calmStep: CalmStep {
         if step < modelData.calmSteps.count {
             return modelData.calmSteps[step]
@@ -53,10 +55,11 @@ struct CalmSingleStepView: View {
             HStack(alignment: .center) {
                 (
                     calmStep.id != 4
-                        ? Button("Next", systemImage: "arrow.right.circle.fill", action: getNextScreen!)
-                        : Button("Finish", systemImage: "checkmark.circle.fill", action: getNextScreen!)
+                        ? Button("Next", systemImage: "arrow.right.circle.fill") { currentStep = getNextScreen().wrappedValue }
+                        : Button("Finish", systemImage: "checkmark.circle.fill") { currentStep = getNextScreen().wrappedValue }
                 )
                 .pasiteaButtonStyle(.borderedProminent)
+                .customHaptic(currentStep)
             }
             .frame(height: 128)
             Spacer()
