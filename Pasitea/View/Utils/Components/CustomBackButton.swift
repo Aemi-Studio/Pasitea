@@ -12,6 +12,7 @@ struct CustomBackButton<Content: View>: View {
 
     @State private var infoPresented = false
     @State private var alertPresented = false
+    @State private var isButtonPressed = false
 
     var trackItem: TrackItem?
 
@@ -29,6 +30,7 @@ struct CustomBackButton<Content: View>: View {
             if display.isSubset(of: .both) {
                 if display.contains(.info) {
                     Button {
+                        isButtonPressed.toggle()
                         infoPresented = true
                     } label: {
                         Label("Informations", systemImage: "info.circle")
@@ -41,6 +43,7 @@ struct CustomBackButton<Content: View>: View {
                 Spacer()
                 if display.contains(.close) {
                     Button(role: .none) {
+                        isButtonPressed.toggle()
                         if enforce {
                             alertPresented = true
                         } else {
@@ -61,6 +64,7 @@ struct CustomBackButton<Content: View>: View {
                     .frame(height: 48)
             }
         }
+        .customHaptic(isButtonPressed)
         .confirmationDialog(
             "You're about to exit an ongoing exercise. Are you sure about it?",
             isPresented: $alertPresented

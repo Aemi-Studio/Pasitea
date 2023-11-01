@@ -125,6 +125,7 @@ struct TrackScreen: View {
                 }
                 .padding([.bottom, .horizontal])
             }
+            .customHaptic(addViewIsPresented)
             .sheet(isPresented: $addViewIsPresented) {
                 TrackItemAddView()
             }
