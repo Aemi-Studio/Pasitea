@@ -200,7 +200,7 @@ struct CalmListenView: View {
                     dismissAction: dismiss,
                     customAction: closeAction,
                     enforce: false,
-                    display: .both
+                    display: [.info, .close]
                 ) {
                     VStack(alignment: .leading, spacing: 24) {
                         Text("Listen")

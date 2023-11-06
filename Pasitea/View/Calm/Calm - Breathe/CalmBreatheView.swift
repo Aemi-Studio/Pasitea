@@ -29,7 +29,7 @@ struct CalmBreatheView: View {
                 CustomBackButton(
                     dismissAction: dismiss,
                     enforce: false,
-                    display: .both
+                    display: [.info, .close]
                 ) {
                     VStack(alignment: .leading, spacing: 24) {
                         Text("Breathe")
