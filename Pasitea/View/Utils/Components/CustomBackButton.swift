@@ -44,6 +44,9 @@ struct CustomBackButton<Content: View>: View {
                 .sheet(isPresented: $infoPresented) {
                     content
                 }
+                if display == [.info]{ // prevents positioning of info icon at center
+                    Spacer()
+                }
             }
             
             if display.contains(.close) {
