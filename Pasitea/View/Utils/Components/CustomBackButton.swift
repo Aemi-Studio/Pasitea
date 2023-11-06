@@ -44,13 +44,11 @@ struct CustomBackButton<Content: View>: View {
                 .sheet(isPresented: $infoPresented) {
                     content
                 }
-                if display == [.info]{ // prevents positioning of info icon at center
-                    Spacer()
-                }
             }
             
+            Spacer()
+            
             if display.contains(.close) {
-                Spacer()
                 Button(role: .none) {
                     isButtonPressed.toggle()
                     if enforce {
@@ -69,8 +67,7 @@ struct CustomBackButton<Content: View>: View {
                 }
             }
             
-            if display.contains(.add) {
-                Spacer()
+            else if display.contains(.add) {
                 Button {
                     isButtonPressed.toggle()
                     addViewIsPresented = true
