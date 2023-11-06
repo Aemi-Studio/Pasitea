@@ -59,6 +59,17 @@ struct CustomBackButton<Content: View>: View {
                             .customSingleBackButton()
                     }
                 }
+            } else if display.contains(.add) {
+                Button {
+                    isButtonPressed.toggle()
+                    infoPresented = true
+                } label: {
+                    Label("Add", systemImage: "plus.circle")
+                        .customSingleBackButton()
+                }
+                .sheet(isPresented: $infoPresented) {
+                    content
+                }
             } else {
                 EmptyView()
                     .frame(height: 48)
