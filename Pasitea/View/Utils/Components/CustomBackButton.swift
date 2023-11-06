@@ -28,11 +28,11 @@ struct CustomBackButton<Content: View>: View {
 
     var body: some View {
         HStack {
-            if display.isDisjoint(with: [.info,.close,.add]){
+            if display.isDisjoint(with: [.info, .close, .add]) {
                 EmptyView()
                     .frame(height: 48)
             }
-            
+
             if display.contains(.info) {
                 Button {
                     isButtonPressed.toggle()
@@ -45,9 +45,9 @@ struct CustomBackButton<Content: View>: View {
                     content
                 }
             }
-            
+
             Spacer()
-            
+
             if display.contains(.close) {
                 Button(role: .none) {
                     isButtonPressed.toggle()
@@ -65,9 +65,7 @@ struct CustomBackButton<Content: View>: View {
                     Label("Close", systemImage: "xmark.circle.fill")
                         .customSingleBackButton()
                 }
-            }
-            
-            else if display.contains(.add) {
+            } else if display.contains(.add) {
                 Button {
                     isButtonPressed.toggle()
                     addViewIsPresented = true
