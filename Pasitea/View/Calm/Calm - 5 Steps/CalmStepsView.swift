@@ -57,7 +57,7 @@ struct CalmStepsView: View {
                     dismissAction: dismiss,
                     customDismiss: customDismiss,
                     enforce: false,
-                    display: !lastStep ? .both : .info
+                    display: !lastStep ? [.info,.close] : .info
                 ) {
                     VStack(alignment: .leading, spacing: 24) {
                         Text("5-steps")
