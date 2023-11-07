@@ -19,15 +19,11 @@ struct TrackHistoryView: View {
 
     var body: some View {
         VStack {
-            
-            if(items.isEmpty){
+            if items.isEmpty {
                 VStack {
                     Text("It looks like there's nothing here").multilineTextAlignment(.center).opacity(0.5)
                 }
-                
-            }
-            else{
-                
+            } else {
                 List(selection: $selectedItems) {
                     Section {
                         ForEach(items) { item in
@@ -55,16 +51,16 @@ struct TrackHistoryView: View {
                                 deletionConfirmation.toggle()
                             } label: {
                                 Label( !selectedItems.isEmpty
-                                       ? "Delete \(selectedItems.count) Exercise\(plural(selectedItems.count))"
-                                       : "Delete Everything",
+                                        ? "Delete \(selectedItems.count) Exercise\(plural(selectedItems.count))"
+                                        : "Delete Everything",
                                        systemImage: "trash.fill")
-                                .labelStyle(.titleOnly)
-                                .foregroundStyle(.red)
-                                .bold()
+                                    .labelStyle(.titleOnly)
+                                    .foregroundStyle(.red)
+                                    .bold()
                             }
                             .confirmationDialog(
                                 "You're about to remove \(maybeEvery(selectedItems.count)) saved exercise\(plural(selectedItems.count)).",
-                                
+
                                 isPresented: $deletionConfirmation
                             ) {
                                 Button(role: .cancel) {

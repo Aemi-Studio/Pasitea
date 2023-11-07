@@ -612,6 +612,22 @@
         }
       }
     },
+    "It looks like there's nothing here" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il n'y a rien par ici"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sembra che non ci sia nulla qui"
+          }
+        }
+      }
+    },
     "Journal" : {
       "localizations" : {
         "fr" : {
