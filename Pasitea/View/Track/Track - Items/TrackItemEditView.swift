@@ -48,7 +48,7 @@ struct TrackItemEditView: View {
                     }
                     trackItem.saveInto(modelContext)
                     self.dismiss()
-                }
+                }.disabled(trackItem.desc.isEmpty)
             }
             .padding()
 
