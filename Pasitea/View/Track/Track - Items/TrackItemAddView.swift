@@ -57,7 +57,7 @@ struct TrackItemAddView: View {
                         previousId: previousId
                     ).saveInto(modelContext, endDate)
                     self.dismiss()
-                }
+                }.disabled(desc.isEmpty)
             }
             .padding()
 

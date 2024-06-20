@@ -14,9 +14,11 @@ struct InformationModalStyle: ViewModifier {
             content
                 .pasitea()
                 .presentationDetents([.medium])
+                .presentationDragIndicator(.visible)
         } else {
             content
                 .presentationDetents([.medium])
+                .presentationDragIndicator(.visible)
         }
     }
 }

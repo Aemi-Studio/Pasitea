@@ -137,6 +137,7 @@ struct BreatheFlowerAnimation: View {
                 }
             }
             .foregroundStyle(.clear)
+            .customHaptic(isRunning)
             .pasiteaButtonStyle(.bordered)
             .background {
                 GeometryReader { geo in

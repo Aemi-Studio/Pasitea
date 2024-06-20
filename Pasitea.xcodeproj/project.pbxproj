@@ -44,6 +44,7 @@
 		46A8D8582AEBDEAD0065C54E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D8572AEBDEAD0065C54E /* Utils.swift */; };
 		46A8D85D2AEC051B0065C54E /* UltraThinInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D85C2AEC051B0065C54E /* UltraThinInterface.swift */; };
 		46A8D8682AEC51A70065C54E /* LargeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8D8672AEC51A70065C54E /* LargeTitle.swift */; };
+		46AB01FC2AF2859D00518E21 /* CustomHaptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB01FB2AF2859D00518E21 /* CustomHaptic.swift */; };
 		46BB751D2AEDD3ED00A226D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46BB751C2AEDD3ED00A226D0 /* Preview Assets.xcassets */; };
 		46BB751F2AEDD62700A226D0 /* CustomCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BB751E2AEDD62700A226D0 /* CustomCover.swift */; };
 		46BB75212AEDE38D00A226D0 /* BlurTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BB75202AEDE38D00A226D0 /* BlurTransition.swift */; };
@@ -105,6 +106,7 @@
 		46A8D8572AEBDEAD0065C54E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		46A8D85C2AEC051B0065C54E /* UltraThinInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltraThinInterface.swift; sourceTree = "<group>"; };
 		46A8D8672AEC51A70065C54E /* LargeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTitle.swift; sourceTree = "<group>"; };
+		46AB01FB2AF2859D00518E21 /* CustomHaptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHaptic.swift; sourceTree = "<group>"; };
 		46BB751C2AEDD3ED00A226D0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Preview Assets.xcassets"; path = "Pasitea/Preview Content/Preview Assets.xcassets"; sourceTree = SOURCE_ROOT; };
 		46BB751E2AEDD62700A226D0 /* CustomCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCover.swift; sourceTree = "<group>"; };
 		46BB75202AEDE38D00A226D0 /* BlurTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurTransition.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				465F174E2AEC5908002FC335 /* BackgroundGradient.swift */,
 				4685E8042AEF20B700DCBC72 /* CustomSingleBackButton.swift */,
 				46BB751E2AEDD62700A226D0 /* CustomCover.swift */,
+				46AB01FB2AF2859D00518E21 /* CustomHaptic.swift */,
 				465F17522AEC5B31002FC335 /* InlineTitle.swift */,
 				46A8D8672AEC51A70065C54E /* LargeTitle.swift */,
 				46ECD0D22AED4DED007057D5 /* SectionToLargeTitle.swift */,
@@ -503,6 +506,7 @@
 				46A8D8512AEBAD160065C54E /* TrackType.swift in Sources */,
 				4685E80F2AEF257800DCBC72 /* PasiteaSubheadlineStyle.swift in Sources */,
 				4685E8142AEF291C00DCBC72 /* InformationModalStyle.swift in Sources */,
+				46AB01FC2AF2859D00518E21 /* CustomHaptic.swift in Sources */,
 				46A8D84D2AEBACFC0065C54E /* TrackFeelingItemRow.swift in Sources */,
 				46A8D8362AEBAC6D0065C54E /* CalmStepsView.swift in Sources */,
 				46ECD0D52AED511D007057D5 /* CustomListStyle.swift in Sources */,
@@ -653,7 +657,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Pasitea/Preview Content\"";
 				DEVELOPMENT_TEAM = NP94WB3P75;
 				ENABLE_PREVIEWS = YES;
@@ -671,7 +675,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2;
+				MARKETING_VERSION = 0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = studio.aemi.ada23.Pasitea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -686,7 +690,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Pasitea/Preview Content\"";
 				DEVELOPMENT_TEAM = NP94WB3P75;
 				ENABLE_PREVIEWS = YES;
@@ -704,7 +708,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2;
+				MARKETING_VERSION = 0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = studio.aemi.ada23.Pasitea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

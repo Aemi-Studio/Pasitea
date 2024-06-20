@@ -21,20 +21,26 @@ struct CalmStepsView: View {
 
     private var trackItem: TrackItem = TrackItem(type: .steps, tags: [0.description])
 
-    func getNextScreen() {
+    func getNextScreen() -> Binding<Int> {
         if currentStep > 0 {
             trackItem.addTags(currentStep.description)
         }
+
+        withAnimation {
+            currentStep += 1
+        }
+
         if lastStep {
             withAnimation {
                 exerciseFinished = true
             }
         } else {
             withAnimation {
-                currentStep += 1
                 lastStep = currentStep == modelData.calmSteps.count - 1
             }
         }
+
+        return $currentStep
     }
 
     var body: some View {
@@ -51,7 +57,7 @@ struct CalmStepsView: View {
                     dismissAction: dismiss,
                     customDismiss: customDismiss,
                     enforce: false,
-                    display: !lastStep ? .both : .info
+                    display: !lastStep ? [.info, .close] : .info
                 ) {
                     VStack(alignment: .leading, spacing: 24) {
                         Text("5-steps")

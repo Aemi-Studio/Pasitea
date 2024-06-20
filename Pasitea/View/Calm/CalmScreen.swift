@@ -33,6 +33,7 @@ struct CalmScreen: View {
                     .buttonBorderShape(.roundedRectangle(radius: 20))
                     .shadow(color: .white.opacity(0.2), radius: 20, x: 0, y: 5)
                     .frame(maxWidth: .infinity)
+                    .customHaptic(isSteppedExercisePresented)
 
                     HStack(spacing: 16) {
                         Button {
@@ -48,10 +49,10 @@ struct CalmScreen: View {
                         .font(.title)
                         .fontDesign(.serif)
                         .fontWeight(.bold)
-
                         .buttonStyle(.bordered)
                         .buttonBorderShape(.roundedRectangle(radius: 20))
                         .frame(maxWidth: .infinity)
+                        .customHaptic(isBreathingExercisePresented)
 
                         Button {
                             withAnimation {
@@ -69,6 +70,7 @@ struct CalmScreen: View {
                         .buttonStyle(.bordered)
                         .buttonBorderShape(.roundedRectangle(radius: 20))
                         .frame(maxWidth: .infinity)
+                        .customHaptic(isListeningExercisePresented)
                     }
 
                     VStack(alignment: .center) {
@@ -93,7 +95,7 @@ struct CalmScreen: View {
                 }
 
                 VStack {
-                    CustomBackButton(display: .info) {
+                    CustomBackButton(display: [.info, .add]) {
                         VStack(alignment: .leading, spacing: 24) {
                             Text("Calm")
                                 .font(.title2)

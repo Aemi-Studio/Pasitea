@@ -19,72 +19,78 @@ struct TrackHistoryView: View {
 
     var body: some View {
         VStack {
-            List(selection: $selectedItems) {
-                Section {
-                    ForEach(items) { item in
-                        NavigationLink {
-                            TrackItemView(trackItem: item)
-                        } label: {
-                            TrackItemRow(trackItem: item)
-                                .swipeActions(edge: .trailing) {
-                                    Button("Delete", systemImage: "trash", role: .destructive) {
-                                        item.deleteFrom(modelContext)
-                                    }
-                                }
-                        }
-                    }
-                } header: {
-                    Text("History")
-                        .sectionToLargeTitle()
+            if items.isEmpty {
+                VStack {
+                    Text("It looks like there's nothing here").multilineTextAlignment(.center).opacity(0.5)
                 }
-            }
-            .customListStyle()
-            .toolbar {
-                ToolbarItemGroup(placement: .topBarTrailing) {
-                    if $editMode.wrappedValue == .active {
-                        Button(role: .destructive) {
-                            deletionConfirmation.toggle()
-                        } label: {
-                            Label( !selectedItems.isEmpty
-                                    ? "Delete \(selectedItems.count) Exercise\(plural(selectedItems.count))"
-                                    : "Delete Everything",
-                                   systemImage: "trash.fill")
-                                .labelStyle(.titleOnly)
-                                .foregroundStyle(.red)
-                                .bold()
+            } else {
+                List(selection: $selectedItems) {
+                    Section {
+                        ForEach(items) { item in
+                            NavigationLink {
+                                TrackItemView(trackItem: item)
+                            } label: {
+                                TrackItemRow(trackItem: item)
+                                    .swipeActions(edge: .trailing) {
+                                        Button("Delete", systemImage: "trash", role: .destructive) {
+                                            item.deleteFrom(modelContext)
+                                        }
+                                    }
+                            }
                         }
-                        .confirmationDialog(
-                            "You're about to remove \(maybeEvery(selectedItems.count)) saved exercise\(plural(selectedItems.count)).",
-
-                            isPresented: $deletionConfirmation
-                        ) {
-                            Button(role: .cancel) {
+                    } header: {
+                        Text("History")
+                            .sectionToLargeTitle()
+                    }
+                }
+                .customListStyle()
+                .toolbar {
+                    ToolbarItemGroup(placement: .topBarTrailing) {
+                        if $editMode.wrappedValue == .active {
+                            Button(role: .destructive) {
                                 deletionConfirmation.toggle()
                             } label: {
-                                Text("Cancel")
+                                Label( !selectedItems.isEmpty
+                                        ? "Delete \(selectedItems.count) Exercise\(plural(selectedItems.count))"
+                                        : "Delete Everything",
+                                       systemImage: "trash.fill")
+                                    .labelStyle(.titleOnly)
+                                    .foregroundStyle(.red)
+                                    .bold()
                             }
-                            Button(role: .destructive) {
-                                if !selectedItems.isEmpty {
-                                    selectedItems.forEach { id in
-                                        items.first { item in
-                                            id == item.id
-                                        }?.deleteFrom(modelContext)
-                                        selectedItems.remove(id)
-                                    }
-                                } else {
-                                    items.forEach { item in
-                                        item.deleteFrom(modelContext)
-                                    }
+                            .confirmationDialog(
+                                "You're about to remove \(maybeEvery(selectedItems.count)) saved exercise\(plural(selectedItems.count)).",
+
+                                isPresented: $deletionConfirmation
+                            ) {
+                                Button(role: .cancel) {
+                                    deletionConfirmation.toggle()
+                                } label: {
+                                    Text("Cancel")
                                 }
-                            } label: {
-                                Text(" Delete \(maybeEvery(selectedItems.count)) exercise\(plural(selectedItems.count))")
+                                Button(role: .destructive) {
+                                    if !selectedItems.isEmpty {
+                                        selectedItems.forEach { id in
+                                            items.first { item in
+                                                id == item.id
+                                            }?.deleteFrom(modelContext)
+                                            selectedItems.remove(id)
+                                        }
+                                    } else {
+                                        items.forEach { item in
+                                            item.deleteFrom(modelContext)
+                                        }
+                                    }
+                                } label: {
+                                    Text(" Delete \(maybeEvery(selectedItems.count)) exercise\(plural(selectedItems.count))")
+                                }
                             }
+                            .disabled(items.isEmpty)
                         }
-                        .disabled(items.isEmpty)
                     }
                 }
+                .environment(\.editMode, $editMode)
             }
-            .environment(\.editMode, $editMode)
         }
         .pasitea()
     }
