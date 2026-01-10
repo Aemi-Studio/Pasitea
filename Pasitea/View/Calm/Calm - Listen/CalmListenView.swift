@@ -120,7 +120,7 @@ struct CalmListenView: View {
 
                 Picker(selection: $selectedSound, label: Text("Sounds")) {
                     ForEach(sounds) { sound in
-                        Text(sound.title).tag(sounds.firstIndex(where: { item in sound.title == item.title })! + 1)
+                        Text(sound.title).tag(sounds.firstIndex { item in sound.title == item.title }! + 1)
                     }
                 }
                 .pickerStyle(.menu)

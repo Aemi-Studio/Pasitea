@@ -141,7 +141,7 @@ struct TrackItemView: View {
             }
             .frame(maxWidth: .infinity)
         }
-        .sheet(isPresented: $isEditMode, content: { TrackItemEditView( trackItem: trackItem ) })
+        .sheet(isPresented: $isEditMode) { TrackItemEditView( trackItem: trackItem ) }
         .padding(.horizontal)
         .padding(.bottom, 16)
         .toolbar {

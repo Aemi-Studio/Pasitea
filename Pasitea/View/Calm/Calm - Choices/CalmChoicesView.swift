@@ -49,9 +49,9 @@ struct CalmChoicesView: View {
                         subtitle: "Save your thoughts for later",
                         isViewPresented: $isTrackingPresented
                     )
-                    .sheet(isPresented: $isTrackingPresented, content: {
+                    .sheet(isPresented: $isTrackingPresented) {
                         TrackItemAddView( previousId: trackItem.id )
-                    })
+                    }
 
                     Spacer()
                 }
