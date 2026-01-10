@@ -8,6 +8,16 @@
 import SwiftData
 import SwiftUI
 
+enum PasiteaMigrationPlan: SchemaMigrationPlan {
+    static var schemas: [any VersionedSchema.Type] {
+        [PasiteaSchemaV1.self]
+    }
+
+    static var stages: [MigrationStage] {
+        []
+    }
+}
+
 @main
 struct PasiteaApp: App {
     @State private var modelData = ModelData()
@@ -16,7 +26,7 @@ struct PasiteaApp: App {
 
     init() {
         do {
-            container = try ModelContainer(for: TrackItem.self)
+            container = try ModelContainer(for: TrackItem.self, migrationPlan: PasiteaMigrationPlan.self)
         } catch {
             #if DEBUG
             print(error.localizedDescription)

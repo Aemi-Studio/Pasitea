@@ -11,8 +11,9 @@ import SwiftUI
 struct TrackItemView: View {
     var trackItem: TrackItem
 
-    @Environment(\.modelContext) private var modelContext
+    @Environment(\.modelContext) private var modelContext: ModelContext
     @Environment(\.dismiss) private var dismiss
+    private var persistence: PersistenceFacade { PersistenceFacade(modelContext: modelContext) }
 
     @State private var isDeletionAlertPresented: Bool = false
     @State private var isEditMode: Bool = false
@@ -168,7 +169,7 @@ struct TrackItemView: View {
                         Text("Cancel")
                     }
                     Button(role: .destructive) {
-                        trackItem.deleteFrom(modelContext)
+                        persistence.delete(trackItem)
                         dismiss()
                     } label: {
                         Text("Delete")

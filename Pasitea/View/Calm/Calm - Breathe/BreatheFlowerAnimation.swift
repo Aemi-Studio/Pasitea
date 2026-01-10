@@ -6,10 +6,12 @@
 //
 
 import Combine
+import SwiftData
 import SwiftUI
 
 struct BreatheFlowerAnimation: View {
-    @Environment(\.modelContext) var modelContext
+    @Environment(\.modelContext) var modelContext: ModelContext
+    private var persistence: PersistenceFacade { PersistenceFacade(modelContext: modelContext) }
 
     @State private var isRunning = false
     @State private var isDone = false
@@ -63,21 +65,26 @@ struct BreatheFlowerAnimation: View {
                     // Middle Left Petal - Second
                     Image("flower")
                         .rotationEffect(.degrees(isFlowerOpen ? -25 : -5), anchor: .bottom)
+                        .accessibilityHidden(true)
 
                     // Middle Right Petal - Fourth
                     Image("flower")
                         .rotationEffect(.degrees(isFlowerOpen ? 25 : 5), anchor: .bottom)
+                        .accessibilityHidden(true)
 
                     // Middle Petal - Third
                     Image("flower")
+                        .accessibilityHidden(true)
 
                     // Left Petal - First
                     Image("flower")
                         .rotationEffect(.degrees(isFlowerOpen ? -50 : -10), anchor: .bottom)
+                        .accessibilityHidden(true)
 
                     // Right Petal - Fifth
                     Image("flower")
                         .rotationEffect(.degrees(isFlowerOpen ? 50 : 10), anchor: .bottom)
+                        .accessibilityHidden(true)
                 }
                 .shadow(radius: isFlowerOpen ? 20 : 0)
                 .hueRotation(Angle(degrees: isFlowerOpen ? -170 : 0))
@@ -124,7 +131,7 @@ struct BreatheFlowerAnimation: View {
                 if isRunning {
                     trackItem.startsNow()
                 } else {
-                    trackItem.reset(modelContext, tags: breatheCount.description)
+                    trackItem.reset(persistence, tags: breatheCount.description)
                 }
 
                 withAnimation(flowerAnimation) {
@@ -172,7 +179,7 @@ struct BreatheFlowerAnimation: View {
         }
         .onDisappear {
             if isRunning {
-                trackItem.endsNow().saveInto(modelContext)
+                trackItem.endsNow().save(persistence)
             }
         }
     }

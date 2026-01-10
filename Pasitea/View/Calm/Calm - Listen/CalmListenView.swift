@@ -25,7 +25,7 @@ struct CalmListenView: View {
     @State private var duration: Double = 100
 
     func closeAction() {
-        self.item.saveInto(modelContext)
+        PersistenceFacade(modelContext: modelContext).save(trackItem)
     }
 
     var timer: Publishers.Autoconnect<Timer.TimerPublisher> {
@@ -36,6 +36,7 @@ struct CalmListenView: View {
     var trackItem: TrackItem = TrackItem(type: .listening)
 
     private var item: TrackItemWrapper { TrackItemWrapper(trackItem) }
+    private var persistence: PersistenceFacade { PersistenceFacade(modelContext: modelContext) }
 
     var animation: Animation {
         moveBars
@@ -62,7 +63,7 @@ struct CalmListenView: View {
         }
         if moveBars {
             audioPlayer?.pause()
-            item.reset(modelContext)
+            item.reset(persistence)
         } else {
             if let audioPlayer {
                 audioPlayer.play()
@@ -105,36 +106,34 @@ struct CalmListenView: View {
             GradientView()
 
             VStack(alignment: .center, spacing: 56) {
-                VStack(alignment: .center) {
-                    VStack {
-                        VStack(alignment: .center) {
-                            HStack {
-                                bar(low: 0.3)
-                                    .animation(animation.speed(1.5), value: moveBars)
-                                bar(low: 0.3)
-                                    .animation(animation.speed(1.2), value: moveBars)
-                                bar(low: 0.3)
-                                    .animation(animation.speed(1.0), value: moveBars)
-                                bar(low: 0.3)
-                                    .animation(animation.speed(1.7), value: moveBars)
-                                bar(low: 0.3)
-                                    .animation(animation.speed(1.1), value: moveBars)
-                            }
-                            .frame(width: 80, height: 80)
-                            .onDisappear {
-                                if moveBars {
-                                    item.endsNow().saveInto(modelContext)
-                                }
-                                moveBars = false
-                                audioPlayer?.stop()
-                            }
+                Button(action: action) {
+                    VStack(alignment: .center) {
+                        HStack {
+                            bar(low: 0.3)
+                                .animation(animation.speed(1.5), value: moveBars)
+                            bar(low: 0.3)
+                                .animation(animation.speed(1.2), value: moveBars)
+                            bar(low: 0.3)
+                                .animation(animation.speed(1.0), value: moveBars)
+                            bar(low: 0.3)
+                                .animation(animation.speed(1.7), value: moveBars)
+                            bar(low: 0.3)
+                                .animation(animation.speed(1.1), value: moveBars)
                         }
-                        .padding(.all, 32)
-                        .background(.accent)
-                        .clipShape(.circle)
+                        .frame(width: 80, height: 80)
+                        .onDisappear {
+                            if moveBars {
+                                item.endsNow().save(persistence)
+                            }
+                            moveBars = false
+                            audioPlayer?.stop()
+                        }
                     }
-                    .onTapGesture(perform: action)
+                    .padding(.all, 32)
+                    .background(.accent)
+                    .clipShape(.circle)
                 }
+                .buttonStyle(.plain)
                 .frame(width: 154, height: 154)
 
                 Picker(selection: $selectedSound, label: Text("Sounds")) {
@@ -153,7 +152,7 @@ struct CalmListenView: View {
                 .onChange(of: selectedSound) {
                     if let audioPlayer {
                         audioPlayer.stop()
-                        item.saveInto(modelContext)
+                        item.save(persistence)
                     }
 
                     guard let player = makeAudioPlayer(soundFilename: sounds[selectedSound - 1].filename) else {

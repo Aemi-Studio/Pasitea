@@ -9,7 +9,8 @@ import SwiftData
 import SwiftUI
 
 struct TrackScreen: View {
-    @Environment(\.modelContext) private var modelContext
+    @Environment(\.modelContext) private var modelContext: ModelContext
+    private var persistence: PersistenceFacade { PersistenceFacade(modelContext: modelContext) }
 
     @State private var addViewIsPresented: Bool = false
 
@@ -67,7 +68,7 @@ struct TrackScreen: View {
                                     TrackFeelingItemRow(trackItem: item)
                                         .contextMenu {
                                             Button("Delete", systemImage: "trash", role: .destructive) {
-                                                item.deleteFrom(modelContext)
+                                                persistence.delete(item)
                                             }
                                         } preview: {
                                             TrackItemPreviewView(trackItem: item)
@@ -93,6 +94,7 @@ struct TrackScreen: View {
                             Spacer()
                             Image(systemName: "chevron.right")
                                 .fontWeight(.medium)
+                                .accessibilityHidden(true)
                         }
                         .font(.title2)
                         .bold()
@@ -107,6 +109,7 @@ struct TrackScreen: View {
                                         TrackItemRow(trackItem: item)
                                         Spacer()
                                         Image(systemName: "chevron.right")
+                                            .accessibilityHidden(true)
                                     }
                                     .padding()
                                     .background(.regularMaterial)
@@ -114,7 +117,7 @@ struct TrackScreen: View {
                                     .shadow(color: Color.accentColor.opacity(0.05), radius: 16, x: 0, y: 8)
                                     .contextMenu {
                                         Button("Delete", systemImage: "trash", role: .destructive) {
-                                            item.deleteFrom(modelContext)
+                                            persistence.delete(item)
                                         }
                                     } preview: {
                                         TrackItemPreviewView(trackItem: item)

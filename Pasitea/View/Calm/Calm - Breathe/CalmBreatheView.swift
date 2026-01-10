@@ -39,11 +39,14 @@ struct CalmBreatheView: View {
                         Group {
                             Text(
                                 """
-                                Cardiac coherence is a breathing technique designed to synchronize your breath with your heart rate for improved emotional well-being and stress reduction.
+                                Cardiac coherence is a breathing technique designed to synchronize your breath with \
+                                your heart rate for improved emotional well-being and stress reduction.
 
-                                It involves slow, rhythmic breathing, typically at a rate of around six breaths per minute, which helps balance the autonomic nervous system.
+                                It involves slow, rhythmic breathing, typically at a rate of around six breaths per \
+                                minute, which helps balance the autonomic nervous system.
 
-                                By practicing cardiac coherence, you can enhance your ability to manage stress and enhance your overall sense of well-being.
+                                By practicing cardiac coherence, you can enhance your ability to manage stress and \
+                                improve your overall sense of well-being.
                                 """)
                         }
                         .multilineTextAlignment(.leading)

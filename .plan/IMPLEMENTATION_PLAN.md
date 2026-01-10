@@ -35,11 +35,18 @@
 - [x] Ensure all SwiftData `ModelContext` operations run on its owning executor (main actor for `@Environment` context)
 - [x] Confirm build log has zero strict-concurrency warnings for these files
 
+### Phase 1.1 — Warning cleanup (compiler + SwiftLint baseline)
+- [x] Eliminate unused-result compiler warnings (use `@discardableResult` for fluent APIs)
+- [x] Fix `CalmSound.id` decoding warning (make `id` decodable/mutable)
+- [x] Fix SwiftLint accessibility warnings (labels/hidden images; tap gestures treated as buttons)
+- [x] Fix SwiftLint `line_length` warnings (wrap long strings and interpolations)
+- [x] Confirm build log has zero compiler warnings and zero SwiftLint violations (baseline)
+
 ### Phase 2 — Data model and persistence boundary hardening
-- [ ] Decide whether `saved`/`deleted` in [TrackItem.swift](file:///Users/gc/Developer/Aemi%20Studio.nosync/Pasitea/Pasitea/Model/TrackItem.swift#L12-L60) should be persisted or `@Transient`
-- [ ] Add SwiftData schema versioning and migration strategy (if any user data exists)
-- [ ] Introduce a persistence facade (main-actor or model-actor) and route saves through it
-- [ ] Stop calling `ModelContext.save()` directly from views (only via the facade)
+- [x] Decide whether `saved`/`deleted` in [TrackItem.swift](file:///Users/gc/Developer/Aemi%20Studio.nosync/Pasitea/Pasitea/Model/TrackItem.swift#L12-L60) should be persisted or `@Transient` (removed; no longer persisted)
+- [x] Add SwiftData schema versioning and migration strategy (if any user data exists)
+- [x] Introduce a persistence facade (main-actor or model-actor) and route saves through it
+- [x] Stop calling `ModelContext.save()` directly from views (only via the facade)
 
 ### Phase 3 — Safety cleanup (crash-proofing)
 - [ ] Replace force unwrap of `TrackType(rawValue:)` in [TrackItem.swift](file:///Users/gc/Developer/Aemi%20Studio.nosync/Pasitea/Pasitea/Model/TrackItem.swift#L62-L82)

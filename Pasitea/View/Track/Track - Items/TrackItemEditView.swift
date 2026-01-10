@@ -9,8 +9,9 @@ import SwiftData
 import SwiftUI
 
 struct TrackItemEditView: View {
-    @Environment(\.modelContext) var modelContext
+    @Environment(\.modelContext) var modelContext: ModelContext
     @Environment(\.dismiss) var dismiss
+    private var persistence: PersistenceFacade { PersistenceFacade(modelContext: modelContext) }
 
     @State private var confirmationRequestPresented: Bool = false
     @FocusState private var isTextFieldFocused
@@ -47,7 +48,7 @@ struct TrackItemEditView: View {
                     if isFeeling(trackItem) {
                         trackItem.endsAt(trackItem.startDate)
                     }
-                    trackItem.saveInto(modelContext)
+                    persistence.save(trackItem)
                     self.dismiss()
                 }.disabled(trackItem.desc.isEmpty)
             }
@@ -97,9 +98,6 @@ struct TrackItemEditView: View {
                         }
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 16))
-                    .onTapGesture {
-                        isTextFieldFocused = true
-                    }
 
                     HStack {
                         VStack(alignment: .leading) {
@@ -132,9 +130,13 @@ struct TrackItemEditView: View {
         .navigationBarBackButtonHidden()
         .interactiveDismissDisabled()
         .pasitea()
-        .onTapGesture {
-            isTextFieldFocused = false
-        }
+        .contentShape(Rectangle())
+        .simultaneousGesture(
+            TapGesture().onEnded {
+                isTextFieldFocused = false
+            }
+        )
+        .accessibilityAddTraits(.isButton)
     }
 }
 

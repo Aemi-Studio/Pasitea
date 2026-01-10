@@ -29,6 +29,7 @@ struct CalmChoicesItemView: View {
                 Spacer()
                 Image(systemName: "chevron.right")
                     .padding()
+                    .accessibilityHidden(true)
             }
         }
         .foregroundColor(.accent)

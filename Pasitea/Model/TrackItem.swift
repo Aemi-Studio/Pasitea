@@ -9,55 +9,53 @@ import Foundation
 import SwiftData
 import SwiftUI
 
-@Model
-public final class TrackItem: Identifiable {
-    @Attribute(.unique) public var id: UUID
-    public var type: TrackType.RawValue = TrackType.none.rawValue
-    public var desc: String = ""
-    public var tags: [String] = []
-    public var startDate: Date = Date.now
-    public var endDate: Date = Date.now
-    public var previousId: UUID?
-    private var saved: Bool = false
-    private var deleted: Bool = false
+public enum PasiteaSchemaV1: VersionedSchema {
+    public static var versionIdentifier: Schema.Version { Schema.Version(1, 0, 0) }
 
-    enum TrackItemCodingKeys: CodingKey {
-        case id
-        case type
-        case desc
-        case tags
-        case startDate
-        case endDate
-        case previousId
+    public static var models: [any PersistentModel.Type] {
+        [TrackItem.self]
     }
 
-    init(
-        type: TrackType = TrackType.none,
-        desc: String = "",
-        tags: [String] = [],
-        startDate: Date = Date.now,
-        endDate: Date = Date.now,
-        previousId: UUID? = nil
-    ) {
-        self.id = UUID()
-        self.type = type.rawValue
-        self.desc = desc
-        self.tags = tags
-        self.startDate = startDate
-        self.endDate = endDate
-        self.previousId = previousId ?? nil
-    }
+    @Model
+    public final class TrackItem: Identifiable {
+        @Attribute(.unique) public var id: UUID
+        public var type: TrackType.RawValue = TrackType.none.rawValue
+        public var desc: String = ""
+        public var tags: [String] = []
+        public var startDate: Date = Date.now
+        public var endDate: Date = Date.now
+        public var previousId: UUID?
 
-    init(_ item: TrackItem) {
-        self.id = UUID()
-        self.type = item.type
-        self.desc = item.desc
-        self.tags = item.tags
-        self.startDate = item.startDate
-        self.endDate = item.endDate
-        self.previousId = item.previousId
+        init(
+            type: TrackType = TrackType.none,
+            desc: String = "",
+            tags: [String] = [],
+            startDate: Date = Date.now,
+            endDate: Date = Date.now,
+            previousId: UUID? = nil
+        ) {
+            self.id = UUID()
+            self.type = type.rawValue
+            self.desc = desc
+            self.tags = tags
+            self.startDate = startDate
+            self.endDate = endDate
+            self.previousId = previousId ?? nil
+        }
+
+        init(_ item: TrackItem) {
+            self.id = UUID()
+            self.type = item.type
+            self.desc = item.desc
+            self.tags = item.tags
+            self.startDate = item.startDate
+            self.endDate = item.endDate
+            self.previousId = item.previousId
+        }
     }
 }
+
+public typealias TrackItem = PasiteaSchemaV1.TrackItem
 
 extension TrackItem {
     @Transient
@@ -82,6 +80,7 @@ extension TrackItem {
 }
 
 extension TrackItem {
+    @discardableResult
     public func addTags(_ tags: String...) -> TrackItem {
         for tag in tags {
             self.tags.append(tag)
@@ -89,51 +88,26 @@ extension TrackItem {
         return self
     }
 
-    public func saveInto(_ modelContext: ModelContext, _ endDate: Date? = nil) {
-        if !saved {
-            self.saved = true
-            self.endDate = endDate ?? self.endDate
-            modelContext.insert(self)
-            do {
-                try modelContext.save()
-            } catch {
-                #if DEBUG
-                print(error.localizedDescription)
-                #endif
-            }
-        }
-    }
-
-    public func deleteFrom(_ modelContext: ModelContext) {
-        if !deleted {
-            modelContext.delete(self)
-            self.deleted = true
-            do {
-                try modelContext.save()
-            } catch {
-                #if DEBUG
-                print(error.localizedDescription)
-                #endif
-            }
-        }
-    }
-
+    @discardableResult
     public func to(_ type: TrackType) -> TrackItem {
         self.type = type.rawValue
         print(self.type)
         return self
     }
 
+    @discardableResult
     public func startsAt(_ date: Date) -> TrackItem {
         self.startDate = date
         return self
     }
 
+    @discardableResult
     public func endsAt(_ date: Date) -> TrackItem {
         self.endDate = date
         return self
     }
 
+    @discardableResult
     public func startsNow() -> TrackItem {
         let date = Date.now
         self.startDate = date
@@ -141,8 +115,52 @@ extension TrackItem {
         return self
     }
 
+    @discardableResult
     public func endsNow() -> TrackItem {
         self.endDate = Date.now
         return self
+    }
+}
+
+@MainActor
+struct PersistenceFacade {
+    let modelContext: ModelContext
+
+    func save(_ item: TrackItem, endDate: Date? = nil) {
+        if let endDate {
+            item.endDate = endDate
+        }
+        modelContext.insert(item)
+        do {
+            try modelContext.save()
+        } catch {
+            #if DEBUG
+            print(error.localizedDescription)
+            #endif
+        }
+    }
+
+    func delete(_ item: TrackItem) {
+        modelContext.delete(item)
+        do {
+            try modelContext.save()
+        } catch {
+            #if DEBUG
+            print(error.localizedDescription)
+            #endif
+        }
+    }
+
+    func delete(_ items: [TrackItem]) {
+        for item in items {
+            modelContext.delete(item)
+        }
+        do {
+            try modelContext.save()
+        } catch {
+            #if DEBUG
+            print(error.localizedDescription)
+            #endif
+        }
     }
 }

@@ -6,24 +6,26 @@
 //
 
 import Foundation
-import SwiftData
 
-class TrackItemWrapper {
+@MainActor
+final class TrackItemWrapper {
     private var item: TrackItem
 
     init(_ item: TrackItem) {
         self.item = item
     }
 
-    public func reset(_ modelContext: ModelContext, tags: String...) -> TrackItemWrapper {
+    @discardableResult
+    public func reset(_ persistence: PersistenceFacade, tags: String...) -> TrackItemWrapper {
         for tag in tags {
             self.item.addTags(tag)
         }
-        self.item.endsNow().saveInto(modelContext)
+        persistence.save(self.item.endsNow())
         self.item = TrackItem(type: self.item.typeAsTrackType, previousId: self.item.previousId ?? self.item.id)
         return self
     }
 
+    @discardableResult
     public func startsNow(_ tags: String...) -> TrackItemWrapper {
         self.item.startsNow()
         for tag in tags {
@@ -32,15 +34,16 @@ class TrackItemWrapper {
         return self
     }
 
+    @discardableResult
     public func endsNow(_ tags: String...) -> TrackItemWrapper {
-        self.item.startsNow()
+        self.item.endsNow()
         for tag in tags {
             self.item.addTags(tag)
         }
         return self
     }
 
-    public func saveInto(_ modelContext: ModelContext) {
-        self.item.saveInto(modelContext)
+    public func save(_ persistence: PersistenceFacade) {
+        persistence.save(self.item)
     }
 }

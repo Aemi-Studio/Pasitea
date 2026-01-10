@@ -9,8 +9,9 @@ import SwiftData
 import SwiftUI
 
 struct TrackItemAddView: View {
-    @Environment(\.modelContext) var modelContext
+    @Environment(\.modelContext) var modelContext: ModelContext
     @Environment(\.dismiss) var dismiss: DismissAction
+    private var persistence: PersistenceFacade { PersistenceFacade(modelContext: modelContext) }
 
     @State private var desc: String = ""
     @State private var trackTypeId: Int = 4
@@ -50,13 +51,14 @@ struct TrackItemAddView: View {
                 }
                 Spacer()
                 Button("Save") {
-                    TrackItem(
+                    let item = TrackItem(
                         type: TrackType.allCases[trackTypeId],
                         desc: desc,
                         startDate: startDate,
                         endDate: endDate,
                         previousId: previousId
-                    ).saveInto(modelContext, endDate)
+                    )
+                    persistence.save(item, endDate: endDate)
                     self.dismiss()
                 }.disabled(desc.isEmpty)
             }
@@ -107,9 +109,6 @@ struct TrackItemAddView: View {
                                     .background(.regularMaterial)
                                     .opacity(0.1)
                             }
-                            .onTapGesture {
-                                isTextFieldFocused = true
-                            }
                         }
                         .clipShape(RoundedRectangle(cornerRadius: 16))
                     }
@@ -145,9 +144,13 @@ struct TrackItemAddView: View {
         .navigationBarBackButtonHidden()
         .interactiveDismissDisabled()
         .pasitea()
-        .onTapGesture {
-            isTextFieldFocused = false
-        }
+        .contentShape(Rectangle())
+        .simultaneousGesture(
+            TapGesture().onEnded {
+                isTextFieldFocused = false
+            }
+        )
+        .accessibilityAddTraits(.isButton)
     }
 }
 

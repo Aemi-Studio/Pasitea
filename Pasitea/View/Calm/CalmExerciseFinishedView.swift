@@ -5,11 +5,13 @@
 //  Created by Guillaume Coquard on 17/10/23.
 //
 
+import SwiftData
 import SwiftUI
 
 struct CalmExerciseFinishedView: View {
     @Environment(\.dismiss) var dismissAction
-    @Environment(\.modelContext) var modelContext
+    @Environment(\.modelContext) var modelContext: ModelContext
+    private var persistence: PersistenceFacade { PersistenceFacade(modelContext: modelContext) }
 
     @State private var isPresented = false
 
@@ -35,13 +37,13 @@ struct CalmExerciseFinishedView: View {
                 HStack(alignment: .center) {
                     VStack(spacing: 20) {
                         Button("I need more help", systemImage: "hand.raised.circle.fill") {
-                            trackItem.saveInto(modelContext)
+                            persistence.save(trackItem)
                             withAnimation { isPresented.toggle() }
                         }
                         .pasiteaButtonStyle(.borderedProminent)
 
                         Button("I'm fine", systemImage: "hand.thumbsup.circle.fill") {
-                            trackItem.saveInto(modelContext)
+                            persistence.save(trackItem)
                             withAnimation {
                                 dismissAction()
                                 dismiss?()

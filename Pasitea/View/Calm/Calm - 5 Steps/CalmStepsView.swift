@@ -67,7 +67,8 @@ struct CalmStepsView: View {
                         Group {
                             Text(
                                 """
-                                The 5-4-3-2-1 method is a scientifically proven quick anxiety and stress reduction technique.
+                                The 5-4-3-2-1 method is a scientifically proven quick anxiety and stress reduction \
+                                technique.
 
                                 To calm down:
 

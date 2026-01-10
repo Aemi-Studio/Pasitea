@@ -8,7 +8,7 @@
 import Foundation
 
 struct CalmSound: Codable, Hashable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var title: String
     var filename: String
 }

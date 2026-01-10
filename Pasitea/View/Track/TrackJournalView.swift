@@ -9,7 +9,8 @@ import SwiftData
 import SwiftUI
 
 struct TrackJournalView: View {
-    @Environment(\.modelContext) var modelContext
+    @Environment(\.modelContext) var modelContext: ModelContext
+    private var persistence: PersistenceFacade { PersistenceFacade(modelContext: modelContext) }
 
     @State private var editMode: EditMode = EditMode.inactive
     @State private var deletionConfirmation: Bool = false
@@ -33,7 +34,7 @@ struct TrackJournalView: View {
                                 TrackItemRow(trackItem: item)
                                     .swipeActions(edge: .trailing) {
                                         Button("Delete", systemImage: "trash", role: .destructive) {
-                                            item.deleteFrom(modelContext)
+                                            persistence.delete(item)
                                         }
                                     }
                             }
@@ -47,6 +48,12 @@ struct TrackJournalView: View {
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarTrailing) {
                         if $editMode.wrappedValue == .active {
+                            let selectionCount = selectedItems.count
+                            let maybeEveryText = maybeEvery(selectionCount)
+                            let pluralSuffix = plural(selectionCount)
+                            let confirmationText =
+                                "You're about to remove \(maybeEveryText) saved feeling\(pluralSuffix)."
+
                             Button(role: .destructive) {
                                 deletionConfirmation.toggle()
                             } label: {
@@ -61,7 +68,7 @@ struct TrackJournalView: View {
                                 .bold()
                             }
                             .confirmationDialog(
-                                "You're about to remove \(maybeEvery(selectedItems.count)) saved feeling\(plural(selectedItems.count)).",
+                                confirmationText,
 
                                 isPresented: $deletionConfirmation
                             ) {
@@ -72,21 +79,14 @@ struct TrackJournalView: View {
                                 }
                                 Button(role: .destructive) {
                                     if !selectedItems.isEmpty {
-                                        for id in Array(selectedItems) {
-                                            items.first { item in
-                                                id == item.id
-                                            }?.deleteFrom(modelContext)
-                                            selectedItems.remove(id)
-                                        }
+                                        let itemsToDelete = items.filter { selectedItems.contains($0.id) }
+                                        persistence.delete(itemsToDelete)
+                                        selectedItems.removeAll()
                                     } else {
-                                        for item in items {
-                                            item.deleteFrom(modelContext)
-                                        }
+                                        persistence.delete(items)
                                     }
                                 } label: {
-                                    Text(
-                                        " Delete \(maybeEvery(selectedItems.count)) feeling\(plural(selectedItems.count))"
-                                    )
+                                    Text("Delete \(maybeEveryText) feeling\(pluralSuffix)")
                                 }
                             }
                             .disabled(items.isEmpty)

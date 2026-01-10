@@ -5,10 +5,12 @@
 //  Created by Guillaume Coquard on 18/10/23.
 //
 
+import SwiftData
 import SwiftUI
 
 struct CustomBackButton<Content: View>: View {
-    @Environment(\.modelContext) var modelContext
+    @Environment(\.modelContext) var modelContext: ModelContext
+    private var persistence: PersistenceFacade { PersistenceFacade(modelContext: modelContext) }
 
     @State private var infoPresented = false
     @State private var addViewIsPresented = false
@@ -54,7 +56,9 @@ struct CustomBackButton<Content: View>: View {
                     if enforce {
                         alertPresented = true
                     } else {
-                        trackItem?.saveInto(modelContext)
+                        if let trackItem {
+                            persistence.save(trackItem)
+                        }
                         withAnimation {
                             dismissAction?()
                             customAction?()
@@ -84,8 +88,9 @@ struct CustomBackButton<Content: View>: View {
             isPresented: $alertPresented
         ) {
             Button(role: .destructive) {
-                // Save the exercise
-                trackItem?.saveInto(modelContext)
+                if let trackItem {
+                    persistence.save(trackItem)
+                }
                 withAnimation {
                     dismissAction?()
                     customAction?()
