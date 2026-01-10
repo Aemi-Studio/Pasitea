@@ -17,7 +17,7 @@ class TrackItemWrapper {
 
     public func reset(_ modelContext: ModelContext, tags: String...) -> TrackItemWrapper {
         for tag in tags {
-            self.item.addTags( tag )
+            self.item.addTags(tag)
         }
         self.item.endsNow().saveInto(modelContext)
         self.item = TrackItem(type: self.item.typeAsTrackType, previousId: self.item.previousId ?? self.item.id)
@@ -27,7 +27,7 @@ class TrackItemWrapper {
     public func startsNow(_ tags: String...) -> TrackItemWrapper {
         self.item.startsNow()
         for tag in tags {
-            self.item.addTags( tag )
+            self.item.addTags(tag)
         }
         return self
     }
@@ -35,7 +35,7 @@ class TrackItemWrapper {
     public func endsNow(_ tags: String...) -> TrackItemWrapper {
         self.item.startsNow()
         for tag in tags {
-            self.item.addTags( tag )
+            self.item.addTags(tag)
         }
         return self
     }

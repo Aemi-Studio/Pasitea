@@ -5,8 +5,8 @@
 //  Created by Guillaume Coquard on 20/10/23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct TrackItemAddView: View {
     @Environment(\.modelContext) var modelContext
@@ -33,7 +33,8 @@ struct TrackItemAddView: View {
                         .bold()
                 }.confirmationDialog(
                     "If you made changes, modifications will be cancelled. Do you really want to cancel them?",
-                    isPresented: $confirmationRequestPresented) {
+                    isPresented: $confirmationRequestPresented
+                ) {
                     Button(role: .cancel) {
                         confirmationRequestPresented.toggle()
                     } label: {
@@ -156,7 +157,17 @@ struct TrackItemAddView_Preview: PreviewProvider {
         @State var isPresented = true
 
         TrackItemAddView()
-            .modelContainer(try! ModelContainer(for: TrackItem.self))
+            .modelContainer(_TrackItemAddViewPreview.container)
     }
 }
 #endif
+
+private enum _TrackItemAddViewPreview {
+    static let container: ModelContainer = {
+        do {
+            return try ModelContainer(for: TrackItem.self)
+        } catch {
+            preconditionFailure(error.localizedDescription)
+        }
+    }()
+}

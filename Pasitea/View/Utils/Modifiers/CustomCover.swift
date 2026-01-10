@@ -17,11 +17,13 @@ struct CustomCover<Content: View>: View {
             content
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .ignoresSafeArea(.all)
-                .environment(\.customDismiss, CustomDismiss {
-                    withAnimation(animation) {
-                        isPresented = false
-                    }
-                })
+                .environment(
+                    \.customDismiss,
+                    CustomDismiss {
+                        withAnimation(animation) {
+                            isPresented = false
+                        }
+                    })
         }
     }
 }
@@ -43,19 +45,19 @@ extension View {
     }
 }
 
-struct CustomDismiss {
+struct CustomDismiss: @unchecked Sendable {
     private var action: () -> Void
     func callAsFunction() {
         action()
     }
 
-    init(action: @escaping () -> Void = { }) {
+    init(action: @escaping () -> Void = {}) {
         self.action = action
     }
 }
 
 struct CustomDismissKey: EnvironmentKey {
-    static var defaultValue: CustomDismiss = CustomDismiss()
+    static let defaultValue: CustomDismiss = CustomDismiss()
 }
 
 extension EnvironmentValues {

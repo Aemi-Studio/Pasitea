@@ -5,22 +5,24 @@
 //  Created by Guillaume Coquard on 17/10/23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct TrackScreen: View {
     @Environment(\.modelContext) private var modelContext
 
     @State private var addViewIsPresented: Bool = false
 
-    @Query(filter: #Predicate<TrackItem> { item in
-        item.type == "Feeling"
-    }, sort: \TrackItem.startDate, order: .reverse)
+    @Query(
+        filter: #Predicate<TrackItem> { item in
+            item.type == "Feeling"
+        }, sort: \TrackItem.startDate, order: .reverse)
     var feelingItems: [TrackItem]
 
-    @Query(filter: #Predicate<TrackItem> { item in
-        item.type != "Feeling"
-    }, sort: \TrackItem.startDate, order: .reverse)
+    @Query(
+        filter: #Predicate<TrackItem> { item in
+            item.type != "Feeling"
+        }, sort: \TrackItem.startDate, order: .reverse)
     var notFeelingItems: [TrackItem]
 
     var body: some View {
@@ -145,6 +147,16 @@ struct TrackScreen: View {
 #Preview {
     TrackScreen()
         .environment(ModelData())
-        .modelContainer(try! ModelContainer(for: TrackItem.self))
+        .modelContainer(_TrackScreenPreview.container)
 }
 #endif
+
+private enum _TrackScreenPreview {
+    static let container: ModelContainer = {
+        do {
+            return try ModelContainer(for: TrackItem.self)
+        } catch {
+            preconditionFailure(error.localizedDescription)
+        }
+    }()
+}

@@ -32,7 +32,8 @@ extension View {
         modifier(CustomHaptic(trigger: trigger, flexibility: flexibility))
     }
 
-    func customHaptic<E: Equatable>(_ trigger: E, flexibility: SensoryFeedback.Flexibility, intensity: Double) -> some View {
+    func customHaptic<E: Equatable>(_ trigger: E, flexibility: SensoryFeedback.Flexibility, intensity: Double)
+    -> some View {
         modifier(CustomHaptic(trigger: trigger, flexibility: flexibility, intensity: intensity))
     }
 }

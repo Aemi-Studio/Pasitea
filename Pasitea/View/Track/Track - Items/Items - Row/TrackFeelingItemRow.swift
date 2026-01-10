@@ -5,8 +5,8 @@
 //  Created by Guillaume Coquard on 27/10/23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct TrackFeelingItemRow: View {
     var trackItem: TrackItem
@@ -44,7 +44,7 @@ struct TrackFeelingItemRow: View {
             if !trackItem.desc.isEmpty {
                 VStack(alignment: .leading) {
                     Text(trackItem.desc)
-                        .dynamicTypeSize(DynamicTypeSize(.small)!)
+                        .dynamicTypeSize(.small)
                         .lineLimit(4)
                         .frame(maxWidth: 128)
                         .multilineTextAlignment(.leading)

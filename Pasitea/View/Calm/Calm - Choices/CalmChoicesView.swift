@@ -50,7 +50,7 @@ struct CalmChoicesView: View {
                         isViewPresented: $isTrackingPresented
                     )
                     .sheet(isPresented: $isTrackingPresented) {
-                        TrackItemAddView( previousId: trackItem.id )
+                        TrackItemAddView(previousId: trackItem.id)
                     }
 
                     Spacer()
@@ -76,6 +76,6 @@ struct CalmChoicesView: View {
 
 #if DEBUG
 #Preview {
-    CalmChoicesView( trackItem: TrackItem() )
+    CalmChoicesView(trackItem: TrackItem())
 }
 #endif

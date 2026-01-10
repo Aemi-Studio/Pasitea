@@ -10,10 +10,10 @@ import SwiftUI
 struct CustomBackButton<Content: View>: View {
     @Environment(\.modelContext) var modelContext
 
-    @State private var infoPresented        = false
-    @State private var addViewIsPresented   = false
-    @State private var alertPresented       = false
-    @State private var isButtonPressed      = false
+    @State private var infoPresented = false
+    @State private var addViewIsPresented = false
+    @State private var alertPresented = false
+    @State private var isButtonPressed = false
 
     var trackItem: TrackItem?
 

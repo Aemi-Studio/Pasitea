@@ -11,7 +11,7 @@ import SwiftUI
 
 @Model
 public final class TrackItem: Identifiable {
-    @Attribute(.unique) public let id: UUID
+    @Attribute(.unique) public var id: UUID
     public var type: TrackType.RawValue = TrackType.none.rawValue
     public var desc: String = ""
     public var tags: [String] = []
@@ -48,7 +48,7 @@ public final class TrackItem: Identifiable {
         self.previousId = previousId ?? nil
     }
 
-    init(_ item: TrackItem ) {
+    init(_ item: TrackItem) {
         self.id = UUID()
         self.type = item.type
         self.desc = item.desc
@@ -63,7 +63,7 @@ extension TrackItem {
     @Transient
     public var typeAsTrackType: TrackType {
         get {
-            (TrackType(rawValue: self.type))!
+            TrackType(rawValue: self.type) ?? .none
         }
         set(rawValue) {
             self.type = rawValue.rawValue

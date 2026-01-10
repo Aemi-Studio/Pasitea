@@ -5,8 +5,8 @@
 //  Created by Antonio Abbatiello on 25/10/23.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 struct BreatheFlowerAnimation: View {
     @Environment(\.modelContext) var modelContext
@@ -62,22 +62,22 @@ struct BreatheFlowerAnimation: View {
                 ZStack {
                     // Middle Left Petal - Second
                     Image("flower")
-                        .rotationEffect(.degrees( isFlowerOpen ? -25 : -5), anchor: .bottom)
+                        .rotationEffect(.degrees(isFlowerOpen ? -25 : -5), anchor: .bottom)
 
                     // Middle Right Petal - Fourth
                     Image("flower")
-                        .rotationEffect(.degrees( isFlowerOpen ? 25 : 5), anchor: .bottom)
+                        .rotationEffect(.degrees(isFlowerOpen ? 25 : 5), anchor: .bottom)
 
                     // Middle Petal - Third
                     Image("flower")
 
                     // Left Petal - First
                     Image("flower")
-                        .rotationEffect(.degrees( isFlowerOpen ? -50 : -10), anchor: .bottom)
+                        .rotationEffect(.degrees(isFlowerOpen ? -50 : -10), anchor: .bottom)
 
                     // Right Petal - Fifth
                     Image("flower")
-                        .rotationEffect(.degrees( isFlowerOpen ? 50 : 10), anchor: .bottom)
+                        .rotationEffect(.degrees(isFlowerOpen ? 50 : 10), anchor: .bottom)
                 }
                 .shadow(radius: isFlowerOpen ? 20 : 0)
                 .hueRotation(Angle(degrees: isFlowerOpen ? -170 : 0))
@@ -87,7 +87,8 @@ struct BreatheFlowerAnimation: View {
             ZStack {
                 if !isDone {
                     Group {
-                        Text( !isPreparing
+                        Text(
+                            !isPreparing
                                 ? isRunning
                                 ? "Breathe Out"
                                 : "Restart when you're ready"
@@ -111,29 +112,27 @@ struct BreatheFlowerAnimation: View {
             .fontWeight(.bold)
 
             Button("Placeholder") {
-                DispatchQueue.global(qos: .background).async {
-                    if isPreparing {
-                        isPreparing = false
-                        started = true
-                    } else if !isRunning {
-                        breatheCount = 0
-                    }
+                if isPreparing {
+                    isPreparing = false
+                    started = true
+                } else if !isRunning {
+                    breatheCount = 0
+                }
 
-                    isRunning.toggle()
+                isRunning.toggle()
 
-                    if isRunning {
-                        trackItem.startsNow()
-                    } else {
-                        trackItem.reset(modelContext, tags: self.breatheCount.description)
-                    }
+                if isRunning {
+                    trackItem.startsNow()
+                } else {
+                    trackItem.reset(modelContext, tags: breatheCount.description)
+                }
 
-                    withAnimation( flowerAnimation ) {
-                        isFlowerOpen.toggle()
-                    }
+                withAnimation(flowerAnimation) {
+                    isFlowerOpen.toggle()
+                }
 
-                    withAnimation( textAnimation ) {
-                        isFlowerOpenForText.toggle()
-                    }
+                withAnimation(textAnimation) {
+                    isFlowerOpenForText.toggle()
                 }
             }
             .foregroundStyle(.clear)
@@ -142,10 +141,12 @@ struct BreatheFlowerAnimation: View {
             .background {
                 GeometryReader { geo in
                     ProgressView(value: Double(breatheCount), total: Double(numberOrBreathing)) {
-                        Label(isPreparing ? "Start" : isRunning ? "Stop" : "Restart",
-                              systemImage: isPreparing ? "play" : isRunning ? "stop" : "arrow.clockwise")
-                            .font(.title3)
-                            .fontWeight(.semibold)
+                        Label(
+                            isPreparing ? "Start" : isRunning ? "Stop" : "Restart",
+                            systemImage: isPreparing ? "play" : isRunning ? "stop" : "arrow.clockwise"
+                        )
+                        .font(.title3)
+                        .fontWeight(.semibold)
                     }
                     .onReceive(timer) { _ in
                         if isRunning {

@@ -26,8 +26,10 @@ struct CustomProgressStyle: ProgressViewStyle {
                     .frame(height: geo.size.height)
                 }
                 .frame(width: geo.size.width)
-                .clipShape(Rectangle()
-                            .path(in: CGRect(
+                .clipShape(
+                    Rectangle()
+                        .path(
+                            in: CGRect(
                                 x: 0,
                                 y: 0,
                                 width: loadedWidth,
@@ -43,8 +45,10 @@ struct CustomProgressStyle: ProgressViewStyle {
                     .frame(height: geo.size.height)
                 }
                 .frame(width: geo.size.width)
-                .clipShape(Rectangle()
-                            .path(in: CGRect(
+                .clipShape(
+                    Rectangle()
+                        .path(
+                            in: CGRect(
                                 x: loadedWidth,
                                 y: 0,
                                 width: remainingWidth,

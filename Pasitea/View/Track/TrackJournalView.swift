@@ -5,8 +5,8 @@
 //  Created by Guillaume Coquard on 27/10/23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct TrackJournalView: View {
     @Environment(\.modelContext) var modelContext
@@ -50,13 +50,15 @@ struct TrackJournalView: View {
                             Button(role: .destructive) {
                                 deletionConfirmation.toggle()
                             } label: {
-                                Label( !selectedItems.isEmpty
+                                Label(
+                                    !selectedItems.isEmpty
                                         ? "Delete \(selectedItems.count) Feeling\(plural(selectedItems.count))"
                                         : "Delete Everything",
-                                       systemImage: "trash.fill")
-                                    .labelStyle(.titleOnly)
-                                    .foregroundStyle(.red)
-                                    .bold()
+                                    systemImage: "trash.fill"
+                                )
+                                .labelStyle(.titleOnly)
+                                .foregroundStyle(.red)
+                                .bold()
                             }
                             .confirmationDialog(
                                 "You're about to remove \(maybeEvery(selectedItems.count)) saved feeling\(plural(selectedItems.count)).",
@@ -70,19 +72,21 @@ struct TrackJournalView: View {
                                 }
                                 Button(role: .destructive) {
                                     if !selectedItems.isEmpty {
-                                        selectedItems.forEach { id in
+                                        for id in Array(selectedItems) {
                                             items.first { item in
                                                 id == item.id
                                             }?.deleteFrom(modelContext)
                                             selectedItems.remove(id)
                                         }
                                     } else {
-                                        items.forEach { item in
+                                        for item in items {
                                             item.deleteFrom(modelContext)
                                         }
                                     }
                                 } label: {
-                                    Text(" Delete \(maybeEvery(selectedItems.count)) feeling\(plural(selectedItems.count))")
+                                    Text(
+                                        " Delete \(maybeEvery(selectedItems.count)) feeling\(plural(selectedItems.count))"
+                                    )
                                 }
                             }
                             .disabled(items.isEmpty)
@@ -98,5 +102,15 @@ struct TrackJournalView: View {
 
 #Preview {
     TrackJournalView(items: [TrackItem()])
-        .modelContainer( try! ModelContainer(for: TrackItem.self ))
+        .modelContainer(_TrackJournalPreview.container)
+}
+
+private enum _TrackJournalPreview {
+    static let container: ModelContainer = {
+        do {
+            return try ModelContainer(for: TrackItem.self)
+        } catch {
+            preconditionFailure(error.localizedDescription)
+        }
+    }()
 }

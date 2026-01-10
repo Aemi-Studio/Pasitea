@@ -34,13 +34,13 @@ struct CalmExerciseFinishedView: View {
                 Spacer()
                 HStack(alignment: .center) {
                     VStack(spacing: 20) {
-                        Button( "I need more help", systemImage: "hand.raised.circle.fill") {
+                        Button("I need more help", systemImage: "hand.raised.circle.fill") {
                             trackItem.saveInto(modelContext)
                             withAnimation { isPresented.toggle() }
                         }
                         .pasiteaButtonStyle(.borderedProminent)
 
-                        Button( "I'm fine", systemImage: "hand.thumbsup.circle.fill" ) {
+                        Button("I'm fine", systemImage: "hand.thumbsup.circle.fill") {
                             trackItem.saveInto(modelContext)
                             withAnimation {
                                 dismissAction()
@@ -59,7 +59,7 @@ struct CalmExerciseFinishedView: View {
         }
         .ultraThinInterface()
         .sheet(isPresented: $isPresented) {
-            CalmChoicesView( trackItem: trackItem )
+            CalmChoicesView(trackItem: trackItem)
                 .informationModalStyle(false)
         }
     }
@@ -67,6 +67,6 @@ struct CalmExerciseFinishedView: View {
 
 #if DEBUG
 #Preview {
-    CalmExerciseFinishedView( trackItem: TrackItem() )
+    CalmExerciseFinishedView(trackItem: TrackItem())
 }
 #endif

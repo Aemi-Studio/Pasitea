@@ -5,8 +5,8 @@
 //  Created by Guillaume Coquard on 16/10/23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @main
 struct PasiteaApp: App {
@@ -16,7 +16,7 @@ struct PasiteaApp: App {
 
     init() {
         do {
-            container = try ModelContainer( for: TrackItem.self )
+            container = try ModelContainer(for: TrackItem.self)
         } catch {
             #if DEBUG
             print(error.localizedDescription)

@@ -5,8 +5,8 @@
 //  Created by Guillaume Coquard on 17/10/23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct TrackItemView: View {
     var trackItem: TrackItem
@@ -25,11 +25,12 @@ struct TrackItemView: View {
         let previousId: String = self.trackItem.previousId?.uuidString ?? UUID().uuidString
         let sessionTrackItems: [TrackItem]
         do {
-            sessionTrackItems = try trackItems.filter(#Predicate<TrackItem> { item in
-                item.id.uuidString == previousId
-                    || (item.previousId?.uuidString == previousId && item.id.uuidString != selfUuid)
-                    || item.previousId?.uuidString == selfUuid
-            })
+            sessionTrackItems = try trackItems.filter(
+                #Predicate<TrackItem> { item in
+                    item.id.uuidString == previousId
+                        || (item.previousId?.uuidString == previousId && item.id.uuidString != selfUuid)
+                        || item.previousId?.uuidString == selfUuid
+                })
         } catch {
             sessionTrackItems = []
         }
@@ -93,7 +94,8 @@ struct TrackItemView: View {
                                         .foregroundStyle(.secondary)
                                     Text(
                                         Helper.dateFormatter
-                                            .string(from: trackItem.endDate.timeIntervalSince(trackItem.startDate)) ?? "Unknown"
+                                            .string(from: trackItem.endDate.timeIntervalSince(trackItem.startDate))
+                                            ?? "Unknown"
                                     )
                                 }
                                 Spacer()
@@ -141,7 +143,7 @@ struct TrackItemView: View {
             }
             .frame(maxWidth: .infinity)
         }
-        .sheet(isPresented: $isEditMode) { TrackItemEditView( trackItem: trackItem ) }
+        .sheet(isPresented: $isEditMode) { TrackItemEditView(trackItem: trackItem) }
         .padding(.horizontal)
         .padding(.bottom, 16)
         .toolbar {
@@ -184,7 +186,17 @@ struct TrackItemView: View {
 #Preview {
     NavigationStack {
         TrackItemView(trackItem: TrackItem())
-            .modelContext(ModelContext(try! ModelContainer(for: TrackItem.self)))
+            .modelContext(ModelContext(_TrackItemViewPreview.container))
     }
 }
 #endif
+
+private enum _TrackItemViewPreview {
+    static let container: ModelContainer = {
+        do {
+            return try ModelContainer(for: TrackItem.self)
+        } catch {
+            preconditionFailure(error.localizedDescription)
+        }
+    }()
+}

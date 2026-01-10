@@ -5,8 +5,8 @@
 //  Created by Guillaume Coquard on 17/10/23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct CalmBreatheView: View {
     @Environment(\.dismiss) var dismiss: DismissAction
@@ -17,7 +17,7 @@ struct CalmBreatheView: View {
 
     var trackItem: TrackItem = TrackItem(type: .breathing)
 
-    var item: TrackItemWrapper { TrackItemWrapper( trackItem ) }
+    var item: TrackItemWrapper { TrackItemWrapper(trackItem) }
 
     var body: some View {
         ZStack {
@@ -37,13 +37,14 @@ struct CalmBreatheView: View {
                             .fontDesign(.serif)
                             .fontWeight(.bold)
                         Group {
-                            Text("""
-Cardiac coherence is a breathing technique designed to synchronize your breath with your heart rate for improved emotional well-being and stress reduction.
+                            Text(
+                                """
+                                Cardiac coherence is a breathing technique designed to synchronize your breath with your heart rate for improved emotional well-being and stress reduction.
 
-It involves slow, rhythmic breathing, typically at a rate of around six breaths per minute, which helps balance the autonomic nervous system.
+                                It involves slow, rhythmic breathing, typically at a rate of around six breaths per minute, which helps balance the autonomic nervous system.
 
-By practicing cardiac coherence, you can enhance your ability to manage stress and enhance your overall sense of well-being.
-""")
+                                By practicing cardiac coherence, you can enhance your ability to manage stress and enhance your overall sense of well-being.
+                                """)
                         }
                         .multilineTextAlignment(.leading)
                         .fontWeight(.medium)
@@ -60,6 +61,6 @@ By practicing cardiac coherence, you can enhance your ability to manage stress a
 
 #if DEBUG
 #Preview {
-    CalmBreatheView( trackItem: TrackItem() )
+    CalmBreatheView(trackItem: TrackItem())
 }
 #endif

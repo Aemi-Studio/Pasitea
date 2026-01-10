@@ -53,13 +53,15 @@ struct CalmSingleStepView: View {
             }
             Spacer(minLength: 16)
             HStack(alignment: .center) {
-                (
-                    calmStep.id != 4
-                        ? Button("Next", systemImage: "arrow.right.circle.fill") { currentStep = getNextScreen().wrappedValue }
-                        : Button("Finish", systemImage: "checkmark.circle.fill") { currentStep = getNextScreen().wrappedValue }
-                )
-                .pasiteaButtonStyle(.borderedProminent)
-                .customHaptic(currentStep)
+                (calmStep.id != 4
+                    ? Button("Next", systemImage: "arrow.right.circle.fill") {
+                        currentStep = getNextScreen().wrappedValue
+                    }
+                    : Button("Finish", systemImage: "checkmark.circle.fill") {
+                        currentStep = getNextScreen().wrappedValue
+                    })
+                    .pasiteaButtonStyle(.borderedProminent)
+                    .customHaptic(currentStep)
             }
             .frame(height: 128)
             Spacer()

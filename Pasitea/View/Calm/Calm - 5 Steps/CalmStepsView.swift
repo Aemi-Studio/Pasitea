@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct CalmStepsView: View {
     @Environment(ModelData.self) private var modelData
@@ -48,7 +48,7 @@ struct CalmStepsView: View {
             GradientView()
 
             VStack(spacing: 10) {
-                CalmSingleStepView( step: $currentStep, getNextScreen: getNextScreen )
+                CalmSingleStepView(step: $currentStep, getNextScreen: getNextScreen)
             }
 
             VStack {
@@ -65,19 +65,20 @@ struct CalmStepsView: View {
                             .fontDesign(.serif)
                             .fontWeight(.bold)
                         Group {
-                            Text("""
-The 5-4-3-2-1 method is a scientifically proven quick anxiety and stress reduction technique.
+                            Text(
+                                """
+                                The 5-4-3-2-1 method is a scientifically proven quick anxiety and stress reduction technique.
 
-To calm down:
+                                To calm down:
 
-1. See: Identify 5 things around you.
-2. Touch: Acknowledge 4 things you can physically feel.
-3. Hear: Note 3 sounds in your environment.
-4. Smell: Focus on 2 scents.
-5. Taste: Experience 1 taste, like a sip of water.
+                                1. See: Identify 5 things around you.
+                                2. Touch: Acknowledge 4 things you can physically feel.
+                                3. Hear: Note 3 sounds in your environment.
+                                4. Smell: Focus on 2 scents.
+                                5. Taste: Experience 1 taste, like a sip of water.
 
-Engaging your senses this way helps you stay present and reduce anxiety.
-""")
+                                Engaging your senses this way helps you stay present and reduce anxiety.
+                                """)
                         }
                         .multilineTextAlignment(.leading)
                         .fontWeight(.medium)
@@ -91,7 +92,7 @@ Engaging your senses this way helps you stay present and reduce anxiety.
         .ultraThinInterface()
         .customCover(isPresented: $exerciseFinished, transition: .blur, animation: .easeInOut(duration: 2)) {
             CalmExerciseFinishedView(
-                trackItem: TrackItem( trackItem ).endsNow(),
+                trackItem: TrackItem(trackItem).endsNow(),
                 dismiss: dismiss,
                 customDismiss: customDismiss
             )
