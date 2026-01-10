@@ -49,11 +49,11 @@
 - [x] Stop calling `ModelContext.save()` directly from views (only via the facade)
 
 ### Phase 3 — Safety cleanup (crash-proofing)
-- [ ] Replace force unwrap of `TrackType(rawValue:)` in [TrackItem.swift](file:///Users/gc/Developer/Aemi%20Studio.nosync/Pasitea/Pasitea/Model/TrackItem.swift#L62-L82)
-- [ ] Replace `try!` / `sound!` audio loading in [CalmListenView.swift](file:///Users/gc/Developer/Aemi%20Studio.nosync/Pasitea/Pasitea/View/Calm/Calm%20-%20Listen/CalmListenView.swift#L44-L70)
-- [ ] Replace `try! ModelContainer(...)` usages (construct container once and inject)
-- [ ] Remove UI optionals forced unwrapped in [TrackItemRowEmpty.swift](file:///Users/gc/Developer/Aemi%20Studio.nosync/Pasitea/Pasitea/View/Track/Track%20-%20Items/Items%20-%20Row/TrackItemRowEmpty.swift#L10-L23)
-- [ ] Remove `DynamicTypeSize(.small)!` force unwrap in [TrackFeelingItemRow.swift](file:///Users/gc/Developer/Aemi%20Studio.nosync/Pasitea/Pasitea/View/Track/Track%20-%20Items/Items%20-%20Row/TrackFeelingItemRow.swift#L11-L59)
+- [x] Replace force unwrap of `TrackType(rawValue:)` in [TrackItem.swift](file:///Users/gc/Developer/Aemi%20Studio.nosync/Pasitea/Pasitea/Model/TrackItem.swift#L62-L82)
+- [x] Replace `try!` / `sound!` audio loading in [CalmListenView.swift](file:///Users/gc/Developer/Aemi%20Studio.nosync/Pasitea/Pasitea/View/Calm/Calm%20-%20Listen/CalmListenView.swift#L44-L70)
+- [x] Replace `try! ModelContainer(...)` usages (construct container once and inject)
+- [x] Remove UI optionals forced unwrapped in [TrackItemRowEmpty.swift](file:///Users/gc/Developer/Aemi%20Studio.nosync/Pasitea/Pasitea/View/Track/Track%20-%20Items/Items%20-%20Row/TrackItemRowEmpty.swift#L10-L23)
+- [x] Remove `DynamicTypeSize(.small)!` force unwrap in [TrackFeelingItemRow.swift](file:///Users/gc/Developer/Aemi%20Studio.nosync/Pasitea/Pasitea/View/Track/Track%20-%20Items/Items%20-%20Row/TrackFeelingItemRow.swift#L11-L59)
 
 ### Phase 4 — Correctness fixes and refactors
 - [ ] Fix `endsNow` semantics bug in [TrackItemWrapper.swift](file:///Users/gc/Developer/Aemi%20Studio.nosync/Pasitea/Pasitea/Model/TrackItemWrapper.swift#L35-L41)
